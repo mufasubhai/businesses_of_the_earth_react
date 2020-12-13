@@ -3,7 +3,8 @@ import {Route, Switch, Redirect } from 'react-router-dom';
 import Modal from "./components/modal/modal.jsx"
 import { HashRouter } from 'react-router-dom';
 import MainPageContainer from './components/main_page/main_page_container'
-
+import './src/styles/app.css';
+import './src/styles/appStyles.scss'
 
 function App() {
   return (

@@ -18,7 +18,7 @@ export const fetchProfilesData = () => (
 
 
 
-export const fetchPostsData = (id) => {
+export const fetchPostData = (id) => {
     
     return $.ajax({
         method: 'GET',
@@ -27,7 +27,7 @@ export const fetchPostsData = (id) => {
     
 }
 
-export const fetchProfilesData = (id) => (
+export const fetchProfileData = (id) => (
     $.ajax({
         method: 'GET',
         url: `https://businessesoftheearth.org/wp-json/wp/v2/profiles-api/${id}`

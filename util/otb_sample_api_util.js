@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-export const fetchPostsgit staData = () => {
+export const fetchPostsData = () => {
     
     return $.ajax({
         method: 'GET',
@@ -9,34 +9,27 @@ export const fetchPostsgit staData = () => {
     
 }
 
-export const fetchAboutMeData = () => (
+export const fetchProfilesData = () => (
     $.ajax({
         method: 'GET',
-        url: ``
+        url: `https://businessesoftheearth.org/wp-json/wp/v2/profiles-api`
     })
 )
 
-export const createOTBSample = OTBSample => {
+
+
+export const fetchPostsData = (id) => {
     
- return   $.ajax({
-        method: 'POST',
-        url: `api/otb_samples`,
-        data: { OTBSample }
+    return $.ajax({
+        method: 'GET',
+        url: `https://businessesoftheearth.org/wp-json/wp/v2/posts/${id}`,
     })
+    
 }
 
-export const updateOTBSample = (OTBSample, OTBSampleCompositeId) => (
+export const fetchProfilesData = (id) => (
     $.ajax({
-        method: 'PATCH',
-        url: `api/otb_samples/${OTBSampleCompositeId}`,
-        data: { OTBSample }
+        method: 'GET',
+        url: `https://businessesoftheearth.org/wp-json/wp/v2/profiles-api/${id}`
     })
 )
-
-export const deleteOTBSample = OTBSampleCompositeId => {
-    return $.ajax({
-        method: 'DELETE',
-        url: `api/otb_samples/${OTBSampleCompositeId}`,
-        data: OTBSampleCompositeId
-    })
-}

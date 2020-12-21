@@ -1,18 +1,18 @@
 import $ from 'jquery';
 
-export const fetchOTBSamples = () => {
+export const fetchPostsgit staData = () => {
     
     return $.ajax({
         method: 'GET',
-        url: 'api/otb_samples',
+        url: 'https://businessesoftheearth.org/wp-json/wp/v2/posts',
     })
     
 }
 
-export const fetchOTBSample = id => (
+export const fetchAboutMeData = () => (
     $.ajax({
         method: 'GET',
-        url: `api/otb_samples/${id}`
+        url: ``
     })
 )
 

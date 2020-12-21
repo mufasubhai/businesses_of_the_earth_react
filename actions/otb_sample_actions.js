@@ -1,13 +1,14 @@
-import * as OTBSampleAPIUtil from '../util/otb_sample_api_util.js'
+import * as APIUTIL from '../util/api_util.js'
 
-export const RECEIVE_OTB_SAMPLES = 'RECEIVE_OTB_SAMPLES';
-export const RECEIVE_OTB_SAMPLE = "RECEIVE_OTB_SAMPLE";
-export const REMOVE_OTB_SAMPLE = "REMOVE_OTB_SAMPLE";
-export const RECEIVE_OTB_SAMPLE_ERRORS = "RECEIVE_OTB_SAMPLE_ERRORS"
+export const RECEIVE_API_ERRORS = 'RECEIVE_API_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS'
+export const RECEIVE_POSTS_DATA = "RECEIVE_POSTS_DATA";
+export const RECEIVE_POST_DATA = "RECEIVE_POST_DATA";
+export const RECEIVE_PROFILES_DATA = "RECEIVE_PROFILES_DATA";
+export const RECEIVE_PROFILE_DATA = "RECEIVE_PROFILE_DATA";
 
 const receiveErrors = errors => ({
-    type: RECEIVE_OTB_SAMPLE_ERRORS,
+    type: RECEIVE_API_ERRORS,
     errors
 })
 
@@ -15,21 +16,28 @@ export const clearErrors = () => ({
     type: CLEAR_ERRORS
 }) 
 
-const receiveOTBSamples = OTBSamples => {
+const receivePostsData = () => {
     
- return {   type: RECEIVE_OTB_SAMPLES,
-    OTBSamples
+ return {   type: RECEIVE_POSTS_DATA,
+    Posts
      }
 }
 
-const receiveOTBSample = OTBSample => ({
-    type: RECEIVE_OTB_SAMPLE,
-    OTBSample
+const receivePostData = (postId) => ({
+    type: RECEIVE_POST_DATA,
+    Post
 })
 
-const removeOTBSample = OTBSampleId => ({
-    type: REMOVE_OTB_SAMPLE,
-    OTBSampleId
+const receiveProfilesData = () => {
+    
+ return {   type: RECEIVE_PROFILES_DATA,
+    Profiles
+     }
+}
+
+const receiveProfileData = (profileId) => ({
+    type: RECEIVE_PROFILE_DATA,
+    Profile
 })
 
 export const fetchOTBSamples = () => dispatch => (

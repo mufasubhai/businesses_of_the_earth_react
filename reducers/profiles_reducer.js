@@ -1,24 +1,19 @@
 import {
-    RECEIVE_PROFILES_DATA,
-    RECEIVE_PROFILE_DATA
+    RECEIVE_POSTS_DATA,
+    RECEIVE_POST_DATA
 } from "../actions/data_actions"
 
-// const compositeID = (OTBSampleHistory) => (
-    
-// )
-// may need composite function for RECEIVE_OTB_SAMPLE_HISTORY Action
 
-const ProfilesReducer = (state = {}, action) => {
+const PostsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
-        case RECEIVE_PROFILES_DATA:
-            return Object.assign({}, state, action.profiles)
-        case RECEIVE_PROFILE_DATA:
-            return Object.assign({}, state, { [action.profile.id]: action.profile})
-       
+        case RECEIVE_POSTS_DATA:
+            return Object.assign({}, state, action.posts)
+        case RECEIVE_POST_DATA:
+            return Object.assign({}, state, { [action.post.id]: action.post})
         default:
             return state;
     }
 }
 
-export default ProfilesReducer;
+export default PostsReducer;

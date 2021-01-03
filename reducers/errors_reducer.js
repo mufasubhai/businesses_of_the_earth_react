@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-// import OTBSamplesErrors from './otb_sample_errors_reducer.js';
-// import OTBSampleHistoriesErrors from './otb_sample_history_errors_reducer.js';
+import ProfileErrorsReducer from './profile_errors_reducer';
+import PostErrorsReducer from './post_errors_reducer'
 
 const errorsReducer = combineReducers({
+    ProfileErrors: ProfileErrorsReducer,
+    PostErrors: PostErrorsReducer
 
-    // OTBSamples: OTBSamplesErrors,
-    // OTBSampleHistories: OTBSampleHistoriesErrors
 });
 
 export default errorsReducer;

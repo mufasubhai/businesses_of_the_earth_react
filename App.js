@@ -15,7 +15,7 @@ function App() {
       <HashRouter>
         <Switch>
           <Route exact path='/' component={MainPageContainer} />
-          <Route exact path='/post/:postId' component={PostItem}/>
+          <Route exact path='/posts/:postId' component={PostItem}/>
           <Route render={() => <Redirect to="/" />} />
         </Switch>
 

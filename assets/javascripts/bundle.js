@@ -53205,7 +53205,7 @@ __webpack_require__.r(__webpack_exports__);
 var fetchPostsData = function fetchPostsData() {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
     method: 'GET',
-    url: 'https://businessesoftheearth.org/wp-json/wp/v2/posts'
+    url: 'https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=60'
   });
 };
 var fetchProfilesData = function fetchProfilesData() {

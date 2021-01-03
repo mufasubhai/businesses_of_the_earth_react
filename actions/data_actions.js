@@ -16,28 +16,27 @@ export const clearErrors = () => ({
     type: CLEAR_ERRORS
 }) 
 
-const receivePostsData = (posts) => {
-    
+const receivePostsData = (posts) => {   
  return {   type: RECEIVE_POSTS_DATA,
     posts
      }
 }
 
-const receivePostData = Post => ({
+const receivePostData = post => ({
     type: RECEIVE_POST_DATA,
-    Post
+    post
 })
 
-const receiveProfilesData = Profiles => {
+const receiveProfilesData = profiles => {
     
  return {   type: RECEIVE_PROFILES_DATA,
-    Profiles
+    profiles
      }
 }
 
-const receiveProfileData = Profile => ({
+const receiveProfileData = profile => ({
     type: RECEIVE_PROFILE_DATA,
-    Profile
+    profile
 })
 
 export const fetchPosts = () => dispatch => (

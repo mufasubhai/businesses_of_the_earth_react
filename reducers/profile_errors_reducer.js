@@ -1,7 +1,7 @@
 import {
     CLEAR_ERRORS,
     RECEIVE_OTB_SAMPLE_ERRORS
-} from '../actions/otb_sample_actions'
+} from '../actions/data_actions'
 
 
 export default (state = [], action) => {

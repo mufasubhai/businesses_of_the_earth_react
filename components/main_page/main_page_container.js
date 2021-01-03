@@ -1,19 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MainPage from "./main_page.jsx";
-// import {fetchOTBSamples} from '../../actions/otb_sample_actions';
+import {fetchPost, fetchProfile, fetchPosts, fetchProfiles} from '../../actions/data_actions';
 // import {fetchOTBSampleHistories} from '../../actions/otb_sample_history_actions';
 
 
 
 const mSTP = state => ({
-  // OTBSamples: Object.values(state.entities.OTBSamples)
+  profiles: Object.values(state.entities.profiles),
+  posts: Object.values(state.entities.posts)
 });
 
 
 const mDTP = dispatch => ({
-    // fetchOTBSamples: () => dispatch(fetchOTBSamples()),
-    // fetchOTBSampleHistories: () => dispatch(fetchOTBSampleHistories()),
+  fetchPost: (id) => dispatch(fetchPost(id)),
+  fetchProfile: (id) => dispatch(fetchProfile(id)),
+  fetchProfiles: () => dispatch(fetchProfiles()),
+  fetchPosts: () => dispatch(fetchPosts)
 });
 
 

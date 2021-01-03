@@ -3,8 +3,8 @@ import ProfileErrorsReducer from './profile_errors_reducer';
 import PostErrorsReducer from './post_errors_reducer'
 
 const errorsReducer = combineReducers({
-    ProfileErrors: ProfileErrorsReducer,
-    PostErrors: PostErrorsReducer
+    profileErrors: ProfileErrorsReducer,
+    postErrors: PostErrorsReducer
 
 });
 

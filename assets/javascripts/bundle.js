@@ -352,19 +352,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _main_page_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main_page.jsx */ "./components/main_page/main_page.jsx");
+/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/data_actions */ "./actions/data_actions.js");
 
 
- // import {fetchOTBSamples} from '../../actions/otb_sample_actions';
-// import {fetchOTBSampleHistories} from '../../actions/otb_sample_history_actions';
+
+ // import {fetchOTBSampleHistories} from '../../actions/otb_sample_history_actions';
 
 var mSTP = function mSTP(state) {
-  return {// OTBSamples: Object.values(state.entities.OTBSamples)
+  return {
+    profiles: Object.values(state.entities.profiles),
+    posts: Object.values(state.entities.posts)
   };
 };
 
 var mDTP = function mDTP(dispatch) {
-  return {// fetchOTBSamples: () => dispatch(fetchOTBSamples()),
-    // fetchOTBSampleHistories: () => dispatch(fetchOTBSampleHistories()),
+  return {
+    fetchPost: function fetchPost(id) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPost"])(id));
+    },
+    fetchProfile: function fetchProfile(id) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfile"])(id));
+    },
+    fetchProfiles: function fetchProfiles() {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfiles"])());
+    },
+    fetchPosts: function fetchPosts() {
+      return dispatch(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"]);
+    }
   };
 };
 
@@ -48460,8 +48474,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  Posts: _posts_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  Profiles: _profiles_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  posts: _posts_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  profiles: _profiles_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -48478,13 +48492,13 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _profile_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile_errors_reducer */ "./reducers/profile_errors_reducer.js");
-/* harmony import */ var _post_errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post_errors_reducer */ "./reducers/post_errors_reducer.js");
+/* harmony import */ var _post_errors_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post_errors_reducer */ "./reducers/post_errors_reducer.js");
 
 
 
 var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  ProfileErrors: _profile_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  PostErrors: _post_errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  profileErrors: _profile_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  postErrors: _post_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
 

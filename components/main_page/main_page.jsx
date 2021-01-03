@@ -1,25 +1,25 @@
 
 import React, {useState, useEffect} from 'react';
+import {PostThumb} from './post_thumb'
 // import TableContainer from '../table/table_container'
 
 const MainPage = props => {
 
+useEffect(() => {
+    props.fetchPosts()
+    props.fetchProfiles()
+}, [])    
 
-// useEffect(() => {
-//     props.fetchOTBSamples()
-//     props.fetchOTBSampleHistories()
-// }, [])    
 
-let table = true;
-// function container() {
-//     if (table) {
-//         return <TableContainer/>
-//     }
-// }
+
+
     
     return (
             <div className="main_page_container">
-            Welcome to React
+                
+              {props.posts.map((post, idx) => {
+                  return <PostThumb key={idx} post={post}/>
+              })}
 
             </div>
         )

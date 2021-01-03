@@ -317,22 +317,23 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _post_thumb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_thumb */ "./components/main_page/post_thumb.jsx");
+
  // import TableContainer from '../table/table_container'
 
 var MainPage = function MainPage(props) {
-  // useEffect(() => {
-  //     props.fetchOTBSamples()
-  //     props.fetchOTBSampleHistories()
-  // }, [])    
-  var table = true; // function container() {
-  //     if (table) {
-  //         return <TableContainer/>
-  //     }
-  // }
-
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    props.fetchPosts();
+    props.fetchProfiles();
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main_page_container"
-  }, "Welcome to React");
+  }, props.posts.map(function (post, idx) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_thumb__WEBPACK_IMPORTED_MODULE_1__["PostThumb"], {
+      key: idx,
+      post: post
+    });
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MainPage);
@@ -377,12 +378,37 @@ var mDTP = function mDTP(dispatch) {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfiles"])());
     },
     fetchPosts: function fetchPosts() {
-      return dispatch(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"]);
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
     }
   };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_main_page_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./components/main_page/post_thumb.jsx":
+/*!*********************************************!*\
+  !*** ./components/main_page/post_thumb.jsx ***!
+  \*********************************************/
+/*! exports provided: PostThumb */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostThumb", function() { return PostThumb; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var PostThumb = function PostThumb(_ref) {
+  var post = _ref.post;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "thumbnail-image",
+    src: post.jetpack_featured_media_url
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "post-title"
+  }, post.title.rendered), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, post.excerpt.rendered));
+};
 
 /***/ }),
 
@@ -545,7 +571,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "div {\n  background-color: #99cc00;\n  padding: 10px; }\n", "",{"version":3,"sources":["webpack://./src/styles/app.css"],"names":[],"mappings":"AAAA;EACI,yBAAwB;EACxB,aAAY,EAAA","sourcesContent":["div {\n    background-color:#99cc00;\n    padding:10px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, "div {\n  background-color: black;\n  padding: 10px; }\n", "",{"version":3,"sources":["webpack://./src/styles/app.css"],"names":[],"mappings":"AAAA;EACI,uBAAuB;EACvB,aAAY,EAAA","sourcesContent":["div {\n    background-color: black;\n    padding:10px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -570,7 +596,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "body {\n  font: verdana, sans-serif;\n  background-color: #f3e2c7; }\n  body h1, body h2 {\n    color: #b68d4c; }\n", "",{"version":3,"sources":["webpack://./src/styles/appStyles.scss","webpack://./src/styles/themeColors.scss"],"names":[],"mappings":"AAGA;EACE,yBAHiC;EAIjC,yBCLwB,EAAA;EDG1B;IAIM,cCNkB,EAAA","sourcesContent":["@import 'themeColors';\n$theme-font:    verdana, sans-serif;\n\nbody {\n  font: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n  }\n}","$themeColor-Light: #f3e2c7;\n$themeColor-Dark:#b68d4c;"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 100px;\n  height: auto; }\n\nbody {\n  font: verdana, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: grey; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/appStyles.scss","webpack://./src/styles/themeColors.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACChB;EACE,yBAHiC;EAIjC,uBCNsB,EAAA;EDIxB;IAIM,WCPe,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 100px;\n    height: auto;\n}","@import 'themeColors';\n@import 'postThumb';\n$theme-font:    verdana, sans-serif;\n\nbody {\n  font: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n  }\n}","$themeColor-Light: white;\n$themeColor-Dark:grey;"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -48468,14 +48494,14 @@ module.exports = function(originalModule) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _posts_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./posts_reducer */ "./reducers/posts_reducer.js");
-/* harmony import */ var _profiles_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profiles_reducer */ "./reducers/profiles_reducer.js");
+/* harmony import */ var _post_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_reducer */ "./reducers/post_reducer.js");
+/* harmony import */ var _profile_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile_reducer */ "./reducers/profile_reducer.js");
 
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  posts: _posts_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  profiles: _profiles_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  posts: _post_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  profiles: _profile_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -48564,10 +48590,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./reducers/posts_reducer.js":
-/*!***********************************!*\
-  !*** ./reducers/posts_reducer.js ***!
-  \***********************************/
+/***/ "./reducers/post_reducer.js":
+/*!**********************************!*\
+  !*** ./reducers/post_reducer.js ***!
+  \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -48578,24 +48604,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var ProfilesReducer = function ProfilesReducer() {
+var PostsReducer = function PostsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
 
   switch (action.type) {
-    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PROFILES_DATA"]:
-      return Object.assign({}, state, action.profiles);
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS_DATA"]:
+      return Object.assign({}, state, action.posts);
 
-    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PROFILE_DATA"]:
-      return Object.assign({}, state, _defineProperty({}, action.profile.id, action.profile));
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST_DATA"]:
+      return Object.assign({}, state, _defineProperty({}, action.post.id, action.post));
 
     default:
       return state;
   }
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ProfilesReducer);
+/* harmony default export */ __webpack_exports__["default"] = (PostsReducer);
 
 /***/ }),
 
@@ -48629,10 +48655,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./reducers/profiles_reducer.js":
-/*!**************************************!*\
-  !*** ./reducers/profiles_reducer.js ***!
-  \**************************************/
+/***/ "./reducers/profile_reducer.js":
+/*!*************************************!*\
+  !*** ./reducers/profile_reducer.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -48643,24 +48669,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var PostsReducer = function PostsReducer() {
+var ProfilesReducer = function ProfilesReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
 
   switch (action.type) {
-    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS_DATA"]:
-      return Object.assign({}, state, action.posts);
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PROFILES_DATA"]:
+      return Object.assign({}, state, action.profiles);
 
-    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST_DATA"]:
-      return Object.assign({}, state, _defineProperty({}, action.post.id, action.post));
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PROFILE_DATA"]:
+      return Object.assign({}, state, _defineProperty({}, action.profile.id, action.profile));
 
     default:
       return state;
   }
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (PostsReducer);
+/* harmony default export */ __webpack_exports__["default"] = (ProfilesReducer);
 
 /***/ }),
 

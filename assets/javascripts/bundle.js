@@ -567,7 +567,12 @@ var postItem = function postItem(props) {
     }, [setPost]);
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !post ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), console.log(post));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !post ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "thumbnail-image",
+    src: post.jetpack_featured_media_url
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "post-title"
+  }, post.title.rendered), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(post.excerpt.rendered)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(post.content.rendered))), console.log(post));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (postItem);

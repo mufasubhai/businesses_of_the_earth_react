@@ -100,7 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _components_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/modal/modal.jsx */ "./components/modal/modal.jsx");
 /* harmony import */ var _components_main_page_main_page_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/main_page/main_page_container */ "./components/main_page/main_page_container.js");
-/* harmony import */ var _components_posts_post_item_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/posts/post_item.jsx */ "./components/posts/post_item.jsx");
+/* harmony import */ var _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/posts/post_item_container */ "./components/posts/post_item_container.js");
 /* harmony import */ var _src_styles_app_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./src/styles/app.css */ "./src/styles/app.css");
 /* harmony import */ var _src_styles_appStyles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./src/styles/appStyles.scss */ "./src/styles/appStyles.scss");
 
@@ -122,7 +122,7 @@ function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/posts/:postId",
-    component: _components_posts_post_item_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     render: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
@@ -433,7 +433,8 @@ var PostThumb = function PostThumb(_ref) {
   //         // return [newObject, ""]
   //         }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "posts/".concat(post.id)
+    to: "posts/".concat(post.id),
+    postContent: post
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "thumbnail-image",
     src: post.jetpack_featured_media_url
@@ -542,22 +543,65 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var postItem = function postItem(props) {
-  console.log(props);
-
+  // console.log(props);
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
       post = _useState2[0],
       setPost = _useState2[1];
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://businessesoftheearth.org/wp-json/wp/v2/posts/".concat(props.match.params.postId)).then(function (response) {
-      setPost(response.data);
-    });
-  }, [setPost]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !post ? null : html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(post.content.rendered));
+  if (!props.posts.filter(function (el) {
+    return el.id === parseInt(props.match.params.postId);
+  })[0]) {
+    console.log('axios');
+    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://businessesoftheearth.org/wp-json/wp/v2/posts/".concat(props.match.params.postId)).then(function (response) {
+        setPost(response.data);
+      });
+    }, [setPost]);
+  } else {
+    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+      console.log('prev-state');
+      setPost(props.posts.filter(function (el) {
+        return el.id === parseInt(props.match.params.postId);
+      })[0]);
+    }, [setPost]);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !post ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), console.log(post));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (postItem);
+
+/***/ }),
+
+/***/ "./components/posts/post_item_container.js":
+/*!*************************************************!*\
+  !*** ./components/posts/post_item_container.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _post_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post_item */ "./components/posts/post_item.jsx");
+
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    posts: Object.values(state.entities.posts)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_post_item__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

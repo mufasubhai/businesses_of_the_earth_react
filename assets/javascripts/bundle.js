@@ -3094,9 +3094,23 @@ ___CSS_LOADER_EXPORT___.push([module.i, "div {\n  background-color: transparent;
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/appStyles.scss ***!
   \****************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: File to import not found or unreadable: mainPage.\n        on line 3 of src/styles/appStyles.scss\n>> @import 'mainPage';\n\n   ^\n");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\nbody {\n  font: verdana, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: grey; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/appStyles.scss","webpack://./src/styles/themeColors.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACIhB;EACE,yBAHiC;EAIjC,uBCTsB,EAAA;EDOxB;IAIM,WCVe,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}","@import 'themeColors';\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n\n$theme-font:    verdana, sans-serif;\n\nbody {\n  font: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n  }\n}","$themeColor-Light: white;\n$themeColor-Dark:grey;"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
 
 /***/ }),
 

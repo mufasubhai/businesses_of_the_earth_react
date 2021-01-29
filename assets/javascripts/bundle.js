@@ -102,8 +102,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_main_page_main_page_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/main_page/main_page_container */ "./components/main_page/main_page_container.js");
 /* harmony import */ var _components_main_page_home_page_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/main_page/home_page_container */ "./components/main_page/home_page_container.js");
 /* harmony import */ var _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/posts/post_item_container */ "./components/posts/post_item_container.js");
-/* harmony import */ var _src_styles_app_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./src/styles/app.css */ "./src/styles/app.css");
-/* harmony import */ var _src_styles_appStyles_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./src/styles/appStyles.scss */ "./src/styles/appStyles.scss");
+/* harmony import */ var _components_team_page_team_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/team_page/team_page */ "./components/team_page/team_page.jsx");
+/* harmony import */ var _src_styles_app_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./src/styles/app.css */ "./src/styles/app.css");
+/* harmony import */ var _src_styles_appStyles_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./src/styles/appStyles.scss */ "./src/styles/appStyles.scss");
+
 
 
 
@@ -121,6 +123,10 @@ function App() {
     exact: true,
     path: "/",
     component: _components_main_page_home_page_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/team",
+    component: _components_team_page_team_page__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/main",
@@ -286,6 +292,136 @@ var closeModal = function closeModal() {
     type: CLOSE_MODAL
   };
 };
+
+/***/ }),
+
+/***/ "./assets/images/adrian-profile.png":
+/*!******************************************!*\
+  !*** ./assets/images/adrian-profile.png ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/adrian-profile.png");
+
+/***/ }),
+
+/***/ "./assets/images/brian-profile.png":
+/*!*****************************************!*\
+  !*** ./assets/images/brian-profile.png ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/brian-profile.png");
+
+/***/ }),
+
+/***/ "./assets/images/daniel-profile.png":
+/*!******************************************!*\
+  !*** ./assets/images/daniel-profile.png ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/daniel-profile.png");
+
+/***/ }),
+
+/***/ "./assets/images/donna-profile.png":
+/*!*****************************************!*\
+  !*** ./assets/images/donna-profile.png ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/donna-profile.png");
+
+/***/ }),
+
+/***/ "./assets/images/isabelle-profile.png":
+/*!********************************************!*\
+  !*** ./assets/images/isabelle-profile.png ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/isabelle-profile.png");
+
+/***/ }),
+
+/***/ "./assets/images/melina-profile.png":
+/*!******************************************!*\
+  !*** ./assets/images/melina-profile.png ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/melina-profile.png");
+
+/***/ }),
+
+/***/ "./assets/images/mina-profile.png":
+/*!****************************************!*\
+  !*** ./assets/images/mina-profile.png ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/mina-profile.png");
+
+/***/ }),
+
+/***/ "./assets/images/natalie-profile.jpg":
+/*!*******************************************!*\
+  !*** ./assets/images/natalie-profile.jpg ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/natalie-profile.jpg");
+
+/***/ }),
+
+/***/ "./assets/images/nicki-profile.jpg":
+/*!*****************************************!*\
+  !*** ./assets/images/nicki-profile.jpg ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/nicki-profile.jpg");
+
+/***/ }),
+
+/***/ "./assets/images/sierra-profile.png":
+/*!******************************************!*\
+  !*** ./assets/images/sierra-profile.png ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/sierra-profile.png");
 
 /***/ }),
 
@@ -809,6 +945,187 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_post_item__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./components/team_page/team_page.jsx":
+/*!********************************************!*\
+  !*** ./components/team_page/team_page.jsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header */ "./components/header/header.jsx");
+/* harmony import */ var _assets_images_adrian_profile_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/images/adrian-profile.png */ "./assets/images/adrian-profile.png");
+/* harmony import */ var _assets_images_brian_profile_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/images/brian-profile.png */ "./assets/images/brian-profile.png");
+/* harmony import */ var _assets_images_daniel_profile_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/images/daniel-profile.png */ "./assets/images/daniel-profile.png");
+/* harmony import */ var _assets_images_donna_profile_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/images/donna-profile.png */ "./assets/images/donna-profile.png");
+/* harmony import */ var _assets_images_isabelle_profile_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/images/isabelle-profile.png */ "./assets/images/isabelle-profile.png");
+/* harmony import */ var _assets_images_melina_profile_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/images/melina-profile.png */ "./assets/images/melina-profile.png");
+/* harmony import */ var _assets_images_mina_profile_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/images/mina-profile.png */ "./assets/images/mina-profile.png");
+/* harmony import */ var _assets_images_natalie_profile_jpg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/images/natalie-profile.jpg */ "./assets/images/natalie-profile.jpg");
+/* harmony import */ var _assets_images_nicki_profile_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/images/nicki-profile.jpg */ "./assets/images/nicki-profile.jpg");
+/* harmony import */ var _assets_images_sierra_profile_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/images/sierra-profile.png */ "./assets/images/sierra-profile.png");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var TeamPage = function TeamPage(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-page-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-top"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ceo-profile"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_daniel_profile_png__WEBPACK_IMPORTED_MODULE_5__["default"],
+    className: "profile-photo",
+    alt: "daniel-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Daniel Shaby"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Founder")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-team"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "team-list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_nicki_profile_jpg__WEBPACK_IMPORTED_MODULE_11__["default"],
+    className: "profile-photo",
+    alt: "nicole-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Nicole Giles"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Team Leader"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_isabelle_profile_png__WEBPACK_IMPORTED_MODULE_7__["default"],
+    className: "profile-photo",
+    alt: "isabelle-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Isabelle Rubio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Team Leader"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_sierra_profile_png__WEBPACK_IMPORTED_MODULE_12__["default"],
+    className: "profile-photo",
+    alt: "sierra-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Sierra DeWalt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Content Creator"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_adrian_profile_png__WEBPACK_IMPORTED_MODULE_3__["default"],
+    className: "profile-photo",
+    alt: "adrian-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Adrian Apodaca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Web Developer"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_brian_profile_png__WEBPACK_IMPORTED_MODULE_4__["default"],
+    className: "profile-photo",
+    alt: "brian-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Brian Anderson"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Professional Writer"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_mina_profile_png__WEBPACK_IMPORTED_MODULE_9__["default"],
+    className: "profile-photo",
+    alt: "mina-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Mina Tahmouresie"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Graphic Designer"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_donna_profile_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+    className: "profile-photo",
+    alt: "donna-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Donna Ghassemi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Content Creator"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_natalie_profile_jpg__WEBPACK_IMPORTED_MODULE_10__["default"],
+    className: "profile-photo",
+    alt: "natalie-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Natalie Deleon"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Professional Writer"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _assets_images_melina_profile_png__WEBPACK_IMPORTED_MODULE_8__["default"],
+    className: "profile-photo",
+    alt: "melina-profile"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Melina Gilbert"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "team-member-detail"
+  }, "Social Media Strategy"))))));
+};
+
+var mSTP = function mSTP(state) {
+  return {};
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(TeamPage));
 
 /***/ }),
 
@@ -2777,23 +3094,9 @@ ___CSS_LOADER_EXPORT___.push([module.i, "div {\n  background-color: transparent;
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/appStyles.scss ***!
   \****************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\nbody {\n  font: verdana, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: grey; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/appStyles.scss","webpack://./src/styles/themeColors.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACChB;EACE,yBAHiC;EAIjC,uBCNsB,EAAA;EDIxB;IAIM,WCPe,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}","@import 'themeColors';\n@import 'postThumb';\n$theme-font:    verdana, sans-serif;\n\nbody {\n  font: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n  }\n}","$themeColor-Light: white;\n$themeColor-Dark:grey;"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
-
+throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: File to import not found or unreadable: mainPage.\n        on line 3 of src/styles/appStyles.scss\n>> @import 'mainPage';\n\n   ^\n");
 
 /***/ }),
 

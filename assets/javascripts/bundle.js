@@ -100,9 +100,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _components_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/modal/modal.jsx */ "./components/modal/modal.jsx");
 /* harmony import */ var _components_main_page_main_page_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/main_page/main_page_container */ "./components/main_page/main_page_container.js");
-/* harmony import */ var _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/posts/post_item_container */ "./components/posts/post_item_container.js");
-/* harmony import */ var _src_styles_app_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./src/styles/app.css */ "./src/styles/app.css");
-/* harmony import */ var _src_styles_appStyles_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./src/styles/appStyles.scss */ "./src/styles/appStyles.scss");
+/* harmony import */ var _components_main_page_home_page_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/main_page/home_page_container */ "./components/main_page/home_page_container.js");
+/* harmony import */ var _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/posts/post_item_container */ "./components/posts/post_item_container.js");
+/* harmony import */ var _src_styles_app_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./src/styles/app.css */ "./src/styles/app.css");
+/* harmony import */ var _src_styles_appStyles_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./src/styles/appStyles.scss */ "./src/styles/appStyles.scss");
+
 
 
 
@@ -118,11 +120,15 @@ function App() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["HashRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
+    component: _components_main_page_home_page_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/main",
     component: _components_main_page_main_page_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/posts/:postId",
-    component: _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     render: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
@@ -309,6 +315,202 @@ document.addEventListener("DOMContentLoaded", function () {
   })), document.getElementById('root'));
   window.getState = store.getState;
 });
+
+/***/ }),
+
+/***/ "./components/elements/milestones.jsx":
+/*!********************************************!*\
+  !*** ./components/elements/milestones.jsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+var mSTP = function mSTP(state) {
+  return {};
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {};
+};
+
+var Milestones = function Milestones(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "milestone-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "milestone-header"
+  }, "HOW FAR WE'VE COME!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "milestone-graphic"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(Milestones));
+
+/***/ }),
+
+/***/ "./components/header/header.jsx":
+/*!**************************************!*\
+  !*** ./components/header/header.jsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // import {PostThumb} from './post_thumb'
+// import TableContainer from '../table/table_container'
+
+var Header = function Header(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "logo-top"
+  }, "Logo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "header-link-list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "header-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "header-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, "Our Team")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "header-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, "Local Businesss")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "header-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, "FAQ"))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./components/main_page/home_page.jsx":
+/*!********************************************!*\
+  !*** ./components/main_page/home_page.jsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _post_thumb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_thumb */ "./components/main_page/post_thumb.jsx");
+/* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header */ "./components/header/header.jsx");
+/* harmony import */ var _elements_milestones__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../elements/milestones */ "./components/elements/milestones.jsx");
+
+
+
+ // import TableContainer from '../table/table_container'
+
+var HomePage = function HomePage(props) {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    props.fetchPosts();
+    props.fetchProfiles();
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main_page_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main-page-banner"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "bold"
+  }, "44%"), "of the USA's economic activity comes from ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "bold"
+  }, "Small Businesses.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Businesses of the earth is here to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "bold"
+  }, "share the stories"), " of hard working local businesses.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main-page-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "main-page-body-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "bold"
+  }, "WhO WE ARE AND WHAT WE STAND FOR")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "main-page-body-text"
+  }, "\u201COur mission is to inspire people to support small businesses so that consumers, job-seekers, entrepreneurs, and local communities can thrive. The way we do this is by showing local communities the stories of small business owners and providing discounts to inspire purchases. We believe that if these small business owners could show customers, job-seekers, and other businesses who they are, the struggles they overcame, and their dreams, then they would inspire much more support. We hope that entrepreneurs, job-seekers, and surrounding communities can learn from these brick-and-mortar, mom-and-pop shops and support them along the way."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "main-page-body-heder"
+  }, "OUR PILLARS OF VALUE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "pillar-list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "pillar-title"
+  }, "Inclusivity", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "pillar-image",
+    alt: "inclusivity"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "pillar-title"
+  }, "Support", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "pillar-image",
+    alt: "Support"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "pillar-title"
+  }, "Community", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "pillar-image",
+    alt: "community"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_elements_milestones__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (HomePage);
+
+/***/ }),
+
+/***/ "./components/main_page/home_page_container.js":
+/*!*****************************************************!*\
+  !*** ./components/main_page/home_page_container.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _home_page_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home_page.jsx */ "./components/main_page/home_page.jsx");
+/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/data_actions */ "./actions/data_actions.js");
+
+
+
+ // import {fetchOTBSampleHistories} from '../../actions/otb_sample_history_actions';
+
+var mSTP = function mSTP(state) {
+  return {
+    profiles: Object.values(state.entities.profiles),
+    posts: Object.values(state.entities.posts)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchPost: function fetchPost(id) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPost"])(id));
+    },
+    fetchProfile: function fetchProfile(id) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfile"])(id));
+    },
+    fetchProfiles: function fetchProfiles() {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfiles"])());
+    },
+    fetchPosts: function fetchPosts() {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_home_page_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

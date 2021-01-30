@@ -3,12 +3,24 @@
 @import 'mainPage';
 @import 'teamPage';
 
-$theme-font:    verdana, sans-serif;
-
+$theme-font:    Gothic A1, sans-serif;
+$theme-font3: Mohave, sans-serif;
+$theme-font2: Lato, sans-serif;
 body {
-  font: $theme-font;
+  font-family: $theme-font;
   background-color: $themeColor-Light;
   h1, h2 {
       color: $themeColor-Dark
+      
+  }
+  p {
+    font-family: $theme-font3;
+    font-weight: 400;
+    font-size: 20px;
+    font-stretch: ultra-condensed;
+    line-height: 27.8px;
+    .bold {
+      font-weight: 700;
+    }
   }
 }

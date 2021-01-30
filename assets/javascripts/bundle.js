@@ -563,21 +563,27 @@ var HomePage = function HomePage(props) {
     className: "main_page_container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-page-banner"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bold"
-  }, "44%"), "of the USA's economic activity comes from ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "44%"), "of the USA's economic activity comes from ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bold"
-  }, "Small Businesses.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Businesses of the earth is here to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Small Businesses.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Businesses of the earth is here to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bold"
   }, "share the stories"), " of hard working local businesses.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-page-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "main-page-body-header"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "bold"
   }, "WhO WE ARE AND WHAT WE STAND FOR")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "main-page-body-text"
-  }, "\u201COur mission is to inspire people to support small businesses so that consumers, job-seekers, entrepreneurs, and local communities can thrive. The way we do this is by showing local communities the stories of small business owners and providing discounts to inspire purchases. We believe that if these small business owners could show customers, job-seekers, and other businesses who they are, the struggles they overcame, and their dreams, then they would inspire much more support. We hope that entrepreneurs, job-seekers, and surrounding communities can learn from these brick-and-mortar, mom-and-pop shops and support them along the way."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+  }, "\u201COur mission is to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "bold"
+  }, "inspire people to support small businesses"), " so that consumers, job-seekers, entrepreneurs, and local communities can thrive. The way we do this is by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    clssName: "bold"
+  }, " showing local communities the stories of small business owners and providing discounts to inspire purchases."), " We believe that if these small business owners could show customers, job-seekers, and other businesses ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "bold"
+  }, "who they are, the struggles they overcame, and their dreams, then they would inspire much more support."), " We hope that entrepreneurs, job-seekers, and surrounding communities can learn from these brick-and-mortar, mom-and-pop shops and support them along the way."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "main-page-body-heder"
   }, "OUR PILLARS OF VALUE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "pillar-list"
@@ -3107,7 +3113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\nbody {\n  font: verdana, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: grey; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/appStyles.scss","webpack://./src/styles/themeColors.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACIhB;EACE,yBAHiC;EAIjC,uBCTsB,EAAA;EDOxB;IAIM,WCVe,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}","@import 'themeColors';\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n\n$theme-font:    verdana, sans-serif;\n\nbody {\n  font: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n  }\n}","$themeColor-Light: white;\n$themeColor-Dark:grey;"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\nbody {\n  font-family: Gothic A1, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: Mohave, sans-serif;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/appStyles.scss","webpack://./src/styles/themeColors.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACKhB;EACE,kCAJmC;EAKnC,uBCVsB,EAAA;EDQxB;IAIM,cCX8B,EAAA;EDOpC;IAQI,+BAV4B;IAW5B,gBAAgB;IAChB,eAAe;IACf,6BAA6B;IAC7B,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}","@import 'themeColors';\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n\n$theme-font:    Gothic A1, sans-serif;\n$theme-font3: Mohave, sans-serif;\n$theme-font2: Lato, sans-serif;\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: $theme-font3;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}","$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

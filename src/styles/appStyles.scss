@@ -2,10 +2,11 @@
 @import 'postThumb';
 @import 'mainPage';
 @import 'teamPage';
+@import 'header';
 
-$theme-font:    Gothic A1, sans-serif;
-$theme-font3: Mohave, sans-serif;
-$theme-font2: Lato, sans-serif;
+$theme-font:    'Gothic A1', sans-serif;
+$theme-font3: 'Mohave', monospace, sans-serif;
+$theme-font2: 'Lato', sans-serif;
 body {
   font-family: $theme-font;
   background-color: $themeColor-Light;
@@ -14,7 +15,7 @@ body {
       
   }
   p {
-    font-family: $theme-font3;
+    font-family: Mohave;
     font-weight: 400;
     font-size: 20px;
     font-stretch: ultra-condensed;

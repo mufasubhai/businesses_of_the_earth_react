@@ -9,10 +9,10 @@ const Header = props => {
             <div className="header-container">
                 <p className="logo-top">Logo</p>
                         <ul className="header-link-list">
-                            <li className="header-link"><a href="#">Home</a></li>
-                            <li className="header-link"><a href="#">Our Team</a></li>
-                            <li className="header-link"><a href="#">Local Businesss</a></li>
-                            <li className="header-link"><a href="#">FAQ</a></li>
+                            <li className="header-link">Home</li>
+                            <li className="header-link">Our Team</li>
+                            <li className="header-link">Local Business</li>
+                            <li className="header-link">FAQ</li>
                         </ul>              
             </div>
         )

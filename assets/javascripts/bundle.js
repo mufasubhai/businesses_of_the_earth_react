@@ -514,21 +514,13 @@ var Header = function Header(props) {
     className: "header-link-list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "header-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#"
-  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "header-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#"
-  }, "Our Team")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "Our Team"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "header-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#"
-  }, "Local Businesss")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "Local Business"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "header-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#"
-  }, "FAQ"))));
+  }, "FAQ")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -560,7 +552,7 @@ var HomePage = function HomePage(props) {
     props.fetchProfiles();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "main_page_container"
+    className: "home-page-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-page-banner"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3113,7 +3105,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\nbody {\n  font-family: Gothic A1, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: Mohave, sans-serif;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/appStyles.scss","webpack://./src/styles/themeColors.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACKhB;EACE,kCAJmC;EAKnC,uBCVsB,EAAA;EDQxB;IAIM,cCX8B,EAAA;EDOpC;IAQI,+BAV4B;IAW5B,gBAAgB;IAChB,eAAe;IACf,6BAA6B;IAC7B,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}","@import 'themeColors';\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n\n$theme-font:    Gothic A1, sans-serif;\n$theme-font3: Mohave, sans-serif;\n$theme-font2: Lato, sans-serif;\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: $theme-font3;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}","$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\n.main_page_container {\n  display: flex;\n  flex-direction: column; }\n\n.header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center; }\n\n.header-link-list {\n  display: flex;\n  flex-direction: row; }\n\n.header-link-list li {\n  list-style: none; }\n\n.header-link {\n  font-family: lato; }\n\nbody {\n  font-family: \"Gothic A1\", sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/mainPage.scss","webpack://./src/styles/header.scss","webpack://./src/styles/themeColors.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACHhB;EACI,aAAa;EACb,sBAAqB,EAAA;;ACAzB;EACI,aAAa;EACb,sBAAsB;EACtB,yBCFiC;EDGjC,mBAAmB,EAAA;;AAGvB;EACI,aAAY;EACZ,mBAAmB,EAAA;;AAIvB;EACI,gBAAgB,EAAA;;AAIpB;EACI,iBAAiB,EAAA;;AEZrB;EACE,oCAJqC;EAKrC,uBDXsB,EAAA;ECSxB;IAIM,cDZ8B,EAAA;ECQpC;IAQI,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;IACf,6BAA6B;IAC7B,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}",".main_page_container {\n    display: flex;\n    flex-direction:column;\n}","@import 'themeColors';\n\n.header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n}\n\n.header-link-list {\n    display:flex;\n    flex-direction: row;\n\n}\n\n.header-link-list li {\n    list-style: none;\n    \n}\n\n.header-link {\n    font-family: lato;\n}\n","$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);","@import 'themeColors';\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n@import 'header';\n\n$theme-font:    'Gothic A1', sans-serif;\n$theme-font3: 'Mohave', monospace, sans-serif;\n$theme-font2: 'Lato', sans-serif;\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

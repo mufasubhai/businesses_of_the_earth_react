@@ -1,0 +1,23 @@
+@import 'themeColors';
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    background-color: $themeColor-Grey;
+    align-items: center;
+}
+
+.header-link-list {
+    display:flex;
+    flex-direction: row;
+
+}
+
+.header-link-list li {
+    list-style: none;
+    
+}
+
+.header-link {
+    font-family: lato;
+}

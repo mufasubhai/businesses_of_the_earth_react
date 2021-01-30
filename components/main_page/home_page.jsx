@@ -14,7 +14,7 @@ useEffect(() => {
 
 
     return (
-        <div className="main_page_container">
+        <div className="home-page-container">
                 <Header/>
             <div className="main-page-banner">
                 <h1><div className="bold">44%</div>of the USA's economic activity comes from <div className="bold">Small Businesses.</div></h1>

@@ -13,7 +13,9 @@ const Milestones = props => {
     return (
         <div className="milestone-wrapper">
             <h1 className="milestone-header">HOW FAR WE'VE COME!</h1>
-            <div className="milestone-graphic"></div>
+            <div className="milestone-graphic">
+                <h1>MILESTONES</h1>
+            </div>
 
         </div>
     )

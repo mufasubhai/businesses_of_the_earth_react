@@ -1,0 +1,23 @@
+
+
+.milestone-wrapper {
+    background-color: $themeColor-Grey;
+    .milestone-header{
+        font-family: $theme-font;
+        color: #F1DED9;
+        font-weight: 600;
+    }
+
+    .milestone-graphic {
+        background-color: $themeColor-lightGrey;
+        width: 90%;
+        height: 50%;
+        margin-bottom: 40px;
+        
+        h1 {
+            font-weight: 300;
+            
+        }
+
+    }
+}

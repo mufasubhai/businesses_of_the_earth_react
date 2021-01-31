@@ -1,12 +1,13 @@
-@import 'themeColors';
+
 @import 'postThumb';
 @import 'mainPage';
 @import 'teamPage';
 @import 'header';
+@import 'milestones';
+@import 'themeVars';
 
-$theme-font:    'Gothic A1', sans-serif;
-$theme-font3: 'Mohave', monospace, sans-serif;
-$theme-font2: 'Lato', sans-serif;
+
+
 body {
   font-family: $theme-font;
   background-color: $themeColor-Light;

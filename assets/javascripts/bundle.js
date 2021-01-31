@@ -1001,14 +1001,16 @@ var TeamPage = function TeamPage(props) {
     className: "team-page-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "team-top"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Meet the team!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "As of December 2020, we are a growing team of 10 people, including Website Developers, Social Media Content Creators, Professional Writers, Graphic Designers, and a Leadership team!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ceo-profile"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_daniel_profile_png__WEBPACK_IMPORTED_MODULE_5__["default"],
     className: "profile-photo",
     alt: "daniel-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Daniel Shaby"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1019,108 +1021,126 @@ var TeamPage = function TeamPage(props) {
     className: "team-list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_nicki_profile_jpg__WEBPACK_IMPORTED_MODULE_11__["default"],
     className: "profile-photo",
     alt: "nicole-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Nicole Giles"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Team Leader"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_isabelle_profile_png__WEBPACK_IMPORTED_MODULE_7__["default"],
     className: "profile-photo",
     alt: "isabelle-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Isabelle Rubio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Team Leader"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_sierra_profile_png__WEBPACK_IMPORTED_MODULE_12__["default"],
     className: "profile-photo",
     alt: "sierra-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Sierra DeWalt"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Content Creator"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_adrian_profile_png__WEBPACK_IMPORTED_MODULE_3__["default"],
     className: "profile-photo",
     alt: "adrian-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Adrian Apodaca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Web Developer"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_brian_profile_png__WEBPACK_IMPORTED_MODULE_4__["default"],
     className: "profile-photo",
     alt: "brian-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Brian Anderson"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Professional Writer"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_mina_profile_png__WEBPACK_IMPORTED_MODULE_9__["default"],
     className: "profile-photo",
     alt: "mina-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Mina Tahmouresie"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Graphic Designer"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_donna_profile_png__WEBPACK_IMPORTED_MODULE_6__["default"],
     className: "profile-photo",
     alt: "donna-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Donna Ghassemi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Content Creator"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_natalie_profile_jpg__WEBPACK_IMPORTED_MODULE_10__["default"],
     className: "profile-photo",
     alt: "natalie-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Natalie Deleon"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Professional Writer"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "team-member-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-photo-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_melina_profile_png__WEBPACK_IMPORTED_MODULE_8__["default"],
     className: "profile-photo",
     alt: "melina-profile"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "team-member-item"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "team-member-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "team-member-detail"
   }, "Melina Gilbert"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -3124,7 +3144,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_assets_images_home_background_jpeg__WEBPACK_IMPORTED_MODULE_3__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\n.main_page_container {\n  display: flex;\n  flex-direction: column; }\n\n.main-page-banner {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: center center;\n  background-size: 100% auto;\n  background-repeat: no-repeat;\n  justify-content: center;\n  height: 100%; }\n\n.main-page-body {\n  background-color: #6aa1a1; }\n\n.header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center; }\n\n.header-link-list {\n  display: flex;\n  flex-direction: row; }\n\n.header-link-list li {\n  list-style: none; }\n\n.header-link {\n  font-family: lato; }\n\n.milestone-wrapper {\n  background-color: #737373; }\n  .milestone-wrapper .milestone-header {\n    font-family: \"Gothic A1\", sans-serif;\n    color: #F1DED9;\n    font-weight: 600; }\n  .milestone-wrapper .milestone-graphic {\n    background-color: #C4C4C4;\n    width: 90%;\n    height: 50%;\n    margin-bottom: 40px; }\n    .milestone-wrapper .milestone-graphic h1 {\n      font-weight: 300; }\n\nbody {\n  font-family: \"Gothic A1\", sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/mainPage.scss","webpack://./src/styles/header.scss","webpack://./src/styles/themeVars.scss","webpack://./src/styles/milestones.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACHhB;EACI,aAAa;EACb,sBAAqB,EAAA;;AAGzB;EACM,yDAAkE;EAChE,kCAAkC;EACtC,0BAA0B;EAE1B,4BAA4B;EAC5B,uBAAuB;EAEvB,YAAY,EAAA;;AAGhB;EACI,yBAAqC,EAAA;;ACfzC;EACI,aAAa;EACb,sBAAsB;EACtB,yBCFiC;EDGjC,mBAAmB,EAAA;;AAGvB;EACI,aAAY;EACZ,mBAAmB,EAAA;;AAIvB;EACI,gBAAgB,EAAA;;AAIpB;EACI,iBAAiB,EAAA;;AEnBrB;EACI,yBDAiC,EAAA;ECDrC;IAGQ,oCDA+B;ICC/B,cAAc;IACd,gBAAgB,EAAA;EALxB;IASQ,yBDPqB;ICQrB,UAAU;IACV,WAAW;IACX,mBAAmB,EAAA;IAZ3B;MAeY,gBAAgB,EAAA;;ACP5B;EACE,oCFNqC;EEOrC,uBFZsB,EAAA;EEUxB;IAIM,cFb8B,EAAA;EESpC;IAQI,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;IACf,6BAA6B;IAC7B,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}",".main_page_container {\n    display: flex;\n    flex-direction:column;\n}\n\n.main-page-banner {\n      background-image: url('../../assets//images/home-background.jpeg');\n        background-position: center center;\n    background-size: 100% auto;\n    // min-height: 80%;\n    background-repeat: no-repeat;\n    justify-content: center;\n    // width: 100%;\n    height: 100%;\n}\n\n.main-page-body {\n    background-color: rgba(106,161,161,1);\n}\n\n.main-page-pillars{\n\n\n}","@import 'themeVars';\n\n.header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n}\n\n.header-link-list {\n    display:flex;\n    flex-direction: row;\n\n}\n\n.header-link-list li {\n    list-style: none;\n    \n}\n\n.header-link {\n    font-family: lato;\n}\n","$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);\n$themeColor-lightGrey:#C4C4C4;\n$theme-font:    'Gothic A1', sans-serif;\n$theme-font3: 'Mohave', monospace, sans-serif;\n$theme-font2: 'Lato', sans-serif;","\n\n.milestone-wrapper {\n    background-color: $themeColor-Grey;\n    .milestone-header{\n        font-family: $theme-font;\n        color: #F1DED9;\n        font-weight: 600;\n    }\n\n    .milestone-graphic {\n        background-color: $themeColor-lightGrey;\n        width: 90%;\n        height: 50%;\n        margin-bottom: 40px;\n        \n        h1 {\n            font-weight: 300;\n            \n        }\n\n    }\n}","\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n@import 'header';\n@import 'milestones';\n@import 'themeVars';\n\n\n\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\n.main_page_container {\n  display: flex;\n  flex-direction: column; }\n\n.main-page-banner {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: center center;\n  background-size: 100% auto;\n  background-repeat: no-repeat;\n  justify-content: center;\n  height: 100%; }\n\n.main-page-body {\n  background-color: #6aa1a1; }\n\n.team-list {\n  padding: 0px; }\n  .team-list li {\n    list-style: none; }\n\n.profile-photo {\n  max-width: 200px;\n  max-height: 200px;\n  border-radius: 200px;\n  margin: 0px; }\n\n.ceo-profile {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.profile-photo-wrapper {\n  display: flex;\n  background-color: #737373;\n  padding: 0px;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  border: 4px solid #737373; }\n\n.team-member-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  background-color: #f1ded9;\n  padding: 20px;\n  margin: 20px 0px; }\n\n.team-member-details {\n  display: flex;\n  flex-direction: column; }\n\n.team-top {\n  background-color: #f1ded9; }\n\n.team-team {\n  padding: 0px; }\n\n.header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center; }\n\n.header-link-list {\n  display: flex;\n  flex-direction: row; }\n\n.header-link-list li {\n  list-style: none; }\n\n.header-link {\n  font-family: lato; }\n\n.milestone-wrapper {\n  background-color: #737373; }\n  .milestone-wrapper .milestone-header {\n    font-family: \"Gothic A1\", sans-serif;\n    color: #F1DED9;\n    font-weight: 600; }\n  .milestone-wrapper .milestone-graphic {\n    background-color: #C4C4C4;\n    width: 90%;\n    height: 50%;\n    margin-bottom: 40px; }\n    .milestone-wrapper .milestone-graphic h1 {\n      font-weight: 300; }\n\nbody {\n  font-family: \"Gothic A1\", sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/mainPage.scss","webpack://./src/styles/teamPage.scss","webpack://./src/styles/themeVars.scss","webpack://./src/styles/header.scss","webpack://./src/styles/milestones.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACHhB;EACI,aAAa;EACb,sBAAqB,EAAA;;AAGzB;EACM,yDAAkE;EAChE,kCAAkC;EACtC,0BAA0B;EAG1B,4BAA4B;EAC5B,uBAAuB;EAEvB,YAAY,EAAA;;AAGhB;EACI,yBAAqC,EAAA;;AChBzC;EAII,YAAY,EAAA;EAJhB;IAEQ,gBAAgB,EAAA;;AAKxB;EACI,gBAAgB;EAChB,iBAAiB;EACjB,oBAAoB;EAEpB,WAAU,EAAA;;AAGd;EACI,yBCjBgC;EDkBhC,aAAa;EACb,mBAAmB;EACnB,8BAA8B,EAAA;;AAGlC;EACI,aAAa;EACb,yBCvBiC;EDwBjC,YAAW;EACX,uBAAsB;EACtB,mBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,oBAAmB;EACnB,yBC9BiC,EAAA;;ADiCrC;EACI,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,yBCtCgC;EDuChC,aAAa;EACb,gBAAgB,EAAA;;AAGpB;EACI,aAAa;EACb,sBAAsB,EAAA;;AAG1B;EACI,yBCjDgC,EAAA;;ADoDpC;EACI,YAAY,EAAA;;AErDhB;EACI,aAAa;EACb,sBAAsB;EACtB,yBDFiC;ECGjC,mBAAmB,EAAA;;AAGvB;EACI,aAAY;EACZ,mBAAmB,EAAA;;AAIvB;EACI,gBAAgB,EAAA;;AAIpB;EACI,iBAAiB,EAAA;;ACnBrB;EACI,yBFAiC,EAAA;EEDrC;IAGQ,oCFA+B;IEC/B,cAAc;IACd,gBAAgB,EAAA;EALxB;IASQ,yBFPqB;IEQrB,UAAU;IACV,WAAW;IACX,mBAAmB,EAAA;IAZ3B;MAeY,gBAAgB,EAAA;;ACP5B;EACE,oCHNqC;EGOrC,uBHZsB,EAAA;EGUxB;IAIM,cHb8B,EAAA;EGSpC;IAQI,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;IACf,6BAA6B;IAC7B,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}",".main_page_container {\n    display: flex;\n    flex-direction:column;\n}\n\n.main-page-banner {\n      background-image: url('../../assets//images/home-background.jpeg');\n        background-position: center center;\n    background-size: 100% auto;\n    \n    // min-height: 80%;\n    background-repeat: no-repeat;\n    justify-content: center;\n    // width: 100%;\n    height: 100%;\n}\n\n.main-page-body {\n    background-color: rgba(106,161,161,1);\n}\n\n.main-page-pillars{\n\n\n}","@import 'themeVars';\n\n.team-list {\n    li {\n        list-style: none;\n    }\n    padding: 0px;\n}\n\n.profile-photo {\n    max-width: 200px;\n    max-height: 200px;\n    border-radius: 200px;\n    \n    margin:0px;\n}\n\n.ceo-profile {\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n}\n\n.profile-photo-wrapper {\n    display: flex;\n    background-color: $themeColor-Grey;\n    padding:0px;\n    justify-content:center;\n    align-items:center;\n    width: 200px;\n    height: 200px;\n    border-radius:200px;\n    border: 4px solid $themeColor-Grey;\n}\n\n.team-member-item {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    background-color: $themeColor-Mid;\n    padding: 20px;\n    margin: 20px 0px;\n}\n\n.team-member-details {\n    display: flex;\n    flex-direction: column;\n}\n\n.team-top {\n    background-color: $themeColor-Mid;\n}\n\n.team-team {\n    padding: 0px;\n}","$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);\n$themeColor-lightGrey:#C4C4C4;\n$theme-font:    'Gothic A1', sans-serif;\n$theme-font3: 'Mohave', monospace, sans-serif;\n$theme-font2: 'Lato', sans-serif;","@import 'themeVars';\n\n.header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n}\n\n.header-link-list {\n    display:flex;\n    flex-direction: row;\n\n}\n\n.header-link-list li {\n    list-style: none;\n    \n}\n\n.header-link {\n    font-family: lato;\n}\n","\n\n.milestone-wrapper {\n    background-color: $themeColor-Grey;\n    .milestone-header{\n        font-family: $theme-font;\n        color: #F1DED9;\n        font-weight: 600;\n    }\n\n    .milestone-graphic {\n        background-color: $themeColor-lightGrey;\n        width: 90%;\n        height: 50%;\n        margin-bottom: 40px;\n        \n        h1 {\n            font-weight: 300;\n            \n        }\n\n    }\n}","\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n@import 'header';\n@import 'milestones';\n@import 'themeVars';\n\n\n\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

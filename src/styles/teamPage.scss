@@ -1,0 +1,57 @@
+@import 'themeVars';
+
+.team-list {
+    li {
+        list-style: none;
+    }
+    padding: 0px;
+}
+
+.profile-photo {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 200px;
+    
+    margin:0px;
+}
+
+.ceo-profile {
+    background-color: $themeColor-Dark;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-photo-wrapper {
+    display: flex;
+    background-color: $themeColor-Grey;
+    padding:0px;
+    justify-content:center;
+    align-items:center;
+    width: 200px;
+    height: 200px;
+    border-radius:200px;
+    border: 4px solid $themeColor-Grey;
+}
+
+.team-member-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $themeColor-Mid;
+    padding: 20px;
+    margin: 20px 0px;
+}
+
+.team-member-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-top {
+    background-color: $themeColor-Mid;
+}
+
+.team-team {
+    padding: 0px;
+}

@@ -347,6 +347,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./assets/images/home-background.jpeg":
+/*!********************************************!*\
+  !*** ./assets/images/home-background.jpeg ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/home-background.jpeg");
+
+/***/ }),
+
 /***/ "./assets/images/isabelle-profile.png":
 /*!********************************************!*\
   !*** ./assets/images/isabelle-profile.png ***!
@@ -559,7 +572,7 @@ var HomePage = function HomePage(props) {
     className: "bold"
   }, "44%"), "of the USA's economic activity comes from ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bold"
-  }, "Small Businesses.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Businesses of the earth is here to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Small Businesses.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Businesses of the earth is here to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "bold"
   }, "share the stories"), " of hard working local businesses.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-page-body"
@@ -567,16 +580,16 @@ var HomePage = function HomePage(props) {
     className: "main-page-body-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "bold"
-  }, "WhO WE ARE AND WHAT WE STAND FOR")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "WhO WE ARE AND WHAT WE STAND FOR")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "main-page-body-text"
   }, "\u201COur mission is to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "bold"
   }, "inspire people to support small businesses"), " so that consumers, job-seekers, entrepreneurs, and local communities can thrive. The way we do this is by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    clssName: "bold"
+    className: "bold"
   }, " showing local communities the stories of small business owners and providing discounts to inspire purchases."), " We believe that if these small business owners could show customers, job-seekers, and other businesses ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "bold"
-  }, "who they are, the struggles they overcame, and their dreams, then they would inspire much more support."), " We hope that entrepreneurs, job-seekers, and surrounding communities can learn from these brick-and-mortar, mom-and-pop shops and support them along the way."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "main-page-body-heder"
+  }, "who they are, the struggles they overcame, and their dreams, then they would inspire much more support."), " We hope that entrepreneurs, job-seekers, and surrounding communities can learn from these brick-and-mortar, mom-and-pop shops and support them along the way.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "main-page-body-header"
   }, "OUR PILLARS OF VALUE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "pillar-list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -3100,12 +3113,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_images_home_background_jpeg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/images/home-background.jpeg */ "./assets/images/home-background.jpeg");
 // Imports
 
 
+
+
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_assets_images_home_background_jpeg__WEBPACK_IMPORTED_MODULE_3__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\n.main_page_container {\n  display: flex;\n  flex-direction: column; }\n\n.header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center; }\n\n.header-link-list {\n  display: flex;\n  flex-direction: row; }\n\n.header-link-list li {\n  list-style: none; }\n\n.header-link {\n  font-family: lato; }\n\nbody {\n  font-family: \"Gothic A1\", sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/mainPage.scss","webpack://./src/styles/header.scss","webpack://./src/styles/themeColors.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACHhB;EACI,aAAa;EACb,sBAAqB,EAAA;;ACAzB;EACI,aAAa;EACb,sBAAsB;EACtB,yBCFiC;EDGjC,mBAAmB,EAAA;;AAGvB;EACI,aAAY;EACZ,mBAAmB,EAAA;;AAIvB;EACI,gBAAgB,EAAA;;AAIpB;EACI,iBAAiB,EAAA;;AEZrB;EACE,oCAJqC;EAKrC,uBDXsB,EAAA;ECSxB;IAIM,cDZ8B,EAAA;ECQpC;IAQI,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;IACf,6BAA6B;IAC7B,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}",".main_page_container {\n    display: flex;\n    flex-direction:column;\n}","@import 'themeColors';\n\n.header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n}\n\n.header-link-list {\n    display:flex;\n    flex-direction: row;\n\n}\n\n.header-link-list li {\n    list-style: none;\n    \n}\n\n.header-link {\n    font-family: lato;\n}\n","$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);","@import 'themeColors';\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n@import 'header';\n\n$theme-font:    'Gothic A1', sans-serif;\n$theme-font3: 'Mohave', monospace, sans-serif;\n$theme-font2: 'Lato', sans-serif;\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\n.main_page_container {\n  display: flex;\n  flex-direction: column; }\n\n.main-page-banner {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: center center;\n  background-size: 100% auto;\n  background-repeat: no-repeat;\n  justify-content: center;\n  width: 100%;\n  height: 100%; }\n\n.main-page-body {\n  background-color: #6aa1a1; }\n\n.header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center; }\n\n.header-link-list {\n  display: flex;\n  flex-direction: row; }\n\n.header-link-list li {\n  list-style: none; }\n\n.header-link {\n  font-family: lato; }\n\nbody {\n  font-family: \"Gothic A1\", sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/mainPage.scss","webpack://./src/styles/header.scss","webpack://./src/styles/themeColors.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACHhB;EACI,aAAa;EACb,sBAAqB,EAAA;;AAGzB;EACM,yDAAkE;EAChE,kCAAkC;EACtC,0BAA0B;EAE1B,4BAA4B;EAC5B,uBAAuB;EACvB,WAAW;EACX,YAAY,EAAA;;AAGhB;EACI,yBAAqC,EAAA;;ACfzC;EACI,aAAa;EACb,sBAAsB;EACtB,yBCFiC;EDGjC,mBAAmB,EAAA;;AAGvB;EACI,aAAY;EACZ,mBAAmB,EAAA;;AAIvB;EACI,gBAAgB,EAAA;;AAIpB;EACI,iBAAiB,EAAA;;AEZrB;EACE,oCAJqC;EAKrC,uBDXsB,EAAA;ECSxB;IAIM,cDZ8B,EAAA;ECQpC;IAQI,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;IACf,6BAA6B;IAC7B,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}",".main_page_container {\n    display: flex;\n    flex-direction:column;\n}\n\n.main-page-banner {\n      background-image: url('../../assets//images/home-background.jpeg');\n        background-position: center center;\n    background-size: 100% auto;\n    // min-height: 80%;\n    background-repeat: no-repeat;\n    justify-content: center;\n    width: 100%;\n    height: 100%;\n}\n\n.main-page-body {\n    background-color: rgba(106,161,161,1);\n}\n\n.main-page-pillars{\n\n    \n}","@import 'themeColors';\n\n.header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n}\n\n.header-link-list {\n    display:flex;\n    flex-direction: row;\n\n}\n\n.header-link-list li {\n    list-style: none;\n    \n}\n\n.header-link {\n    font-family: lato;\n}\n","$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);","@import 'themeColors';\n@import 'postThumb';\n@import 'mainPage';\n@import 'teamPage';\n@import 'header';\n\n$theme-font:    'Gothic A1', sans-serif;\n$theme-font3: 'Mohave', monospace, sans-serif;\n$theme-font2: 'Lato', sans-serif;\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: Mohave;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -3228,6 +3247,51 @@ module.exports = function cssWithMappingToString(item) {
   }
 
   return [content].join('\n');
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    // eslint-disable-next-line no-param-reassign
+    options = {};
+  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
+
+
+  url = url && url.__esModule ? url.default : url;
+
+  if (typeof url !== 'string') {
+    return url;
+  } // If url is already wrapped in quotes, remove them
+
+
+  if (/^['"].*['"]$/.test(url)) {
+    // eslint-disable-next-line no-param-reassign
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    // eslint-disable-next-line no-param-reassign
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, '\\n'), "\"");
+  }
+
+  return url;
 };
 
 /***/ }),

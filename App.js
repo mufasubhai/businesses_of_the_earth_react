@@ -18,7 +18,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={HomePageContainer} />
           <Route exact path='/team' component={TeamPage} />
-          <Route exact path='/main' component={MainPageContainer} />
+          <Route exact path='/posts' component={MainPageContainer} />
           <Route exact path='/posts/:postId' component={PostItemContainer}/>
           <Route render={() => <Redirect to="/" />} />
         </Switch>

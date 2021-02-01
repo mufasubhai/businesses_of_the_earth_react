@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _components_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/modal/modal.jsx */ "./components/modal/modal.jsx");
-/* harmony import */ var _components_main_page_main_page_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/main_page/main_page_container */ "./components/main_page/main_page_container.js");
+/* harmony import */ var _components_main_page_index_page_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/main_page/index_page_container */ "./components/main_page/index_page_container.js");
 /* harmony import */ var _components_main_page_home_page_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/main_page/home_page_container */ "./components/main_page/home_page_container.js");
 /* harmony import */ var _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/posts/post_item_container */ "./components/posts/post_item_container.js");
 /* harmony import */ var _components_team_page_team_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/team_page/team_page */ "./components/team_page/team_page.jsx");
@@ -130,7 +130,7 @@ function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/posts",
-    component: _components_main_page_main_page_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _components_main_page_index_page_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/posts/:postId",
@@ -661,10 +661,10 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
-/***/ "./components/main_page/main_page.jsx":
-/*!********************************************!*\
-  !*** ./components/main_page/main_page.jsx ***!
-  \********************************************/
+/***/ "./components/main_page/index_page.jsx":
+/*!*********************************************!*\
+  !*** ./components/main_page/index_page.jsx ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -676,7 +676,7 @@ __webpack_require__.r(__webpack_exports__);
 
  // import TableContainer from '../table/table_container'
 
-var MainPage = function MainPage(props) {
+var IndexPage = function IndexPage(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     props.fetchPosts();
     props.fetchProfiles();
@@ -691,14 +691,14 @@ var MainPage = function MainPage(props) {
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (MainPage);
+/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
 
 /***/ }),
 
-/***/ "./components/main_page/main_page_container.js":
-/*!*****************************************************!*\
-  !*** ./components/main_page/main_page_container.js ***!
-  \*****************************************************/
+/***/ "./components/main_page/index_page_container.js":
+/*!******************************************************!*\
+  !*** ./components/main_page/index_page_container.js ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -707,7 +707,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _main_page_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main_page.jsx */ "./components/main_page/main_page.jsx");
+/* harmony import */ var _index_page_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index_page.jsx */ "./components/main_page/index_page.jsx");
 /* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/data_actions */ "./actions/data_actions.js");
 
 
@@ -738,7 +738,7 @@ var mDTP = function mDTP(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_main_page_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_index_page_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 

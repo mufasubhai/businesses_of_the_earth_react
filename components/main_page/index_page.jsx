@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import {PostThumb} from './post_thumb'
 // import TableContainer from '../table/table_container'
 
-const MainPage = props => {
+const IndexPage = props => {
 
 useEffect(() => {
     props.fetchPosts()
@@ -25,4 +25,4 @@ useEffect(() => {
         )
 }
 
-export default MainPage
+export default IndexPage;

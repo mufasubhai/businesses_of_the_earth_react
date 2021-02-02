@@ -20,9 +20,13 @@
     background-color: $themeColor-Dark;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-        padding: 20px;
+    justify-content: center;
+        padding: 20px ;
         box-shadow: $theme-box;
+
+        .team-member-details  {
+            padding-left: 50px;
+        }
 
 }
 

@@ -30,12 +30,12 @@ const TeamPage = props => {
                     <div className="profile-photo-wrapper">
                         <img src={daniel} className="profile-photo" alt="daniel-profile"/>
                     </div>
-                <div>
+                
                     <div className="team-member-details">
                         <p className="team-member-detail">Daniel Shaby</p>
                         <p className="team-member-detail">Founder/CEO</p>
                     </div>
-                </div>
+                
             </div>
 
             <div className="team-team">

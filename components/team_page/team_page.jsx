@@ -49,8 +49,6 @@ const TeamPage = props => {
                             <p className="team-member-detail">Nicole Giles</p>
                             <p className="team-member-detail">Team Leader</p>
                         </div>
-                    </li>
-                     <li className="team-member-item">
                         <div className="profile-photo-wrapper">
                             <img src={isabelle} className="profile-photo" alt="isabelle-profile"/>
                         </div>
@@ -59,6 +57,8 @@ const TeamPage = props => {
                             <p className="team-member-detail">Team Leader</p>
                         </div>
                     </li>
+                     
+                    
                   
                    
                     <li className="team-member-item">
@@ -69,8 +69,8 @@ const TeamPage = props => {
                             <p className="team-member-detail">Sierra DeWalt</p>
                             <p className="team-member-detail">Content Creator</p>
                         </div>
-                    </li>
-                    <li className="team-member-item">
+                    
+                    
                         <div className="profile-photo-wrapper">
                             <img src={adrian} className="profile-photo" alt="adrian-profile"/>
                         </div>
@@ -79,6 +79,9 @@ const TeamPage = props => {
                             <p className="team-member-detail">Web Developer</p>
                         </div>
                     </li>
+
+
+
                     <li className="team-member-item">
                         <div className="profile-photo-wrapper">
                             <img src={brian} className="profile-photo" alt="brian-profile"/>
@@ -87,8 +90,8 @@ const TeamPage = props => {
                             <p className="team-member-detail">Brian Anderson</p>
                             <p className="team-member-detail">Professional Writer</p>
                         </div>
-                    </li>
-                    <li className="team-member-item">
+                    
+                    
                         <div className="profile-photo-wrapper">
                             <img src={mina} className="profile-photo" alt="mina-profile"/>
                         </div>
@@ -98,6 +101,7 @@ const TeamPage = props => {
                          
                         </div>
                     </li>
+                    
                     <li className="team-member-item">
                         <div className="profile-photo-wrapper">
                         <img src={donna} className="profile-photo" alt="donna-profile"/>
@@ -107,8 +111,8 @@ const TeamPage = props => {
                             <p className="team-member-detail">Content Creator</p>
                             
                         </div>
-                    </li>
-                    <li className="team-member-item">
+                    
+                    
                         <div className="profile-photo-wrapper">
                         <img src={natalie} className="profile-photo" alt="natalie-profile"/>
                         </div>
@@ -117,6 +121,7 @@ const TeamPage = props => {
                             <p className="team-member-detail">Market Researcher</p>
                         </div>
                     </li>
+                    
                     <li className="team-member-item">
                             <div className="profile-photo-wrapper">
                             <img src={melina} className="profile-photo" alt="melina-profile"/>
@@ -125,6 +130,7 @@ const TeamPage = props => {
                             <p className="team-member-detail">Melina Gilbert</p>
                             <p className="team-member-detail">Social Media Strategy</p>
                         </div>
+                         
                     </li>
                   
                     

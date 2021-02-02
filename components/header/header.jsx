@@ -1,5 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 // import {PostThumb} from './post_thumb'
 // import TableContainer from '../table/table_container'
 
@@ -9,10 +10,10 @@ const Header = props => {
             <div id="header-container">
                 <p className="logo-top">Logo</p>
                         <ul className="header-link-list">
-                            <li className="header-link">Home</li>
-                            <li className="header-link">Our Team</li>
-                            <li className="header-link">Local Business</li>
-                            <li className="header-link">FAQ</li>
+                            <Link to='/' className="header-link">Home</Link>
+                            <Link to='/team'className="header-link">Our Team</Link>
+                            <Link to='/posts'className="header-link">Local Business</Link>
+                            <Link className="header-link">FAQ</Link>
                         </ul>              
             </div>
         )

@@ -6,19 +6,39 @@
     background-color: $themeColor-Grey;
     align-items: center;
     margin-top: 0px;
+    box-shadow: $theme-box;
 }
 
 .header-link-list {
+    width: 100%;
     display:flex;
     flex-direction: row;
+    justify-content: space-around;
 
 }
 
-.header-link-list li {
-    list-style: none;
-    
-}
+// .header-link-list li {
+//     list-style: none;
+//     font-size: 24px;
+//     line-height: 29px;
+
+
+// }
+
+
 
 .header-link {
     font-family: lato;
+      list-style: none;
+    font-size: 24px;
+    line-height: 29px;
+    color: $thenmeColor-Darkest;
+    font-style: normal;
+    text-decoration: none;
+
+
+}
+
+.header-link:hover {
+    cursor: pointer;
 }

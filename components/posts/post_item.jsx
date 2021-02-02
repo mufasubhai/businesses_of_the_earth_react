@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import parse from 'html-react-parser';
 import Axios from 'axios';
-
+import Header from '../header/header'
 
 const postItem = (props) => {
     // console.log(props);
@@ -28,7 +28,7 @@ const postItem = (props) => {
     
     return (
         <div>
-           
+           <Header/>
            {(!post) ? null : 
 
            <span>

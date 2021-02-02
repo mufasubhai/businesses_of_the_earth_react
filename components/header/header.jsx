@@ -6,7 +6,7 @@ import React, {useState, useEffect} from 'react';
 const Header = props => {
 
     return (
-            <div className="header-container">
+            <div id="header-container">
                 <p className="logo-top">Logo</p>
                         <ul className="header-link-list">
                             <li className="header-link">Home</li>

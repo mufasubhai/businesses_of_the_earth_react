@@ -33,7 +33,7 @@ const TeamPage = props => {
                 <div>
                     <div className="team-member-details">
                         <p className="team-member-detail">Daniel Shaby</p>
-                        <p className="team-member-detail">Founder</p>
+                        <p className="team-member-detail">Founder/CEO</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@ const TeamPage = props => {
                         </div>
                         <div className="team-member-details">
                             <p className="team-member-detail">Natalie Deleon</p>
-                            <p className="team-member-detail">Professional Writer</p>
+                            <p className="team-member-detail">Market Researcher</p>
                         </div>
                     </li>
                     <li className="team-member-item">

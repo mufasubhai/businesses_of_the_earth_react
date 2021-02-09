@@ -40,20 +40,21 @@ useEffect(() => {
 
            
 
-                <h2 className="home-page-body-header">OUR PILLARS OF VALUE</h2>
+                <h2 className="home-page-body-header">OUR METRICS</h2>
 
                 <ul className="pillar-list">
-                    <label className="pillar-title">Inclusivity
-                        <img className="pillar-image" alt="inclusivity"></img>
-                    </label>
-                    <label className="pillar-title">Support
-                        <img className="pillar-image" alt="Support"></img>
-                    </label>
-                    <label className="pillar-title">Community
-                        <img className="pillar-image" alt="community"></img>
-                    </label>
+
+                        <li>Metric 1</li> 
+                        <li>Metric 2</li> 
+                        <li>Metric 3</li> 
+                        <li>Metric 4</li> 
                     
+
                 </ul>
+
+                <h2 className="home-page-body-header">WHERE ARE THE SMALL BUSINESSES?</h2>
+
+                <div className='map'></div>
             </div>  
             
 

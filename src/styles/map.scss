@@ -1,0 +1,11 @@
+@import 'themeVars';
+
+.map {
+    // padding: 4px;
+    margin: 40px 0px;
+    width: 90%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: $themeColor-lightGrey;
+}

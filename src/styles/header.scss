@@ -10,6 +10,8 @@
 }
 
 .header-link-list {
+    justify-self: center;
+    padding: 0px 40px;
     width: 100%;
     display:flex;
     flex-direction: row;
@@ -40,5 +42,5 @@
 }
 
 .header-link:hover {
-    cursor: pointer;
+    cursor: pointer4
 }

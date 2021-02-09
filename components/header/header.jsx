@@ -13,7 +13,7 @@ const Header = props => {
                             <Link to='/' className="header-link">Home</Link>
                             <Link to='/team'className="header-link">Our Team</Link>
                             <Link to='/posts'className="header-link">Local Business</Link>
-                            <Link className="header-link">FAQ</Link>
+                            <Link to='/faq'className="header-link">FAQ</Link>
                         </ul>              
             </div>
         )

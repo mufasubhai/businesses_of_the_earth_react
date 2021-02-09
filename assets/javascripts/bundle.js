@@ -103,8 +103,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_main_page_home_page_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/main_page/home_page_container */ "./components/main_page/home_page_container.js");
 /* harmony import */ var _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/posts/post_item_container */ "./components/posts/post_item_container.js");
 /* harmony import */ var _components_team_page_team_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/team_page/team_page */ "./components/team_page/team_page.jsx");
-/* harmony import */ var _src_styles_app_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./src/styles/app.css */ "./src/styles/app.css");
-/* harmony import */ var _src_styles_appStyles_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./src/styles/appStyles.scss */ "./src/styles/appStyles.scss");
+/* harmony import */ var _components_elements_faq_faq__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/elements/faq/faq */ "./components/elements/faq/faq.jsx");
+/* harmony import */ var _src_styles_app_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./src/styles/app.css */ "./src/styles/app.css");
+/* harmony import */ var _src_styles_appStyles_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./src/styles/appStyles.scss */ "./src/styles/appStyles.scss");
+
 
 
 
@@ -131,6 +133,10 @@ function App() {
     exact: true,
     path: "/posts",
     component: _components_main_page_index_page_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/faq",
+    component: _components_elements_faq_faq__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/posts/:postId",
@@ -467,6 +473,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./components/elements/faq/faq.jsx":
+/*!*****************************************!*\
+  !*** ./components/elements/faq/faq.jsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.js");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../header/header */ "./components/header/header.jsx");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// https://businessesoftheearth.org/wp-json/wp/v2/pages/129
+
+
+
+
+
+var FAQ = function FAQ(props) {
+  // console.log(props);
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      faq = _useState2[0],
+      setFaq = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://businessesoftheearth.org/wp-json/wp/v2/pages/129").then(function (response) {
+      setFaq(response.data);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), !faq ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(faq.content.rendered))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FAQ);
+
+/***/ }),
+
 /***/ "./components/elements/milestones.jsx":
 /*!********************************************!*\
   !*** ./components/elements/milestones.jsx ***!
@@ -537,6 +596,7 @@ var Header = function Header(props) {
     to: "/posts",
     className: "header-link"
   }, "Local Business"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/faq",
     className: "header-link"
   }, "FAQ")));
 };

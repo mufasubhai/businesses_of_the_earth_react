@@ -2,6 +2,8 @@
 
 .milestone-wrapper {
     background-color: $themeColor-Grey;
+    display: flex;
+    flex-direction: column;
     .milestone-header{
         font-family: $theme-font;
         color: #F1DED9;

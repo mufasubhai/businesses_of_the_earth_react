@@ -19,10 +19,13 @@ const TeamPage = props => {
         <div className="team-page-wrapper">
             <Header/>
 
+
+
             <div className="team-top">
             <h1>Meet the team!</h1>
 
             <p>As of December 2020, we are a growing team of 10 people, including Website Developers, Social Media Content Creators, Professional Writers, Graphic Designers, and a Leadership team!</p>
+
 
             </div>
 

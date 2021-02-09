@@ -21,9 +21,11 @@ useEffect(() => {
             <div className="home-page-banner">
                 
                 <div>
+                <div>
 
                 <h1 className="home-page-header"><span className="bold">44%</span> of the USA's economic <br></br> activity comes from <span className="bold">Small Businesses.</span></h1>
                 <p>Businesses of the earth is here to <span className="bold">share the stories</span> of hard working local businesses.</p>
+                </div>
                 </div>
                 
             </div>

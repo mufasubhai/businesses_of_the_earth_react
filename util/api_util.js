@@ -8,6 +8,14 @@ export const fetchPostsData = () => {
     })
     
 }
+export const fetchFAQ = () => {
+    
+    return $.ajax({
+        method: 'GET',
+        url: 'https://businessesoftheearth.org/wp-json/wp/v2/pages/129',
+    })
+    
+}
 
 export const fetchProfilesData = () => (
     $.ajax({

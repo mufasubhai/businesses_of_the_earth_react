@@ -103,7 +103,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_main_page_home_page_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/main_page/home_page_container */ "./components/main_page/home_page_container.js");
 /* harmony import */ var _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/posts/post_item_container */ "./components/posts/post_item_container.js");
 /* harmony import */ var _components_team_page_team_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/team_page/team_page */ "./components/team_page/team_page.jsx");
-/* harmony import */ var _components_elements_faq_faq__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/elements/faq/faq */ "./components/elements/faq/faq.jsx");
+/* harmony import */ var _components_elements_faq_faq_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/elements/faq/faq_container */ "./components/elements/faq/faq_container.js");
 /* harmony import */ var _src_styles_app_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./src/styles/app.css */ "./src/styles/app.css");
 /* harmony import */ var _src_styles_appStyles_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./src/styles/appStyles.scss */ "./src/styles/appStyles.scss");
 
@@ -136,7 +136,7 @@ function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/faq",
-    component: _components_elements_faq_faq__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _components_elements_faq_faq_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/posts/:postId",
@@ -158,7 +158,7 @@ function App() {
 /*!*********************************!*\
   !*** ./actions/data_actions.js ***!
   \*********************************/
-/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, clearErrors, fetchPosts, fetchPost, fetchProfiles, fetchProfile */
+/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, clearErrors, fetchFAQ, fetchPosts, fetchPost, fetchProfiles, fetchProfile */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -170,7 +170,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_POST_DATA", function() { return RECEIVE_POST_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PROFILES_DATA", function() { return RECEIVE_PROFILES_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PROFILE_DATA", function() { return RECEIVE_PROFILE_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FAQ_DATA", function() { return RECEIVE_FAQ_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FAQ_ERRORS", function() { return RECEIVE_FAQ_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearErrors", function() { return clearErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFAQ", function() { return fetchFAQ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPost", function() { return fetchPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProfiles", function() { return fetchProfiles; });
@@ -184,6 +187,8 @@ var RECEIVE_POSTS_DATA = "RECEIVE_POSTS_DATA";
 var RECEIVE_POST_DATA = "RECEIVE_POST_DATA";
 var RECEIVE_PROFILES_DATA = "RECEIVE_PROFILES_DATA";
 var RECEIVE_PROFILE_DATA = "RECEIVE_PROFILE_DATA";
+var RECEIVE_FAQ_DATA = "RECEIVE_FAQ_DATA";
+var RECEIVE_FAQ_ERRORS = "RECEIVE_FAQ_ERRORS";
 
 var receivePostErrors = function receivePostErrors(errors) {
   return {
@@ -195,6 +200,13 @@ var receivePostErrors = function receivePostErrors(errors) {
 var receiveProfileErrors = function receiveProfileErrors(errors) {
   return {
     type: RECEIVE_PROFILE_ERRORS,
+    errors: errors
+  };
+};
+
+var receiveFAQErrors = function receiveFAQErrors(errors) {
+  return {
+    type: RECEIVE_FAQ_ERRORS,
     errors: errors
   };
 };
@@ -233,6 +245,22 @@ var receiveProfileData = function receiveProfileData(profile) {
   };
 };
 
+var receiveFAQData = function receiveFAQData(faq) {
+  return {
+    type: RECEIVE_FAQ_DATA,
+    faq: faq
+  };
+};
+
+var fetchFAQ = function fetchFAQ() {
+  return function (dispatch) {
+    return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchFAQ"]().then(function (FAQ) {
+      return dispatch(receiveFAQData(FAQ));
+    }, function (err) {
+      return dispatch(receiveFAQErrors(err.responseJSON));
+    });
+  };
+};
 var fetchPosts = function fetchPosts() {
   return function (dispatch) {
     return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"]().then(function (Posts) {
@@ -519,10 +547,55 @@ var FAQ = function FAQ(props) {
       setFaq(response.data);
     });
   }, []);
+
+  if (!props.faq) {
+    console.log('axios');
+    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://businessesoftheearth.org/wp-json/wp/v2/pages/129").then(function (response) {
+        setFaq(response.data);
+      });
+    }, []);
+  } else {
+    Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+      setFaq(props.faq);
+    }, []);
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), !faq ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(faq.content.rendered))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FAQ);
+
+/***/ }),
+
+/***/ "./components/elements/faq/faq_container.js":
+/*!**************************************************!*\
+  !*** ./components/elements/faq/faq_container.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _faq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./faq */ "./components/elements/faq/faq.jsx");
+
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    faq: state.entities.faq
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_faq__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -628,6 +701,7 @@ var HomePage = function HomePage(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     props.fetchPosts();
     props.fetchProfiles();
+    props.fetchFAQ();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-page-container"
@@ -707,6 +781,9 @@ var mDTP = function mDTP(dispatch) {
     },
     fetchPosts: function fetchPosts() {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
+    },
+    fetchFAQ: function fetchFAQ() {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchFAQ"])());
     }
   };
 };
@@ -53537,12 +53614,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _post_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_reducer */ "./reducers/post_reducer.js");
 /* harmony import */ var _profile_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile_reducer */ "./reducers/profile_reducer.js");
+/* harmony import */ var _faq_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./faq_reducer */ "./reducers/faq_reducer.js");
+
 
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   posts: _post_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  profiles: _profile_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  profiles: _profile_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  faq: _faq_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -53560,14 +53640,77 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _profile_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile_errors_reducer */ "./reducers/profile_errors_reducer.js");
 /* harmony import */ var _post_errors_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post_errors_reducer */ "./reducers/post_errors_reducer.js");
+/* harmony import */ var _faq_errors_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./faq_errors_reducer */ "./reducers/faq_errors_reducer.js");
+
 
 
 
 var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   profileErrors: _profile_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  postErrors: _post_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  postErrors: _post_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  faqErrors: _faq_errors_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
+
+/***/ }),
+
+/***/ "./reducers/faq_errors_reducer.js":
+/*!****************************************!*\
+  !*** ./reducers/faq_errors_reducer.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/data_actions */ "./actions/data_actions.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_FAQ_ERRORS"]:
+      return action.errors;
+
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_ERRORS"]:
+      return [];
+
+    default:
+      return state;
+  }
+});
+
+/***/ }),
+
+/***/ "./reducers/faq_reducer.js":
+/*!*********************************!*\
+  !*** ./reducers/faq_reducer.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/data_actions */ "./actions/data_actions.js");
+
+
+var PostsReducer = function PostsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_FAQ_DATA"]:
+      return action.faq;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (PostsReducer);
 
 /***/ }),
 
@@ -53895,12 +54038,13 @@ var configureStore = function configureStore() {
 /*!**************************!*\
   !*** ./util/api_util.js ***!
   \**************************/
-/*! exports provided: fetchPostsData, fetchProfilesData, fetchPostData, fetchProfileData */
+/*! exports provided: fetchPostsData, fetchFAQ, fetchProfilesData, fetchPostData, fetchProfileData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostsData", function() { return fetchPostsData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFAQ", function() { return fetchFAQ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProfilesData", function() { return fetchProfilesData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostData", function() { return fetchPostData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProfileData", function() { return fetchProfileData; });
@@ -53911,6 +54055,12 @@ var fetchPostsData = function fetchPostsData() {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
     method: 'GET',
     url: 'https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=60'
+  });
+};
+var fetchFAQ = function fetchFAQ() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+    method: 'GET',
+    url: 'https://businessesoftheearth.org/wp-json/wp/v2/pages/129'
   });
 };
 var fetchProfilesData = function fetchProfilesData() {

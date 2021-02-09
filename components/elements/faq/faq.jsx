@@ -22,6 +22,25 @@ const FAQ = (props) => {
         }, [])
 
     
+
+
+
+    if (!props.faq) {
+        console.log('axios')
+       useEffect(()=> {
+            Axios.get(`https://businessesoftheearth.org/wp-json/wp/v2/pages/129`).then(response => {
+                setFaq(response.data)
+            }
+            );
+        }, [])
+    } else {
+        useEffect(()=> {
+            
+            setFaq(props.faq)
+
+        }, [])
+    }
+
     
     return (
         <div>

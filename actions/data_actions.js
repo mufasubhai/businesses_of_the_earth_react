@@ -7,6 +7,8 @@ export const RECEIVE_POSTS_DATA = "RECEIVE_POSTS_DATA";
 export const RECEIVE_POST_DATA = "RECEIVE_POST_DATA";
 export const RECEIVE_PROFILES_DATA = "RECEIVE_PROFILES_DATA";
 export const RECEIVE_PROFILE_DATA = "RECEIVE_PROFILE_DATA";
+export const RECEIVE_FAQ_DATA = "RECEIVE_FAQ_DATA";
+export const RECEIVE_FAQ_ERRORS = "RECEIVE_FAQ_ERRORS";
 
 const receivePostErrors = errors => ({
     type: RECEIVE_POST_ERRORS,
@@ -14,6 +16,10 @@ const receivePostErrors = errors => ({
 })
 const receiveProfileErrors = errors => ({
     type: RECEIVE_PROFILE_ERRORS,
+    errors
+})
+const receiveFAQErrors = errors => ({
+    type: RECEIVE_FAQ_ERRORS,
     errors
 })
 
@@ -43,6 +49,19 @@ const receiveProfileData = profile => ({
     type: RECEIVE_PROFILE_DATA,
     profile
 })
+
+const receiveFAQData = faq => ({
+    type: RECEIVE_FAQ_DATA,
+    faq
+})
+
+export const fetchFAQ = () => dispatch => (
+    APIUtil.fetchFAQ()
+        .then(FAQ => (dispatch(receiveFAQData(FAQ))),
+        err => (
+            dispatch(receiveFAQErrors(err.responseJSON))
+        )
+))
 
 export const fetchPosts = () => dispatch => (
     APIUtil.fetchPostsData()

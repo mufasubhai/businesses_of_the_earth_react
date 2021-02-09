@@ -10,6 +10,7 @@ const HomePage = props => {
 useEffect(() => {
     props.fetchPosts()
     props.fetchProfiles()
+    props.fetchFAQ();
 }, [])    
 
 

@@ -6,7 +6,7 @@ import IndexPage from './components/main_page/index_page_container';
 import HomePageContainer from './components/main_page/home_page_container';
 import PostItemContainer from './components/posts/post_item_container';
 import TeamPage from './components/team_page/team_page'
-import FAQ from './components/elements/faq/faq'
+import FAQContainer from './components/elements/faq/faq_container'
 import './src/styles/app.css';
 import './src/styles/appStyles.scss';
 
@@ -20,7 +20,7 @@ function App() {
           <Route exact path='/' component={HomePageContainer} />
           <Route exact path='/team' component={TeamPage} />
           <Route exact path='/posts' component={IndexPage} />
-          <Route exact path='/faq' component={FAQ} />
+          <Route exact path='/faq' component={FAQContainer} />
           <Route exact path='/posts/:postId' component={PostItemContainer}/>
           <Route render={() => <Redirect to="/" />} />
         </Switch>

@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _components_modal_modal_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/modal/modal.jsx */ "./components/modal/modal.jsx");
-/* harmony import */ var _components_main_page_index_page_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/main_page/index_page_container */ "./components/main_page/index_page_container.js");
+/* harmony import */ var _components_posts_index_page_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/posts/index_page_container */ "./components/posts/index_page_container.js");
 /* harmony import */ var _components_main_page_home_page_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/main_page/home_page_container */ "./components/main_page/home_page_container.js");
 /* harmony import */ var _components_posts_post_item_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/posts/post_item_container */ "./components/posts/post_item_container.js");
 /* harmony import */ var _components_team_page_team_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/team_page/team_page */ "./components/team_page/team_page.jsx");
@@ -132,7 +132,7 @@ function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/posts",
-    component: _components_main_page_index_page_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _components_posts_index_page_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/faq",
@@ -561,7 +561,15 @@ var FAQ = function FAQ(props) {
     }, []);
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), !faq ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(faq.content.rendered))));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "faq-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "faq-wrapper-top"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Frequently Asked Questions")), !faq ? null : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "faq-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "faq-question"
+  }, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(faq.content.rendered))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FAQ);
@@ -689,10 +697,8 @@ var Header = function Header(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _post_thumb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_thumb */ "./components/main_page/post_thumb.jsx");
-/* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header */ "./components/header/header.jsx");
-/* harmony import */ var _elements_milestones__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../elements/milestones */ "./components/elements/milestones.jsx");
-
+/* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header/header */ "./components/header/header.jsx");
+/* harmony import */ var _elements_milestones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../elements/milestones */ "./components/elements/milestones.jsx");
 
 
  // import TableContainer from '../table/table_container'
@@ -705,7 +711,7 @@ var HomePage = function HomePage(props) {
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-page-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-page-banner"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "home-page-header"
@@ -735,7 +741,7 @@ var HomePage = function HomePage(props) {
     className: "home-page-body-header"
   }, "WHERE ARE THE SMALL BUSINESSES?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "map"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_elements_milestones__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_elements_milestones__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomePage);
@@ -789,141 +795,6 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_home_page_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]));
-
-/***/ }),
-
-/***/ "./components/main_page/index_page.jsx":
-/*!*********************************************!*\
-  !*** ./components/main_page/index_page.jsx ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _post_thumb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_thumb */ "./components/main_page/post_thumb.jsx");
-/* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header */ "./components/header/header.jsx");
-
-
- // import TableContainer from '../table/table_container'
-
-var IndexPage = function IndexPage(props) {
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    props.fetchPosts();
-    props.fetchProfiles();
-  }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "main_page_container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), props.posts.map(function (post, idx) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_thumb__WEBPACK_IMPORTED_MODULE_1__["PostThumb"], {
-      key: idx,
-      post: post
-    });
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
-
-/***/ }),
-
-/***/ "./components/main_page/index_page_container.js":
-/*!******************************************************!*\
-  !*** ./components/main_page/index_page_container.js ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _index_page_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index_page.jsx */ "./components/main_page/index_page.jsx");
-/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/data_actions */ "./actions/data_actions.js");
-
-
-
- // import {fetchOTBSampleHistories} from '../../actions/otb_sample_history_actions';
-
-var mSTP = function mSTP(state) {
-  return {
-    profiles: Object.values(state.entities.profiles),
-    posts: Object.values(state.entities.posts)
-  };
-};
-
-var mDTP = function mDTP(dispatch) {
-  return {
-    fetchPost: function fetchPost(id) {
-      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPost"])(id));
-    },
-    fetchProfile: function fetchProfile(id) {
-      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfile"])(id));
-    },
-    fetchProfiles: function fetchProfiles() {
-      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfiles"])());
-    },
-    fetchPosts: function fetchPosts() {
-      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_index_page_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]));
-
-/***/ }),
-
-/***/ "./components/main_page/post_thumb.jsx":
-/*!*********************************************!*\
-  !*** ./components/main_page/post_thumb.jsx ***!
-  \*********************************************/
-/*! exports provided: PostThumb */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostThumb", function() { return PostThumb; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.js");
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
-
-
-var PostThumb = function PostThumb(_ref) {
-  var post = _ref.post;
-  // const cloneDeep = require('lodash.clonedeep')
-  // const trimmedText  = textObject => {
-  //     let newObject = cloneDeep(textObject);
-  //     console.log(newObject)
-  //     let text = Array.from(newObject[0].props.children)
-  //     // let newText = text.split("").splice(0, 200)
-  //     // console.log(text);
-  //     // console.log(typeof text);
-  //     // console.log(typeof Array.from(text))
-  //         // if (newText.length >= 200) {
-  //         //     newText = newText.push("...")
-  //         // }
-  //         // let newSentence = ""
-  //         // newText.forEach(char => {
-  //         //     newSentence += char;
-  //         // })
-  //         // newObject[0].props.children = newSentence;
-  //         // return [newObject, ""]
-  //         }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "posts/".concat(post.id),
-    postContent: post
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "thumbnail-image",
-    src: post.jetpack_featured_media_url
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "post-title"
-  }, post.title.rendered), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, html_react_parser__WEBPACK_IMPORTED_MODULE_1___default()(post.excerpt.rendered)));
-};
 
 /***/ }),
 
@@ -990,6 +861,95 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Modal));
+
+/***/ }),
+
+/***/ "./components/posts/index_page.jsx":
+/*!*****************************************!*\
+  !*** ./components/posts/index_page.jsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _post_thumb__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_thumb */ "./components/posts/post_thumb.jsx");
+/* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header */ "./components/header/header.jsx");
+
+
+ // import TableContainer from '../table/table_container'
+
+var IndexPage = function IndexPage(props) {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    props.fetchPosts();
+    props.fetchProfiles();
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main_page_container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "index-page-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "The Businesses,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " The Stories"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Empowering Small Businesses and Surrounging Communities through ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "bold"
+  }, "You."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-index-list"
+  }, props.posts.map(function (post, idx) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_thumb__WEBPACK_IMPORTED_MODULE_1__["PostThumb"], {
+      key: idx,
+      post: post
+    });
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (IndexPage);
+
+/***/ }),
+
+/***/ "./components/posts/index_page_container.js":
+/*!**************************************************!*\
+  !*** ./components/posts/index_page_container.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _index_page_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index_page.jsx */ "./components/posts/index_page.jsx");
+/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/data_actions */ "./actions/data_actions.js");
+
+
+
+ // import {fetchOTBSampleHistories} from '../../actions/otb_sample_history_actions';
+
+var mSTP = function mSTP(state) {
+  return {
+    profiles: Object.values(state.entities.profiles),
+    posts: Object.values(state.entities.posts)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchPost: function fetchPost(id) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPost"])(id));
+    },
+    fetchProfile: function fetchProfile(id) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfile"])(id));
+    },
+    fetchProfiles: function fetchProfiles() {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfiles"])());
+    },
+    fetchPosts: function fetchPosts() {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_index_page_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1091,6 +1051,60 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_post_item__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./components/posts/post_thumb.jsx":
+/*!*****************************************!*\
+  !*** ./components/posts/post_thumb.jsx ***!
+  \*****************************************/
+/*! exports provided: PostThumb */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostThumb", function() { return PostThumb; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.js");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var PostThumb = function PostThumb(_ref) {
+  var post = _ref.post;
+  // const cloneDeep = require('lodash.clonedeep')
+  // const trimmedText  = textObject => {
+  //     let newObject = cloneDeep(textObject);
+  //     console.log(newObject)
+  //     let text = Array.from(newObject[0].props.children)
+  //     // let newText = text.split("").splice(0, 200)
+  //     // console.log(text);
+  //     // console.log(typeof text);
+  //     // console.log(typeof Array.from(text))
+  //         // if (newText.length >= 200) {
+  //         //     newText = newText.push("...")
+  //         // }
+  //         // let newSentence = ""
+  //         // newText.forEach(char => {
+  //         //     newSentence += char;
+  //         // })
+  //         // newObject[0].props.children = newSentence;
+  //         // return [newObject, ""]
+  //         }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "posts/".concat(post.id),
+    postContent: post
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-thumb"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "thumbnail-image",
+    src: post.jetpack_featured_media_url
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "post-title"
+  }, post.title.rendered)));
+};
 
 /***/ }),
 
@@ -3274,9 +3288,12 @@ ___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio
 ___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio3qqh.css);"]);
 ___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio3qqh.css);"]);
 ___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio3qqh.css);"]);
+___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio3qqh.css);"]);
+___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio3qqh.css);"]);
+___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio3qqh.css);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_assets_images_home_background_png__WEBPACK_IMPORTED_MODULE_3__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  width: 400px;\n  height: auto; }\n\n#header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center;\n  margin-top: 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.header-link-list {\n  justify-self: center;\n  padding: 0px 40px;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around; }\n\n.header-link {\n  font-family: lato;\n  list-style: none;\n  font-size: 24px;\n  line-height: 29px;\n  color: black;\n  font-style: normal;\n  text-decoration: none; }\n\n.header-link:hover {\n  cursor: pointer4; }\n\n.home-page-container > div {\n  padding: 0px;\n  margin-top: 20px;\n  display: flex;\n  align-items: center;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .home-page-container > div div {\n    display: flex;\n    flex-direction: row; }\n\n.pillar-list {\n  list-style: none; }\n  .pillar-list li {\n    font-size: 30px; }\n\n.home-page-banner {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: center center;\n  background-size: 100% auto;\n  background-repeat: no-repeat;\n  justify-content: center;\n  height: 100%;\n  min-height: 500px;\n  padding: 0px;\n  flex-direction: row; }\n  .home-page-banner div {\n    background-color: rgba(241, 222, 217, 0.6);\n    display: flex;\n    align-self: stretch;\n    width: 100%; }\n    .home-page-banner div div {\n      display: flex;\n      flex-direction: column;\n      padding: 40px;\n      background-color: transparent; }\n\n@media screen and (max-width: 1700px) {\n  .home-page-banner {\n    background-size: auto 100%; } }\n\n.home-page-body {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: column; }\n\n.home-page-body-header {\n  padding: 0px 40px;\n  color: #f1ded9;\n  font-size: 50px; }\n\n.home-page-body-text {\n  padding: 40px; }\n\n.home-page-header {\n  color: black;\n  z-index: 2;\n  font-size: 64px;\n  text-align: left;\n  line-height: 84px;\n  font-weight: 300; }\n  .home-page-header .bold {\n    font-weight: 800; }\n\n.home-page-banner > p {\n  z-index: 2; }\n\n.team-list {\n  padding: 0px;\n  background-color: #737373; }\n  .team-list li {\n    list-style: none; }\n\n.profile-photo {\n  max-width: 200px;\n  max-height: 200px;\n  border-radius: 200px;\n  margin: 0px; }\n\n.ceo-profile {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  padding: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .ceo-profile .team-member-details {\n    padding-left: 50px; }\n\n.profile-photo-wrapper {\n  display: flex;\n  background-color: #737373;\n  padding: 0px;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  border: 4px solid #737373; }\n  .profile-photo-wrapper .hidden {\n    display: none; }\n\n.team-member-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  background-color: #f1ded9;\n  padding: 40px 80px;\n  margin: 20px 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.team-member-details {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around; }\n\n.team-top {\n  background-color: #f1ded9;\n  margin: 20px 0px;\n  padding: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.team-team {\n  padding: 0px; }\n\n.milestone-wrapper {\n  background-color: #737373;\n  display: flex;\n  flex-direction: column; }\n  .milestone-wrapper .milestone-header {\n    font-family: tablet-gothic, sans-serif;\n    color: #F1DED9;\n    font-weight: 600; }\n  .milestone-wrapper .milestone-graphic {\n    background-color: #C4C4C4;\n    width: 90%;\n    height: 50%;\n    margin-bottom: 40px; }\n    .milestone-wrapper .milestone-graphic h1 {\n      font-weight: 300; }\n\n.map {\n  margin: 40px 0px;\n  width: 90%;\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  background-color: #C4C4C4; }\n\nbody {\n  font-family: tablet-gothic, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: input-sans-compressed, sans-serif;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/header.scss","webpack://./src/styles/themeVars.scss","webpack://./src/styles/homePage.scss","webpack://./src/styles/teamPage.scss","webpack://./src/styles/milestones.scss","webpack://./src/styles/map.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"AACA;EACI,YAAY;EACZ,YAAY,EAAA;;ACDhB;EACI,aAAa;EACb,sBAAsB;EACtB,yBCAiC;EDCjC,mBAAmB;EACnB,eAAe;EACf,2CCGwC,EAAA;;ADA5C;EACI,oBAAoB;EACpB,iBAAiB;EACjB,WAAW;EACX,aAAY;EACZ,mBAAmB;EACnB,6BAA6B,EAAA;;AAcjC;EACI,iBAAiB;EACf,gBAAgB;EAClB,eAAe;EACf,iBAAiB;EACjB,YC7BuB;ED8BvB,kBAAkB;EAClB,qBAAqB,EAAA;;AAKzB;EACI,gBACJ,EAAA;;AEzCA;EACI,YAAY;EAEZ,gBAAgB;EAChB,aAAa;EAEb,mBAAmB;EACnB,2CDAwC,EAAA;ECP5C;IASQ,aAAa;IACb,mBAAmB,EAAA;;AAO3B;EACI,gBAAgB,EAAA;EADpB;IAIQ,eAAe,EAAA;;AAKvB;EACI,yDAAiE;EACjE,kCAAkC;EAClC,0BAA0B;EAI1B,4BAA4B;EAC5B,uBAAuB;EAEvB,YAAY;EACZ,iBAAiB;EACjB,YAAY;EAGZ,mBAAmB,EAAA;EAfvB;IAmBQ,0CAAyC;IACzC,aAAY;IACZ,mBAAmB;IAEnB,WAAW,EAAA;IAvBnB;MA0BQ,aAAa;MACb,sBAAsB;MACtB,aAAa;MACb,6BAA6B,EAAA;;AAMrC;EACA;IACI,0BAA0B,EAAA,EAC5B;;AAgBF;EACI,yBDlFgC;ECmFhC,aAAY;EACZ,sBAAsB,EAAA;;AAG1B;EACI,iBAAiB;EAEjB,cDzFgC;EC0FhC,eAAe,EAAA;;AAGnB;EACI,aAAa,EAAA;;AAGjB;EAEI,YDhGuB;ECiGvB,UAAU;EACV,eAAe;EACf,gBAAgB;EAChB,iBAAiB;EACjB,gBAAgB,EAAA;EAPpB;IAUQ,gBAAgB,EAAA;;AAKxB;EACI,UAAU,EAAA;;ACnHd;EAII,YAAY;EACZ,yBFFiC,EAAA;EEHrC;IAEQ,gBAAgB,EAAA;;AAMxB;EACI,gBAAgB;EAChB,iBAAiB;EACjB,oBAAoB;EAEpB,WAAU,EAAA;;AAGd;EACI,yBFhBgC;EEiBhC,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACnB,aAAc;EACd,2CFboC,EAAA;EEO5C;IASY,kBAAkB,EAAA;;AAK9B;EACI,aAAa;EACb,yBF7BiC;EE8BjC,YAAW;EACX,uBAAsB;EACtB,mBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,oBAAmB;EACnB,yBFpCiC,EAAA;EE2BrC;IAYQ,aAAa,EAAA;;AAIrB;EACI,aAAa;EACb,mBAAmB;EACnB,6BAA6B;EAC7B,yBFhDgC;EEiDhC,kBAAkB;EAClB,gBAAgB;EAChB,2CF5CwC,EAAA;;AE+C5C;EACI,aAAa;EACb,sBAAsB;EACtB,6BAA6B,EAAA;;AAGjC;EACI,yBF7DgC;EE8DhC,gBAAgB;EAChB,aAAa;EACb,2CFzDwC,EAAA;;AE4D5C;EACI,YAAY,EAAA;;ACtEhB;EACI,yBHEiC;EGDjC,aAAa;EACb,sBAAsB,EAAA;EAH1B;IAKQ,sCHC8B;IGA9B,cAAc;IACd,gBAAgB,EAAA;EAPxB;IAWQ,yBHPqB;IGQrB,UAAU;IACV,WAAW;IACX,mBAAmB,EAAA;IAd3B;MAiBY,gBAAgB,EAAA;;ACjB5B;EAEI,gBAAgB;EAChB,UAAU;EACV,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,yBJHyB,EAAA;;AKK7B;EACE,sCLJoC;EKKpC,uBLXsB,EAAA;EKSxB;IAIM,cLZ8B,EAAA;EKQpC;IAQI,8CLT2C;IKU3C,gBAAgB;IAChB,eAAe;IACf,6BAA6B;IAC7B,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA","sourcesContent":["\n.thumbnail-image {\n    width: 400px;\n    height: auto;\n}","@import 'themeVars';\n\n#header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n    margin-top: 0px;\n    box-shadow: $theme-box;\n}\n\n.header-link-list {\n    justify-self: center;\n    padding: 0px 40px;\n    width: 100%;\n    display:flex;\n    flex-direction: row;\n    justify-content: space-around;\n\n}\n\n// .header-link-list li {\n//     list-style: none;\n//     font-size: 24px;\n//     line-height: 29px;\n\n\n// }\n\n\n\n.header-link {\n    font-family: lato;\n      list-style: none;\n    font-size: 24px;\n    line-height: 29px;\n    color: $thenmeColor-Darkest;\n    font-style: normal;\n    text-decoration: none;\n\n\n}\n\n.header-link:hover {\n    cursor: pointer4\n}","@import url(\"https://use.typekit.net/jio3qqh.css\");\n\n$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);\n$themeColor-lightGrey:#C4C4C4;\n$thenmeColor-Darkest: black;\n$theme-font: tablet-gothic, sans-serif;\n$theme-font2: 'Lato', sans-serif;\n$theme-font3: input-sans-compressed, sans-serif;\n$theme-box:  0px 4px 4px rgba(0, 0, 0, 0.25);","@import 'themeVars';\n\n\n\n.home-page-container > div {\n    padding: 0px;\n    // flex-direction:column;\n    margin-top: 20px;\n    display: flex;\n    // flex-direction: column;\n    align-items: center;\n    box-shadow: $theme-box;\n    div {\n        display: flex;\n        flex-direction: row;\n        // div {\n        //     display: flex;\n        // flex-direction: column;\n        // }\n    }\n}\n.pillar-list {\n    list-style: none;\n\n    li {\n        font-size: 30px;\n    }\n}\n\n\n.home-page-banner {\n    background-image: url('../../assets//images/home-background.png');\n    background-position: center center;\n    background-size: 100% auto;\n    // background-size:  100% auto;\n    \n    // min-height: 80%;\n    background-repeat: no-repeat;\n    justify-content: center;\n    // width: 100%;\n    height: 100%;\n    min-height: 500px;\n    padding: 0px;\n    // display: flex;\n    // flex-direction: column;\n    flex-direction: row;\n    // justify-content: stretch;\n    \n    div {\n        background-color: rgba(241, 222, 217, .6);\n        display:flex;\n        align-self: stretch;\n        // align-items: stretch;\n        width: 100%;\n    // height: 100%;\n    div {\n        display: flex;\n        flex-direction: column;\n        padding: 40px;\n        background-color: transparent;\n    }\n    }\n \n}\n\n@media screen and (max-width: 1700px) {\n.home-page-banner {\n    background-size: auto 100%;\n }\n}\n\n// .home-page-banner > span {\n//     position: absolute;\n//     left: 0px;\n//     top: 0px;\n//        background:  #F1DED9;\n//        display: flex;\n//        flex-direction: column;\n//        align-items:center;\n//     opacity: .6;\n//    \n    \n    \n// }\n.home-page-body {\n    background-color: $themeColor-Dark;\n    display:flex;\n    flex-direction: column;\n}\n\n.home-page-body-header {\n    padding: 0px 40px;\n    // padding-bottom: 0px;\n    color: $themeColor-Mid;\n    font-size: 50px;\n\n}\n.home-page-body-text {\n    padding: 40px;\n}\n\n.home-page-header {\n    \n    color: $thenmeColor-Darkest;\n    z-index: 2;\n    font-size: 64px;\n    text-align: left;\n    line-height: 84px;\n    font-weight: 300;\n    \n    .bold {\n        font-weight: 800;\n    }\n    // background-color: rgba(241, 222, 217, .6)\n}\n\n.home-page-banner > p {\n    z-index: 2;\n}\n.home-page-pillars{\n\n\n}","@import 'themeVars';\n\n.team-list {\n    li {\n        list-style: none;\n    }\n    padding: 0px;\n    background-color: $themeColor-Grey;\n}\n\n.profile-photo {\n    max-width: 200px;\n    max-height: 200px;\n    border-radius: 200px;\n    // object-fit: cover;\n    margin:0px;\n}\n\n.ceo-profile {\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n        padding: 20px ;\n        box-shadow: $theme-box;\n\n        .team-member-details  {\n            padding-left: 50px;\n        }\n\n}\n\n.profile-photo-wrapper {\n    display: flex;\n    background-color: $themeColor-Grey;\n    padding:0px;\n    justify-content:center;\n    align-items:center;\n    width: 200px;\n    height: 200px;\n    border-radius:200px;\n    border: 4px solid $themeColor-Grey;\n\n    .hidden {\n        display: none;\n    }\n}\n\n.team-member-item {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    background-color: $themeColor-Mid;\n    padding: 40px 80px;\n    margin: 20px 0px;\n    box-shadow: $theme-box;\n}\n\n.team-member-details {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n\n.team-top {\n    background-color: $themeColor-Mid;\n    margin: 20px 0px;\n    padding: 40px;\n    box-shadow: $theme-box;\n}\n\n.team-team {\n    padding: 0px;\n}\n","\n\n.milestone-wrapper {\n    background-color: $themeColor-Grey;\n    display: flex;\n    flex-direction: column;\n    .milestone-header{\n        font-family: $theme-font;\n        color: #F1DED9;\n        font-weight: 600;\n    }\n\n    .milestone-graphic {\n        background-color: $themeColor-lightGrey;\n        width: 90%;\n        height: 50%;\n        margin-bottom: 40px;\n        \n        h1 {\n            font-weight: 300;\n            \n        }\n\n    }\n}","@import 'themeVars';\n\n.map {\n    // padding: 4px;\n    margin: 40px 0px;\n    width: 90%;\n    height: 500px;\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-lightGrey;\n}","\n@import 'postThumb';\n@import 'header';\n@import 'homePage';\n@import 'teamPage';\n@import 'milestones';\n@import 'themeVars';\n@import 'map';\n\n\n\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: $theme-font3;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  height: auto;\n  width: 250px;\n  height: 250px;\n  border-radius: 200px;\n  border: 4px solid #737373;\n  object-fit: cover;\n  margin: 0px; }\n\n.post-thumb {\n  width: 600px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  margin: 60px; }\n  .post-thumb h3 {\n    text-align: center;\n    width: 60%; }\n\n.post-title {\n  color: black; }\n\n#header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center;\n  margin-top: 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.header-link-list {\n  justify-self: center;\n  padding: 0px 40px;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around; }\n\n.header-link {\n  font-family: lato;\n  list-style: none;\n  font-size: 24px;\n  line-height: 29px;\n  color: black;\n  font-style: normal;\n  text-decoration: none; }\n\n.header-link:hover {\n  cursor: pointer4; }\n\n.home-page-container > div {\n  padding: 0px;\n  margin-top: 20px;\n  display: flex;\n  align-items: center;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .home-page-container > div div {\n    display: flex;\n    flex-direction: row; }\n\n.pillar-list {\n  list-style: none; }\n  .pillar-list li {\n    font-size: 30px; }\n\n.home-page-banner {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: center center;\n  background-size: 100% auto;\n  background-repeat: no-repeat;\n  justify-content: center;\n  height: 100%;\n  min-height: 500px;\n  padding: 0px;\n  flex-direction: row; }\n  .home-page-banner div {\n    background-color: rgba(241, 222, 217, 0.6);\n    display: flex;\n    align-self: stretch;\n    width: 100%; }\n    .home-page-banner div div {\n      display: flex;\n      flex-direction: column;\n      padding: 40px;\n      background-color: transparent; }\n\n@media screen and (max-width: 1700px) {\n  .home-page-banner {\n    background-size: auto 100%; } }\n\n.home-page-body {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: column; }\n\n.home-page-body-header {\n  padding: 0px 40px;\n  color: #f1ded9;\n  font-size: 50px; }\n\n.home-page-body-text {\n  padding: 40px; }\n\n.home-page-header {\n  color: black;\n  z-index: 2;\n  font-size: 64px;\n  text-align: left;\n  line-height: 84px;\n  font-weight: 300; }\n  .home-page-header .bold {\n    font-weight: 800; }\n\n.home-page-banner > p {\n  z-index: 2; }\n\n.team-list {\n  padding: 0px;\n  background-color: #737373; }\n  .team-list li {\n    list-style: none; }\n\n.profile-photo {\n  max-width: 200px;\n  max-height: 200px;\n  border-radius: 200px;\n  margin: 0px; }\n\n.ceo-profile {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  padding: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .ceo-profile .team-member-details {\n    padding-left: 50px; }\n\n.profile-photo-wrapper {\n  display: flex;\n  background-color: #737373;\n  padding: 0px;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  border: 4px solid #737373; }\n  .profile-photo-wrapper .hidden {\n    display: none; }\n\n.team-member-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  background-color: #f1ded9;\n  padding: 40px 80px;\n  margin: 20px 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.team-member-details {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around; }\n\n.team-top {\n  background-color: #f1ded9;\n  margin: 20px 0px;\n  padding: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.team-team {\n  padding: 0px; }\n\n.milestone-wrapper {\n  background-color: #737373;\n  display: flex;\n  flex-direction: column; }\n  .milestone-wrapper .milestone-header {\n    font-family: tablet-gothic, sans-serif;\n    color: #F1DED9;\n    font-weight: 600; }\n  .milestone-wrapper .milestone-graphic {\n    background-color: #C4C4C4;\n    width: 90%;\n    height: 50%;\n    margin-bottom: 40px; }\n    .milestone-wrapper .milestone-graphic h1 {\n      font-weight: 300; }\n\n.map {\n  margin: 40px 0px;\n  width: 90%;\n  height: 500px;\n  display: flex;\n  flex-direction: column;\n  background-color: #C4C4C4; }\n\n.faq-body {\n  flex-direction: column;\n  display: flex; }\n\n.faq-wrapper-top {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  background-color: #6aa1a1;\n  margin-top: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .faq-wrapper-top h1 {\n    color: #f1ded9; }\n\n.faq-question p:nth-child(odd) {\n  background-color: #f1ded9;\n  margin-bottom: 0px;\n  padding-top: 20px;\n  padding-left: 20px;\n  padding-right: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.faq-question p:nth-child(even) {\n  padding-left: 60px;\n  background-color: #f1ded9;\n  margin-top: 0px;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.index-page-header {\n  background-color: #f1ded9;\n  padding: 40px;\n  margin: 20px 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .index-page-header h1 {\n    font-size: 80px; }\n  .index-page-header p {\n    padding-top: 40px; }\n\n.post-index-list {\n  margin-top: 20px;\n  padding-top: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  flex-wrap: wrap; }\n\nbody {\n  font-family: tablet-gothic, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: input-sans-compressed, sans-serif;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n\n@media screen and (min-width: 2600px) {\n  #root {\n    display: flex;\n    flex-direction: row;\n    justify-content: center; }\n  .App {\n    width: 2600px; } }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/themeVars.scss","webpack://./src/styles/header.scss","webpack://./src/styles/homePage.scss","webpack://./src/styles/teamPage.scss","webpack://./src/styles/milestones.scss","webpack://./src/styles/map.scss","webpack://./src/styles/faq.scss","webpack://./src/styles/postIndex.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"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","sourcesContent":["\n@import 'themeVars';\n.thumbnail-image {\n    height: auto;\n    width: 250px;\n    height: 250px;\n    border-radius: 200px;\n        border: 4px solid $themeColor-Grey;\n    object-fit: cover;\n    margin:0px;\n    \n}\n\n\n.post-thumb {\n    // width: 25%;\n    width: 600px;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // margin: 0px;\n    margin: 60px;\n\n    h3 {\n        text-align: center;\n        width: 60%;\n    }\n}\n\n.post-title {\ncolor: black;\n}","@import url(\"https://use.typekit.net/jio3qqh.css\");\n\n$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);\n$themeColor-lightGrey:#C4C4C4;\n$thenmeColor-Darkest: black;\n$theme-font: tablet-gothic, sans-serif;\n$theme-font2: 'Lato', sans-serif;\n$theme-font3: input-sans-compressed, sans-serif;\n$theme-box:  0px 4px 4px rgba(0, 0, 0, 0.25);","@import 'themeVars';\n\n#header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n    margin-top: 0px;\n    box-shadow: $theme-box;\n}\n\n.header-link-list {\n    justify-self: center;\n    padding: 0px 40px;\n    width: 100%;\n    display:flex;\n    flex-direction: row;\n    justify-content: space-around;\n\n}\n\n// .header-link-list li {\n//     list-style: none;\n//     font-size: 24px;\n//     line-height: 29px;\n\n\n// }\n\n\n\n.header-link {\n    font-family: lato;\n      list-style: none;\n    font-size: 24px;\n    line-height: 29px;\n    color: $thenmeColor-Darkest;\n    font-style: normal;\n    text-decoration: none;\n\n\n}\n\n.header-link:hover {\n    cursor: pointer4\n}","@import 'themeVars';\n\n\n\n.home-page-container > div {\n    padding: 0px;\n    // flex-direction:column;\n    margin-top: 20px;\n    display: flex;\n    // flex-direction: column;\n    align-items: center;\n    box-shadow: $theme-box;\n    div {\n        display: flex;\n        flex-direction: row;\n        // div {\n        //     display: flex;\n        // flex-direction: column;\n        // }\n    }\n}\n.pillar-list {\n    list-style: none;\n\n    li {\n        font-size: 30px;\n    }\n}\n\n\n.home-page-banner {\n    background-image: url('../../assets//images/home-background.png');\n    background-position: center center;\n    background-size: 100% auto;\n    // background-size:  100% auto;\n    \n    // min-height: 80%;\n    background-repeat: no-repeat;\n    justify-content: center;\n    // width: 100%;\n    height: 100%;\n    min-height: 500px;\n    padding: 0px;\n    // display: flex;\n    // flex-direction: column;\n    flex-direction: row;\n    // justify-content: stretch;\n    \n    div {\n        background-color: rgba(241, 222, 217, .6);\n        display:flex;\n        align-self: stretch;\n        // align-items: stretch;\n        width: 100%;\n    // height: 100%;\n    div {\n        display: flex;\n        flex-direction: column;\n        padding: 40px;\n        background-color: transparent;\n    }\n    }\n \n}\n\n@media screen and (max-width: 1700px) {\n.home-page-banner {\n    background-size: auto 100%;\n }\n}\n\n// .home-page-banner > span {\n//     position: absolute;\n//     left: 0px;\n//     top: 0px;\n//        background:  #F1DED9;\n//        display: flex;\n//        flex-direction: column;\n//        align-items:center;\n//     opacity: .6;\n//    \n    \n    \n// }\n.home-page-body {\n    background-color: $themeColor-Dark;\n    display:flex;\n    flex-direction: column;\n}\n\n.home-page-body-header {\n    padding: 0px 40px;\n    // padding-bottom: 0px;\n    color: $themeColor-Mid;\n    font-size: 50px;\n\n}\n.home-page-body-text {\n    padding: 40px;\n}\n\n.home-page-header {\n    \n    color: $thenmeColor-Darkest;\n    z-index: 2;\n    font-size: 64px;\n    text-align: left;\n    line-height: 84px;\n    font-weight: 300;\n    \n    .bold {\n        font-weight: 800;\n    }\n    // background-color: rgba(241, 222, 217, .6)\n}\n\n.home-page-banner > p {\n    z-index: 2;\n}\n.home-page-pillars{\n\n\n}","@import 'themeVars';\n\n.team-list {\n    li {\n        list-style: none;\n    }\n    padding: 0px;\n    background-color: $themeColor-Grey;\n}\n\n.profile-photo {\n    max-width: 200px;\n    max-height: 200px;\n    border-radius: 200px;\n    // object-fit: cover;\n    margin:0px;\n}\n\n.ceo-profile {\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n        padding: 20px ;\n        box-shadow: $theme-box;\n\n        .team-member-details  {\n            padding-left: 50px;\n        }\n\n}\n\n.profile-photo-wrapper {\n    display: flex;\n    background-color: $themeColor-Grey;\n    padding:0px;\n    justify-content:center;\n    align-items:center;\n    width: 200px;\n    height: 200px;\n    border-radius:200px;\n    border: 4px solid $themeColor-Grey;\n\n    .hidden {\n        display: none;\n    }\n}\n\n.team-member-item {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    background-color: $themeColor-Mid;\n    padding: 40px 80px;\n    margin: 20px 0px;\n    box-shadow: $theme-box;\n}\n\n.team-member-details {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n\n.team-top {\n    background-color: $themeColor-Mid;\n    margin: 20px 0px;\n    padding: 40px;\n    box-shadow: $theme-box;\n}\n\n.team-team {\n    padding: 0px;\n}\n","\n\n.milestone-wrapper {\n    background-color: $themeColor-Grey;\n    display: flex;\n    flex-direction: column;\n    .milestone-header{\n        font-family: $theme-font;\n        color: #F1DED9;\n        font-weight: 600;\n    }\n\n    .milestone-graphic {\n        background-color: $themeColor-lightGrey;\n        width: 90%;\n        height: 50%;\n        margin-bottom: 40px;\n        \n        h1 {\n            font-weight: 300;\n            \n        }\n\n    }\n}","@import 'themeVars';\n\n.map {\n    // padding: 4px;\n    margin: 40px 0px;\n    width: 90%;\n    height: 500px;\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-lightGrey;\n}","@import 'themeVars';\n\n.faq-body {\n    flex-direction: column;\n    display: flex;\n}\n\n\n.faq-wrapper-top {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    background-color:$themeColor-Dark;\n    margin-top: 20px;\n    box-shadow: $theme-box;\n    h1 {\n        color: $themeColor-Mid;\n    }\n}\n\n\n.faq-question {\n\n    p:nth-child(odd) {\n        background-color: $themeColor-Mid;\n        margin-bottom:0px;\n        padding-top:20px;\n        padding-left: 20px;\n        padding-right: 20px;\n        box-shadow: $theme-box;\n    }\n    p:nth-child(even) {\n        padding-left: 60px;\n        background-color: $themeColor-Mid;\n        margin-top:0px;\n        padding-top:20px;\n        padding-bottom:20px;\n        box-shadow: $theme-box;\n    }\n}","@import 'themeVars';\n\n.index-page-header {\n    background-color: $themeColor-Mid;\n    // height: 400px;\n    padding: 40px;\n    margin: 20px 0px;\n    box-shadow: $theme-box;\n    h1 {\n        font-size: 80px;\n    }\n\n    p {\n        padding-top: 40px;\n    }\n\n\n}\n\n.post-index-list {\n    margin-top: 20px;\n    padding-top: 40px;\n    box-shadow: $theme-box;\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    flex-wrap: wrap;\n    \n}","\n@import 'postThumb';\n@import 'header';\n@import 'homePage';\n@import 'teamPage';\n@import 'milestones';\n@import 'themeVars';\n@import 'map';\n@import 'faq';\n@import 'postIndex';\n\n\n\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: $theme-font3;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}\n\n\n\n@media screen and (min-width: 2600px) {\n#root {\n  display: flex; \n  flex-direction: row;\n  justify-content: center;\n}\n\n.App {\n  width: 2600px;\n}\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -53640,7 +53657,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _profile_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile_errors_reducer */ "./reducers/profile_errors_reducer.js");
 /* harmony import */ var _post_errors_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post_errors_reducer */ "./reducers/post_errors_reducer.js");
-/* harmony import */ var _faq_errors_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./faq_errors_reducer */ "./reducers/faq_errors_reducer.js");
+/* harmony import */ var _faq_errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./faq_errors_reducer */ "./reducers/faq_errors_reducer.js");
 
 
 
@@ -53648,7 +53665,7 @@ __webpack_require__.r(__webpack_exports__);
 var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   profileErrors: _profile_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   postErrors: _post_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  faqErrors: _faq_errors_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
+  faqErrors: _faq_errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
 

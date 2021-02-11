@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
-import {PostThumb} from './post_thumb';
+
 import Header from '../header/header'
 import Milestones from '../elements/milestones'
 // import TableContainer from '../table/table_container'

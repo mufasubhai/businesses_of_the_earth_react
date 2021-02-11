@@ -43,16 +43,21 @@ const FAQ = (props) => {
 
     
     return (
-        <div>
+        <div className="faq-body">
            <Header/>
+
+            <div className="faq-wrapper-top">
+
+           <h1>Frequently Asked Questions</h1>
+            </div>
            {(!faq) ? null : 
 
-           <span>
+           <div className='faq-wrapper'>
                 {/* <img className="thumbnail-image" src={post.jetpack_featured_media_url}></img> */}
             {/* <h3 className="post-title">{post.title.rendered}</h3> */}
             {/* <span>{parse(post.excerpt.rendered)}</span> */}
-            <span>{parse(faq.content.rendered)}</span>
-           </span>
+            <span className="faq-question">{parse(faq.content.rendered)}</span>
+           </div>
            }
            {/* {console.log(post)} */}
             

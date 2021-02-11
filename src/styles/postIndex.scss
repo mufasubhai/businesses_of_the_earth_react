@@ -1,0 +1,30 @@
+@import 'themeVars';
+
+.index-page-header {
+    background-color: $themeColor-Mid;
+    // height: 400px;
+    padding: 40px;
+    margin: 20px 0px;
+    box-shadow: $theme-box;
+    h1 {
+        font-size: 80px;
+    }
+
+    p {
+        padding-top: 40px;
+    }
+
+
+}
+
+.post-index-list {
+    margin-top: 20px;
+    padding-top: 40px;
+    box-shadow: $theme-box;
+    background-color: $themeColor-Dark;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}

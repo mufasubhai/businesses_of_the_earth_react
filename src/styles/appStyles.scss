@@ -6,6 +6,8 @@
 @import 'milestones';
 @import 'themeVars';
 @import 'map';
+@import 'faq';
+@import 'postIndex';
 
 
 
@@ -26,4 +28,18 @@ body {
       font-weight: 700;
     }
   }
+}
+
+
+
+@media screen and (min-width: 2600px) {
+#root {
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+}
+
+.App {
+  width: 2600px;
+}
 }

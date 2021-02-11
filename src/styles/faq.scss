@@ -1,0 +1,40 @@
+@import 'themeVars';
+
+.faq-body {
+    flex-direction: column;
+    display: flex;
+}
+
+
+.faq-wrapper-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color:$themeColor-Dark;
+    margin-top: 20px;
+    box-shadow: $theme-box;
+    h1 {
+        color: $themeColor-Mid;
+    }
+}
+
+
+.faq-question {
+
+    p:nth-child(odd) {
+        background-color: $themeColor-Mid;
+        margin-bottom:0px;
+        padding-top:20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-shadow: $theme-box;
+    }
+    p:nth-child(even) {
+        padding-left: 60px;
+        background-color: $themeColor-Mid;
+        margin-top:0px;
+        padding-top:20px;
+        padding-bottom:20px;
+        box-shadow: $theme-box;
+    }
+}

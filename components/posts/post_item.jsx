@@ -34,7 +34,7 @@ const postItem = (props) => {
            <div className="post-wrapper">
                <div className="post-top">
                     <img className="post-header-image" src={post.jetpack_featured_media_url}></img>
-                    <h3 className="post-title">{post.title.rendered.split('#038;').join('')}</h3>
+                    <h3 className="post-title">{post.title.rendered.split('#038;').join('').split('&#8217;').join(`'`)}</h3>
                </div>
 
             <div className="post-excerpt">{parse(post.excerpt.rendered)}</div>

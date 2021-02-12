@@ -14,21 +14,23 @@
 
 .post-thumb {
     // width: 25%;
-    width: 600px;
+    width: 450px;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     // margin: 0px;
-    margin: 60px;
+    margin: 20px;
 
-    h3 {
+    h3:link {
         text-align: center;
-        width: 60%;
+        width:300px;
+        text-decoration: none;
     }
 }
 
 .post-title {
 color: black;
+text-align: center;
 }

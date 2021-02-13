@@ -6,7 +6,8 @@ import Header from '../header/header'
 const postItem = (props) => {
     // console.log(props);
     const [post, setPost] = useState(null);
-
+    let images = null;
+// const images = document.getElementsByClassName('wp-block-image');
 
     if (!props.posts.filter(el => el.id === parseInt(props.match.params.postId))[0]) {
         console.log('axios')
@@ -21,13 +22,34 @@ const postItem = (props) => {
         useEffect(()=> {
             console.log('prev-state')
             setPost(props.posts.filter(el => el.id === parseInt(props.match.params.postId))[0])
-
+            
         }, [setPost])
     }
+
+    useEffect(()=> {
+        images = [...document.getElementsByClassName('wp-block-image')];
+        images.forEach(image => {
+            let class1 = image.firstChild.classList[0];
+            let class2 = image.firstChild.classList[1];
+        //     let class2 = image.firstChild.classList[1];
+
+            console.log(class1)
+        //     // console.log(class2)
+            image.classList.add(class1, class2)
+            console.log(image.classList)
+        // //     console.log(image.classList)
+        })
+        
+        console.log(images)
+    }, [post, images])
 
     
     return (
         <div>
+            <script>
+                
+                document.
+            </script>
            <Header/>
            {(!post) ? null : 
 
@@ -42,6 +64,10 @@ const postItem = (props) => {
            </div>
            }
            {console.log(post)}
+           {/* {  */}
+            {/* //   images? console.log(images) : null} */}
+            
+           {/* { (!images) ? console.log(images) : null} */}
             
         </div>
     )

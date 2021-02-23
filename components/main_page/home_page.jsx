@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 
 import Header from '../header/header'
 import Milestones from '../elements/milestones'
+import Map from '../maps/map'
 // import TableContainer from '../table/table_container'
 
 const HomePage = props => {
@@ -16,6 +17,7 @@ useEffect(() => {
 
     return (
         <div className="home-page-container">
+
                 <Header/>
 
 
@@ -55,7 +57,7 @@ useEffect(() => {
 
                 <h2 className="home-page-body-header">WHERE ARE THE SMALL BUSINESSES?</h2>
 
-                <div className='map'></div>
+                <Map className='map'/>
             </div>  
             
 

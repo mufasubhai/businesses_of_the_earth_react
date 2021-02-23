@@ -3,9 +3,26 @@
 .map {
     // padding: 4px;
     margin: 40px 0px;
-    width: 90%;
+    width: 1000px;
     height: 500px;
     display: flex;
     flex-direction: column;
     background-color: $themeColor-lightGrey;
+}
+
+
+#map {
+    height: 400px;
+    width: 400px;
+    div {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+.gmnoprint {
+    display: 'none';
+
+
+
 }

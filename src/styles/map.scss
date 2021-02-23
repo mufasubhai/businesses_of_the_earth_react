@@ -3,17 +3,22 @@
 .map {
     // padding: 4px;
     margin: 40px 0px;
-    width: 1000px;
-    height: 500px;
+
     display: flex;
     flex-direction: column;
     background-color: $themeColor-lightGrey;
+    div {
+        width: 1000px ;
+        height:500px ;
+        position: relative;
+    }
 }
 
 
+
 #map {
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 1000px;
     div {
         width: 400px;
         height: 400px;

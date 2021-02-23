@@ -57,7 +57,7 @@ useEffect(() => {
 
                 <h2 className="home-page-body-header">WHERE ARE THE SMALL BUSINESSES?</h2>
 
-                <Map className='map'/>
+                <Map/>
             </div>  
             
 

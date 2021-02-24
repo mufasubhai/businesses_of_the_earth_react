@@ -53,12 +53,16 @@ display:none;
     div {
         background-color: rgba(241, 222, 217, .6);
         display:flex;
+        justify-content: center;
+        flex-direction: column;
         align-self: stretch;
         // align-items: stretch;
         width: 100%;
     // height: 100%;
     div {
+        max-width: 1500px;
         display: flex;
+        
         flex-direction: column;
         padding: 40px;
         background-color: transparent;
@@ -68,6 +72,25 @@ display:none;
  
 }
 
+.home-page-body {
+    div {
+        max-width: 1500px;
+    }
+
+    h2 {
+        max-width: 1500px;
+    }
+
+    p {
+        max-width: 1500px;
+    }
+    ul {
+        max-width: 1500px;
+    }
+
+
+}
+
 
 @media screen and (max-width: 1700px) {
 .home-page-banner {
@@ -75,20 +98,6 @@ display:none;
  }
 }
 
-
-// .home-page-banner > span {
-//     position: absolute;
-//     left: 0px;
-//     top: 0px;
-//        background:  #F1DED9;
-//        display: flex;
-//        flex-direction: column;
-//        align-items:center;
-//     opacity: .6;
-//    
-    
-    
-// }
 .home-page-body {
     background-color: $themeColor-Dark;
     display:flex;

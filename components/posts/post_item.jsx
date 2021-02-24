@@ -48,7 +48,7 @@ const postItem = (props) => {
         <div>
             <script>
                 
-                document.
+                
             </script>
            <Header/>
            {(!post) ? null : 

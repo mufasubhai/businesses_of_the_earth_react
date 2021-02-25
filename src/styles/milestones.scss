@@ -8,16 +8,24 @@
         font-family: $theme-font;
         color: #F1DED9;
         font-weight: 600;
+        max-width: $max-width;
+
     }
 
     .milestone-graphic {
         background-color: $themeColor-lightGrey;
+        max-width: $max-width;
         width: 90%;
         height: 50%;
+        height: 500px;
         margin-bottom: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         
         h1 {
             font-weight: 300;
+            
             
         }
 

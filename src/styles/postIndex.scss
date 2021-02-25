@@ -29,3 +29,25 @@
     flex-wrap: wrap;
     
 }
+
+.index-page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        max-width: $max-width;
+        margin: 0px;
+    }
+    p {
+        max-width: $max-width;
+    }
+}
+
+.post-index-list {
+    div {
+        max-width: $max-width;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap
+    }
+}

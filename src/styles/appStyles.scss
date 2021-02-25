@@ -11,6 +11,11 @@
 @import 'postItem';
 
 
+.width-wrapper {
+   max-width: $max-width;
+   display: flex;
+   flex-direction: row;
+}
 
 body {
   font-family: $theme-font;

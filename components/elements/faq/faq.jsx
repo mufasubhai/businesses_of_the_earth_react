@@ -53,10 +53,18 @@ const FAQ = (props) => {
            {(!faq) ? null : 
 
            <div className='faq-wrapper'>
-                {/* <img className="thumbnail-image" src={post.jetpack_featured_media_url}></img> */}
-            {/* <h3 className="post-title">{post.title.rendered}</h3> */}
-            {/* <span>{parse(post.excerpt.rendered)}</span> */}
-            <span className="faq-question">{parse(faq.content.rendered)}</span>
+               
+                
+
+                        {/* <img className="thumbnail-image" src={post.jetpack_featured_media_url}></img> */}
+                    {/* <h3 className="post-title">{post.title.rendered}</h3> */}
+                    {/* <span>{parse(post.excerpt.rendered)}</span> */}
+                    <span className="faq-question">
+                        <span>{parse(faq.content.rendered)}
+                            </span>
+                            </span>
+                
+               
            </div>
            }
            {/* {console.log(post)} */}

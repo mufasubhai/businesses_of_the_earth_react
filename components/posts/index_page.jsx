@@ -16,7 +16,7 @@ useEffect(() => {
 
     
     return (
-            <div className="main_page_container">
+            <div className="index-page-container">
 
                 <Header/>
 
@@ -28,9 +28,12 @@ useEffect(() => {
                 </div>
                 
                 <div className="post-index-list">
-                    {props.posts.map((post, idx) => {
-                        return <PostThumb key={idx} post={post}/>
-                    })}
+                    <div>
+                        {props.posts.map((post, idx) => {
+                            return <PostThumb key={idx} post={post}/>
+                        })}
+
+                    </div>
 
                 </div>
 

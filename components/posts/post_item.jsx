@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import parse from 'html-react-parser';
 import Axios from 'axios';
 import Header from '../header/header'
+import Map from '../maps/map'
 
 const postItem = (props) => {
     // console.log(props);
@@ -63,7 +64,9 @@ const postItem = (props) => {
 
             <div className="post-excerpt">{parse(post.excerpt.rendered)}</div>
             <div className="post-content">{parse(post.content.rendered)}</div>
+           <Map/>
            </div>
+
            }
            {console.log(post)}
            {/* {  */}

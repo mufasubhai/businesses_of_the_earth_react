@@ -44,4 +44,4 @@ const mDTP = dispatch => ({
 
 
 
-export default (connect(mSTP, mDTP)(GoogleMap));
+export default connect(mSTP, mDTP)(GoogleMap);

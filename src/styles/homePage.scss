@@ -28,6 +28,12 @@ display:none;
 
     li {
         font-size: 30px;
+        // font-style: Bo;
+        max-width: 600px;
+        text-align:center;
+        margin-bottom: 20px;
+        color: $themeColor-Darkest;
+        font-family: $theme-font;
     }
 }
 
@@ -117,7 +123,7 @@ display:none;
 
 .home-page-header {
     
-    color: $thenmeColor-Darkest;
+    color: $themeColor-Darkest;
     z-index: 2;
     font-size: 64px;
     text-align: left;

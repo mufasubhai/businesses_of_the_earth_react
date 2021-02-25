@@ -47,11 +47,18 @@ useEffect(() => {
 
                 <ul className="pillar-list">
 
-                        <li>Metric 1</li> 
-                        <li>Metric 2</li> 
-                        <li>Metric 3</li> 
-                        <li>Metric 4</li> 
-                    
+                    <li>
+                        10,000 Impressions monthly across our Social Media Platforms (Instagram, Facebook, and Twitter)
+                    </li>
+                    <li>
+                        1,100 Profile Views monthly across Social Media Platforms
+                    </li>
+                    <li>
+                        600 unique website visitors in the past two months 
+                    </li>
+                    <li>
+                        200 average reach per post about small business owners across social media platforms
+                    </li>
 
                 </ul>
 

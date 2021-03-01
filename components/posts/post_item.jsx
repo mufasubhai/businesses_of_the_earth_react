@@ -3,12 +3,18 @@ import parse from 'html-react-parser';
 import Axios from 'axios';
 import Header from '../header/header'
 import Map from '../maps/map'
+import Authors from '../../assets/variables/authors'
 
 const postItem = (props) => {
     // console.log(props);
     const [post, setPost] = useState(null);
     let images = null;
 // const images = document.getElementsByClassName('wp-block-image');
+
+    const stripWidth = string => {
+        return string.split(/width="[^"]+"/).join('').split(/height="[^"]+"/).join('').split(/sizes="[^"]+"/).join('');
+    }
+
 
     if (!props.posts.filter(el => el.id === parseInt(props.match.params.postId))[0]) {
         console.log('axios')
@@ -34,14 +40,13 @@ const postItem = (props) => {
             let class2 = image.firstChild.classList[1];
         //     let class2 = image.firstChild.classList[1];
 
-            console.log(class1)
+            
         //     // console.log(class2)
             image.classList.add(class1, class2)
-            console.log(image.classList)
+            
         // //     console.log(image.classList)
         })
         
-        console.log(images)
     }, [post, images])
 
     
@@ -58,21 +63,25 @@ const postItem = (props) => {
                <div className="post-top">
                    <div className="width-wrapper">
                     <img className="post-header-image" src={post.jetpack_featured_media_url}></img>
+                    <div className="post-header-text">
+
                     <h3 className="post-title">{post.title.rendered.split('#038;').join('').split('&#8217;').join(`'`)}</h3>
+                    
+                    <h2 className="author">{Authors[post.author]}</h2>
+                    </div>
                     </div>
                </div>
 
             <div className="post-excerpt">{parse(post.excerpt.rendered)}</div>
-            <div className="post-content">{parse(post.content.rendered)}</div>
+            <div className="post-content">{parse(stripWidth(post.content.rendered))}</div>
+            {console.log(post)}
+            
+            
            <Map/>
            </div>
 
            }
-           {console.log(post)}
-           {/* {  */}
-            {/* //   images? console.log(images) : null} */}
-            
-           {/* { (!images) ? console.log(images) : null} */}
+    
             
         </div>
     )

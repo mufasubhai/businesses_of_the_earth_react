@@ -25,8 +25,13 @@
     background-color: $themeColor-Dark;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items:center;
     flex-wrap: wrap;
+
+    div {
+        justify-content: center;
+    }
     
 }
 

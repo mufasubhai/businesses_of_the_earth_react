@@ -143,16 +143,18 @@
     display: flex;
 // flex-direction: center;
 // width: 300px;
+width: $max-width;
 align-items: center;
-max-width: 100%;
-justify-content: center;
-figcaption {
-    max-width: 100%;
-}
+// max-width: 100%;
+// justify-content: center;
+// figcaption {
+//     max-width: 100%;
+// }
 
 img{
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    justify-self: center;
 }
 }
 
@@ -171,7 +173,7 @@ figcaption {
     .blocks-gallery-item {
         display:flex;
 
-        width: 35%;
+        width: 50%;
         height: auto;
         align-items: center;
         figure {
@@ -185,4 +187,10 @@ figcaption {
         }
     }
 
+}
+
+.author {
+    color: $themeColor-Mid;
+    text-align: center;
+    width: 100%;
 }

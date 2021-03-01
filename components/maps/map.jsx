@@ -6,6 +6,7 @@ import GoogleMapReact from 'google-map-react'
 
 
 
+
 const GoogleMap = props => {
 let defaultProps = {
     center: {
@@ -20,6 +21,8 @@ let defaultProps = {
         <div className="map-wrapper ">
 
         <div id="map">
+          
+          
            <GoogleMapReact
           bootstrapURLKeys={{ key: MAPI}}
           defaultCenter={defaultProps.center}

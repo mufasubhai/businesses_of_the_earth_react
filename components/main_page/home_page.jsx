@@ -7,12 +7,35 @@ import Map from '../maps/map'
 // import TableContainer from '../table/table_container'
 
 const HomePage = props => {
+    
+    useEffect(() => {
+        props.fetchPosts()
+        props.fetchProfiles()
+        props.fetchFAQ();
+    }, [])    
+    
+    const [posts, setPosts] = useState([])
 
 useEffect(() => {
-    props.fetchPosts()
-    props.fetchProfiles()
-    props.fetchFAQ();
-}, [])    
+    let newPosts = [];
+    
+    props.posts.forEach(post => {
+        
+        
+        
+        newPosts.push(post)
+    
+    })
+    
+    setPosts(newPosts)
+
+}, [props.posts])
+
+
+
+
+
+
 
 
     return (
@@ -63,8 +86,12 @@ useEffect(() => {
                 </ul>
 
                 <h2 className="home-page-body-header">WHERE ARE THE SMALL BUSINESSES?</h2>
-
-                <Map/>
+                
+                {
+                    (posts) ? 
+                    <Map pins={posts}/>
+                    : console.log(posts)
+                }
             </div>  
             
 

@@ -1,13 +1,13 @@
 import React, {useEffect, useState, useLayoutEffect} from 'react';
 import {MAPI} from '../../config/keys'
 import {connect} from 'react-redux'
-// import { Map, Marker, GoogleApiWrapper } from  'google-maps-react'
+
 import GoogleMapReact from 'google-map-react'
+import Pin from './pin'
 
 
 
-
-const GoogleMap = props => {
+const GoogleMap = ({ pins }) => {
 let defaultProps = {
     center: {
       lat: 34.0522,
@@ -21,14 +21,22 @@ let defaultProps = {
         <div className="map-wrapper ">
 
         <div id="map">
-          
+          {console.log('pins')}
+          {console.log(pins)}
           
            <GoogleMapReact
           bootstrapURLKeys={{ key: MAPI}}
           defaultCenter={defaultProps.center}
           defaultZoom={defaultProps.zoom}
           >
-          
+          {
+            
+            pins.map((pin) => {
+
+              return <Pin lat={pin.lat} lng={pin.long} text={pin.title}/>
+          }) 
+            
+          }
         </GoogleMapReact>
         </div>
         </div>
@@ -37,7 +45,7 @@ let defaultProps = {
 
 
 const mSTP = state => ({
-    testState : "poop"
+    
 })
 
 const mDTP = dispatch => ({

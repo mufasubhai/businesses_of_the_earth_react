@@ -1,0 +1,38 @@
+@import 'themeVars';
+
+.map-pin {
+    background-color: red;
+    border-radius: 20px;
+    border: black solid 2px;
+}
+
+.map-pin > .map-min-hover {
+    
+    visibility: hidden;
+
+}
+
+.map-pin:hover {
+    background-color: blue;
+
+}
+.map-pin:hover > .map-pin-hover {
+
+
+    visibility: visible;
+
+}
+
+#map {
+    div {
+        width:15px;
+        height:15px;
+        
+    }
+
+
+
+
+}
+
+

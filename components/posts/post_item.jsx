@@ -6,7 +6,7 @@ import Map from '../maps/map'
 import Authors from '../../assets/variables/authors'
 
 const postItem = (props) => {
-    // console.log(props);
+    
     const [post, setPost] = useState(null);
     let images = null;
 // const images = document.getElementsByClassName('wp-block-image');
@@ -17,7 +17,7 @@ const postItem = (props) => {
 
 
     if (!props.posts.filter(el => el.id === parseInt(props.match.params.postId))[0]) {
-        console.log('axios')
+        
         useEffect(()=> {
             Axios.get(`https://businessesoftheearth.org/wp-json/wp/v2/posts/${props.match.params.postId}`).then(response => {
                 setPost(response.data)
@@ -27,7 +27,7 @@ const postItem = (props) => {
 
     } else {
         useEffect(()=> {
-            console.log('prev-state')
+        
             setPost(props.posts.filter(el => el.id === parseInt(props.match.params.postId))[0])
             
         }, [setPost])
@@ -38,13 +38,13 @@ const postItem = (props) => {
         images.forEach(image => {
             let class1 = image.firstChild.classList[0];
             let class2 = image.firstChild.classList[1];
-        //     let class2 = image.firstChild.classList[1];
+        
 
             
-        //     // console.log(class2)
+        
             image.classList.add(class1, class2)
             
-        // //     console.log(image.classList)
+        
         })
         
     }, [post, images])
@@ -74,7 +74,7 @@ const postItem = (props) => {
 
             <div className="post-excerpt">{parse(post.excerpt.rendered)}</div>
             <div className="post-content">{parse(stripWidth(post.content.rendered))}</div>
-            {console.log(post)}
+            
             
             
            <Map/>

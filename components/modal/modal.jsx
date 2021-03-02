@@ -10,7 +10,7 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    console.log('edit_form_data');
+    
     switch (modal) {
         case 'edit_form_data':
             return null

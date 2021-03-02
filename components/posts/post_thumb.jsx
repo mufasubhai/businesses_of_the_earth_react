@@ -3,34 +3,7 @@ import parse from 'html-react-parser';
 import {Link} from 'react-router-dom';
 
 export const PostThumb = ({post}) => {
-    // const cloneDeep = require('lodash.clonedeep')
-    // const trimmedText  = textObject => {
-    //     let newObject = cloneDeep(textObject);
-    //     console.log(newObject)
-
-       
-    //     let text = Array.from(newObject[0].props.children)
-            
-    //     // let newText = text.split("").splice(0, 200)
-
-    //     // console.log(text);
-    //     // console.log(typeof text);
-    //     // console.log(typeof Array.from(text))
-
-    //         // if (newText.length >= 200) {
-    //         //     newText = newText.push("...")
-    //         // }
-
-    //         // let newSentence = ""
-    //         // newText.forEach(char => {
-    //         //     newSentence += char;
-    //         // })
-
-    //         // newObject[0].props.children = newSentence;
-            
-    //         // return [newObject, ""]
-    //         }
-        
+    
         
 
     return (

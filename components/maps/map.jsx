@@ -21,21 +21,20 @@ let defaultProps = {
         <div className="map-wrapper ">
 
         <div id="map">
-          {console.log('pins')}
-          {console.log(pins)}
-          
+        
            <GoogleMapReact
           bootstrapURLKeys={{ key: MAPI}}
           defaultCenter={defaultProps.center}
           defaultZoom={defaultProps.zoom}
           >
           {
-            
-            pins.map((pin) => {
+            (pins) ? 
+            pins.map((pin, idx) => {
 
-              return <Pin lat={pin.lat} lng={pin.long} text={pin.title}/>
+              return <Pin lat={pin.lat} lng={pin.long} text={pin.title} key={idx}/>
           }) 
-            
+          : 
+          null
           }
         </GoogleMapReact>
         </div>

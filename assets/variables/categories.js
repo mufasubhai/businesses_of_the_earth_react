@@ -1,15 +1,19 @@
-module.exports = {
-    19 :"Consulting",
-    274 :"Employment & Discounts",
-    116:"Discounts",
-    115:"Jobs/Hiring",
-    247:"Food & Entertainment",
-    24:"Food & Drink",
-    17:"Photography/Film",
-    20:"Health & Wellness",
-    21:"Fashion & Beauty",
-    18:"Happy Home",
-    22:"Money/Business/Finance",
-    98:"On the Go",
-    275:"Technology",
+export const categoryTags = {
+   321: "Art",
+   24: "Food & Drink",
+   20: "Health & Wellness",
+   21: "Fashion & Beauty",
+   18 :"Home Goods",
+   322 :"Services"
 }
+
+export const categoryNames = {
+    "Art": 321,
+    "Food & Drink": 24,
+    "Health & Wellness": 20,
+    "Fashion & Beauty": 21,
+    "Home Goods": 18,
+    "Services": 322,
+}
+
+

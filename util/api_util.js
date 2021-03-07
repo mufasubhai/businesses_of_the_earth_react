@@ -41,3 +41,10 @@ export const fetchProfileData = (id) => (
         url: `https://businessesoftheearth.org/wp-json/wp/v2/profiles-api/${id}`
     })
 )
+
+export const fetchCategoryPosts = (categoryTag) => (
+    $.ajax({
+        method: 'GET',
+        url: `https://businessesoftheearth.org/wp-json/wp/v2/posts?categories=${categoryTag}`
+    }) 
+)

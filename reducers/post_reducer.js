@@ -8,7 +8,8 @@ const PostsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_POSTS_DATA:
-            return Object.assign({}, state, action.posts)
+            // return Object.assign({}, state, action.posts)
+            return action.posts
         case RECEIVE_POST_DATA:
             return Object.assign({}, state, { [action.post.id]: action.post})
         default:

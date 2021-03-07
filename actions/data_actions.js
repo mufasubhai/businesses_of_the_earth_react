@@ -70,6 +70,15 @@ export const fetchPosts = () => dispatch => (
             dispatch(receivePostErrors(err.responseJSON))
         ))
 )
+
+export const fetchPostsTag = (tag) => dispatch => (
+    APIUtil.fetchCategoryPosts(tag)
+        .then(Posts => (dispatch(receivePostsData(Posts))
+        ), err => (
+            dispatch(receivePostErrors(err.responseJson))
+        ))
+
+)
 export const fetchPost = (id) => dispatch => (
     APIUtil.fetchPostData(id)
         .then(Post => (dispatch(receivePostData(Post))

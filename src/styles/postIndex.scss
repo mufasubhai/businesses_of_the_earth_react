@@ -56,3 +56,65 @@
         flex-wrap:wrap
     }
 }
+
+.post-index-categories {
+      margin-top: 20px;
+    padding-top: 40px;
+    box-shadow: $theme-box;
+    background-color: $themeColor-Dark;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    
+    
+    .category-wrapper {
+        max-width: $max-width;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0px;
+         }
+    
+    .selection-item {
+            
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 180px;
+    max-height:180px;
+    border-radius: 200px;
+    background-color: $themeColor-Light;
+    border: 4px solid $themeColor-Grey;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // margin: 0px;
+    margin: 20px;
+    font-size: 20px;
+    
+
+    }
+    .selection-item:hover {
+        cursor: pointer;
+    }    
+    
+    .selected-selection-item {
+        color: $themeColor-Dark;
+    }
+
+    div {
+           justify-content: center;
+        max-width: $max-width;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap
+    }
+
+    
+}
+

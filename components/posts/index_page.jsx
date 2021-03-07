@@ -48,13 +48,19 @@ const classTag = (tag) => {
                     <h1> The Stories</h1>
                     <p>Empowering Small Businesses and Surrounging Communities through <span className="bold">You.</span></p>
                 </div>
-                <div className="post-index-list tags">
-                      <div className={classTag("All Posts")} onClick={() => selectTag("All Posts")}>All Posts</div>
+           
+                <div className="post-index-categories">
+                    <span className="category-wrapper">
+
                     {Object.values(categoryTags).map((val, idx) => {
                         return <div className={classTag(val)} onClick={() => selectTag(val)} key={idx}>{val}</div>
                     })}
+                    <div className={classTag("All Posts")} onClick={() => selectTag("All Posts")}>All Posts</div>
+                    </span>
                 </div>
-                
+
+                {   (props.posts.length > 0) ? 
+
                 <div className="post-index-list">
                     <div>
                         {props.posts.map((post, idx) => {
@@ -63,7 +69,9 @@ const classTag = (tag) => {
 
                     </div>
 
-                </div>
+                </div> : null
+                }
+                
 
             </div>
         )

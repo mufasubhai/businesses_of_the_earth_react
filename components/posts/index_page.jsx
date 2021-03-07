@@ -13,6 +13,7 @@ useEffect(() => {
 }, [])    
 
 const [currentSection, setCurrentSection ] = useState('All Posts')
+// maybe add loader here
 
 const selectTag = (tag) => {
     if (tag === "All Posts") {

@@ -5,7 +5,7 @@ import { HashRouter } from 'react-router-dom';
 import IndexPage from './components/posts/index_page_container';
 import HomePageContainer from './components/main_page/home_page_container';
 import PostItemContainer from './components/posts/post_item_container';
-import TeamPage from './components/team_page/team_page'
+import TeamPageContainer from './components/team_page/team_page_container'
 import FAQContainer from './components/elements/faq/faq_container'
 import './src/styles/app.css';
 import './src/styles/appStyles.scss';
@@ -18,7 +18,7 @@ function App() {
       <HashRouter>
         <Switch>
           <Route exact path='/' component={HomePageContainer} />
-          <Route exact path='/team' component={TeamPage} />
+          <Route exact path='/team' component={TeamPageContainer} />
           <Route exact path='/posts' component={IndexPage} />
           <Route exact path='/faq' component={FAQContainer} />
           <Route exact path='/posts/:postId' component={PostItemContainer}/>

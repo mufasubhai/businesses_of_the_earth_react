@@ -8,7 +8,11 @@ const Pin = ({ lat, long, text, id }) => {
         <span>
             <div className="map-pin ">
 
-                <Link to={`/posts/${id}`} className="map-pin-hover">{text}
+                <Link to={`/posts/${id}`} className="map-pin-hover">
+                    <span>
+                        {text}
+                        
+                        </span>
             </Link>
             </div>
 

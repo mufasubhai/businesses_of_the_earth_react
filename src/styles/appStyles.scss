@@ -54,3 +54,12 @@ img {
   width: 2600px;
 }
 }
+
+a {
+ text-decoration-line: none; 
+}
+
+a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: $themeColor-Dark;
+}

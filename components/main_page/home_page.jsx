@@ -86,11 +86,11 @@ useEffect(() => {
                 </ul>
 
                 <h2 className="home-page-body-header">WHERE ARE THE SMALL BUSINESSES?</h2>
-                
+                {console.log(posts)}
                 {
                     (posts) ? 
                     <Map pins={posts}/>
-                    : console.log(posts)
+                    : null
                 }
             </div>  
             

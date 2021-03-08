@@ -30,8 +30,9 @@ let defaultProps = {
           {
             (pins) ? 
             pins.map((pin, idx) => {
+              
 
-              return <Pin lat={pin.lat} lng={pin.long} text={pin.title} key={idx}/>
+              return <Pin lat={pin.lat} lng={pin.long} text={pin.businessName} key={idx} id={pin.id}/>
           }) 
           : 
           null

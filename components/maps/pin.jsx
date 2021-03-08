@@ -1,13 +1,15 @@
 import React from 'react'
+import {Link} from'react-router-dom';
 
 
-const Pin = ({ lat, long, title }) => {
+const Pin = ({ lat, long, text, id }) => {
 
     return (
         <span>
             <div className="map-pin ">
-                <div className="map-pin-hover">this will be the business title
-            </div>
+
+                <Link to={`/posts/${id}`} className="map-pin-hover">{text}
+            </Link>
             </div>
 
         </span>

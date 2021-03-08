@@ -1,19 +1,22 @@
 @import 'themeVars';
 
 .map-pin {
-    background-color: red;
+    background-color: $themeColor-Mid;
     border-radius: 20px;
     border: black solid 2px;
 }
 
-.map-pin > .map-min-hover {
+.map-pin > .map-pin-hover {
+    font-family: $theme-font3;
+    color: $themeColor-Dark;
     
-    visibility: hidden;
+    font-size: 20px;
 
+    visibility: hidden;
 }
 
 .map-pin:hover {
-    background-color: blue;
+    background-color: $themeColor-Grey;
 
 }
 .map-pin:hover > .map-pin-hover {

@@ -12,7 +12,7 @@ import natalie from '../../assets/images/natalie-profile.jpg';
 import nicole from '../../assets/images/nicki-profile.jpg';
 import sierra from '../../assets/images/sierra-profile.png';
 
-import { ProfileThumb } from './profile_thumb'
+import ProfileThumb from './profile_thumb'
 
 const TeamPage = props => {
     

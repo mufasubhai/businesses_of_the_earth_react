@@ -9,7 +9,7 @@ export const RECEIVE_PROFILES_DATA = "RECEIVE_PROFILES_DATA";
 export const RECEIVE_PROFILE_DATA = "RECEIVE_PROFILE_DATA";
 export const RECEIVE_FAQ_DATA = "RECEIVE_FAQ_DATA";
 export const RECEIVE_FAQ_ERRORS = "RECEIVE_FAQ_ERRORS";
-
+export const SET_CURRENT_PROFILE = "SET_CURRENT_PROFILE"
 const receivePostErrors = errors => ({
     type: RECEIVE_POST_ERRORS,
     errors
@@ -53,7 +53,8 @@ const receiveProfileData = profile => ({
 const receiveFAQData = faq => ({
     type: RECEIVE_FAQ_DATA,
     faq
-})
+}) 
+
 
 export const fetchFAQ = () => dispatch => (
     APIUtil.fetchFAQ()
@@ -101,3 +102,9 @@ export const fetchProfile = (id) => dispatch => (
         ))
 )
 
+export const setCurrentProfile = (profile) => {
+    return {
+        type: SET_CURRENT_PROFILE,
+        profile: profile
+    }
+}

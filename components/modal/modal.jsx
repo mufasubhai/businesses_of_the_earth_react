@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 // import FormData from './form_data.jsx';
-
+import ProfileModal from './profile_modal'
 
 
 function Modal({ modal, closeModal }) {
@@ -12,8 +12,8 @@ function Modal({ modal, closeModal }) {
     let component;
     
     switch (modal) {
-        case 'edit_form_data':
-            return null
+        case 'profile_modal':
+            component = <ProfileModal/>
             break;
         default:
             return null;

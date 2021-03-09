@@ -49,11 +49,24 @@
 .team-member-item {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 50%;
+    max-width: 100%;
     justify-content: space-around;
     background-color: $themeColor-Mid;
-    padding: 40px 80px;
+    
     margin: 20px 0px;
-    box-shadow: $theme-box;
+    // box-shadow: $theme-box;
+}
+team-member-item:hover {
+    cursor: pointer;
+}
+
+.team-member-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .team-member-details {

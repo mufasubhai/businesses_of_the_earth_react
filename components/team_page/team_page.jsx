@@ -16,6 +16,7 @@ import ProfileThumb from './profile_thumb'
 
 const TeamPage = props => {
     
+    let ceoprofile = [...props.profiles.filter((profile) => (profile.order === '0'))]
     useEffect(() => {
         props.fetchProfiles();
     }, [])
@@ -33,31 +34,44 @@ const TeamPage = props => {
 
 
             </div>
-    
             {
-                props.profiles.sort((a,b) => {
+                console.log('ceo profile')
+                
+            }
+            {console.log(ceoprofile)}
+            {
+                ceoprofile.map((CEOProfile, idx) => {
+                    return <div className="ceo-profile">
+                            
+                         <ProfileThumb key={idx} profile={CEOProfile}/>
+
+                      
+                    </div>
+                })
+
+            }
+            
+            <div className="team-member-wrapper">
+
+            
+            {
+                props.profiles.filter(el => el.order != 0).sort((a,b) => {
           
                     return a.order - b.order}).map((profile, idx) => {
-                    return <ProfileThumb key={idx} profile={profile}/>
+                    return<li className="team-member-item">
+                         <ProfileThumb key={idx} profile={profile}/>
+
+                     </li> 
                 })
             }
 
-            {/* <div className="ceo-profile">
-                    <div className="profile-photo-wrapper">
-                        <img src={daniel} className="profile-photo" alt="daniel-profile"/>
-                    </div>
-                
-                    <div className="team-member-details">
-                        <p className="team-member-detail">Daniel Shaby</p>
-                        <p className="team-member-detail">Founder/CEO</p>
-                    </div>
-                
             </div>
 
 
+{/* 
                 <ul className="team-list">
 
-                    <li className="team-member-item">
+                   
                         <div className="profile-photo-wrapper">
                             <img src={nicole} className="profile-photo" alt="nicole-profile"/>
                         </div>
@@ -72,10 +86,10 @@ const TeamPage = props => {
                             <p className="team-member-detail">Isabelle Rubio</p>
                             <p className="team-member-detail">Team Leader</p>
                         </div>
-                    </li> */}
+                    </li>
                      
                     
-                  
+                   */}
                    
         
 

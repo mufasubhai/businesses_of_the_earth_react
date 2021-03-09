@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: center;
     // margin: 0px;
-    margin: 20px;
+    margin: 40px;
 
     h3:link {
         text-align: center;
@@ -30,6 +30,10 @@
     }
 }
 
+
+.profile-thumb:hover {
+    cursor:pointer;
+}
 .profile-title {
 color: black;
 text-align: center;

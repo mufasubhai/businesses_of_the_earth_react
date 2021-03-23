@@ -21,7 +21,7 @@
 
 .faq-question {
 
-    p:nth-child(odd) {
+    p:nth-child(even) {
         background-color: $themeColor-Mid;
         margin-bottom:0px;
         padding-top:20px;
@@ -29,7 +29,7 @@
         padding-right: 20px;
         box-shadow: $theme-box;
     }
-    p:nth-child(even) {
+    p:nth-child(odd) {
         padding-left: 60px;
         background-color: $themeColor-Mid;
         margin-top:0px;

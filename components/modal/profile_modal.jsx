@@ -18,10 +18,10 @@ const ProfileModal = ({profile, closeModal}) => {
                 <img className="thumbnail-image" src={profile.image}></img>
                 <h3 className="profile-title">{profile.title.rendered}</h3>
                 <h3 className="profile-title">{profile.position}</h3>
-                <span>{parse(profile.excerpt.rendered)}</span>
+                <span className="no_reading_time">{parse(profile.excerpt.rendered)}</span>
 
                 <div className="button-container">
-                <button className="modal-button cancel" onClick={() => closeModal()}>Close Profile</button>
+                <button className="modal-button cancel" onClick={() => closeModal()}>Close</button>
                 </div>
                 </span>
 

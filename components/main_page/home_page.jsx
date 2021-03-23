@@ -1,6 +1,4 @@
-
 import React, {useState, useEffect} from 'react';
-
 import Header from '../header/header'
 import Milestones from '../elements/milestones'
 import Map from '../maps/map'
@@ -82,19 +80,7 @@ useEffect(() => {
                    
                     <span className="no_reading_time">{
                     (props.metrics) ? parse(props.metrics.content.rendered) : null }</span>
-                  
-                    {/* <li>
-                        10,000 Impressions monthly across our Social Media Platforms (Instagram, Facebook, and Twitter)
-                    </li>
-                    <li>
-                        1,100 Profile Views monthly across Social Media Platforms
-                    </li>
-                    <li>
-                        600 unique website visitors in the past two months 
-                    </li>
-                    <li>
-                        200 average reach per post about small business owners across social media platforms
-                    </li> */}
+                
 
                 </ul>
 

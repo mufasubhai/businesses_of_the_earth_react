@@ -1,9 +1,3 @@
-
-
-
-// https://businessesoftheearth.org/wp-json/wp/v2/pages/129
-
-
 import React, {useState, useEffect} from 'react';
 import parse from 'html-react-parser';
 import Axios from 'axios';
@@ -52,7 +46,7 @@ const FAQ = (props) => {
             </div>
            {(!faq) ? null : 
 
-           <div className='faq-wrapper'>
+           <div className='faq-wrapper no_reading_time'>
                
                 
 

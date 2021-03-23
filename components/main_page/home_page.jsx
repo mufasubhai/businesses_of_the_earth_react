@@ -69,6 +69,12 @@ useEffect(() => {
 
            
 
+                <h2 className="home-page-body-header">OUR VALUES</h2>
+                    <ul className="value-list">
+                     <li className="value-item">Voice</li>   
+                     <li className="value-item">Equity</li>   
+                     <li className="value-item">Empowerment</li>   
+                    </ul>        
                 <h2 className="home-page-body-header">OUR METRICS</h2>
 
                 <ul className="pillar-list">
@@ -102,7 +108,7 @@ useEffect(() => {
             </div>  
             
 
-            <Milestones/>
+            {/* <Milestones/> */}
         </div>
         )
 }

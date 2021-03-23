@@ -51,12 +51,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     min-width: 50%;
-    max-width: 100%;
+    flex-grow: 1;
     justify-content: space-around;
     background-color: $themeColor-Mid;
     
+    
+    box-shadow: $theme-box;
     margin: 20px 0px;
-    // box-shadow: $theme-box;
+    
 }
 team-member-item:hover {
     cursor: pointer;

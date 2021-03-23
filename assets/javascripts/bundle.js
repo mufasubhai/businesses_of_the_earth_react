@@ -871,7 +871,7 @@ var GoogleMap = function GoogleMap(_ref) {
 
     if (pins[0]["long"] && pins[0].lat) {
       defaultProps.center.lat = parseInt(pins[0].lat);
-      dfaultProps.center["long"] = parseInt(pins[0]["long"]);
+      defaultProps.center["long"] = parseInt(pins[0]["long"]);
       defaultProps.zoom = 11.5;
     }
   }

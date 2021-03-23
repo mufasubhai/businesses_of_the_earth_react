@@ -158,7 +158,7 @@ function App() {
 /*!*********************************!*\
   !*** ./actions/data_actions.js ***!
   \*********************************/
-/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, SET_CURRENT_PROFILE, clearErrors, fetchFAQ, fetchPosts, fetchPostsTag, fetchPost, fetchProfiles, fetchProfile, setCurrentProfile */
+/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, RECEIVE_METRIC_DATA, RECEIVE_METRIC_ERRORS, SET_CURRENT_PROFILE, clearErrors, fetchFAQ, fetchMetric, fetchPosts, fetchPostsTag, fetchPost, fetchProfiles, fetchProfile, setCurrentProfile */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -172,9 +172,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PROFILE_DATA", function() { return RECEIVE_PROFILE_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FAQ_DATA", function() { return RECEIVE_FAQ_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FAQ_ERRORS", function() { return RECEIVE_FAQ_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_METRIC_DATA", function() { return RECEIVE_METRIC_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_METRIC_ERRORS", function() { return RECEIVE_METRIC_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_CURRENT_PROFILE", function() { return SET_CURRENT_PROFILE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearErrors", function() { return clearErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFAQ", function() { return fetchFAQ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMetric", function() { return fetchMetric; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostsTag", function() { return fetchPostsTag; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPost", function() { return fetchPost; });
@@ -192,6 +195,8 @@ var RECEIVE_PROFILES_DATA = "RECEIVE_PROFILES_DATA";
 var RECEIVE_PROFILE_DATA = "RECEIVE_PROFILE_DATA";
 var RECEIVE_FAQ_DATA = "RECEIVE_FAQ_DATA";
 var RECEIVE_FAQ_ERRORS = "RECEIVE_FAQ_ERRORS";
+var RECEIVE_METRIC_DATA = "RECEIVE_METRIC_DATA";
+var RECEIVE_METRIC_ERRORS = "RECEIVE_METRIC_ERRORS";
 var SET_CURRENT_PROFILE = "SET_CURRENT_PROFILE";
 
 var receivePostErrors = function receivePostErrors(errors) {
@@ -209,6 +214,13 @@ var receiveProfileErrors = function receiveProfileErrors(errors) {
 };
 
 var receiveFAQErrors = function receiveFAQErrors(errors) {
+  return {
+    type: RECEIVE_FAQ_ERRORS,
+    errors: errors
+  };
+};
+
+var receiveMetricErrors = function receiveMetricErrors(errors) {
   return {
     type: RECEIVE_FAQ_ERRORS,
     errors: errors
@@ -262,6 +274,23 @@ var fetchFAQ = function fetchFAQ() {
       return dispatch(receiveFAQData(FAQ));
     }, function (err) {
       return dispatch(receiveFAQErrors(err.responseJSON));
+    });
+  };
+};
+
+var receiveMetricData = function receiveMetricData(metric) {
+  return {
+    type: RECEIVE_METRIC_DATA,
+    metric: metric
+  };
+};
+
+var fetchMetric = function fetchMetric() {
+  return function (dispatch) {
+    return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchMetric"]().then(function (FAQ) {
+      return dispatch(receiveMetricData(FAQ));
+    }, function (err) {
+      return dispatch(receiveMetricErrors(err.responseJSON));
     });
   };
 };
@@ -348,58 +377,6 @@ var closeModal = function closeModal() {
 
 /***/ }),
 
-/***/ "./assets/images/adrian-profile.png":
-/*!******************************************!*\
-  !*** ./assets/images/adrian-profile.png ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/adrian-profile.png");
-
-/***/ }),
-
-/***/ "./assets/images/brian-profile.png":
-/*!*****************************************!*\
-  !*** ./assets/images/brian-profile.png ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/brian-profile.png");
-
-/***/ }),
-
-/***/ "./assets/images/daniel-profile.png":
-/*!******************************************!*\
-  !*** ./assets/images/daniel-profile.png ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/daniel-profile.png");
-
-/***/ }),
-
-/***/ "./assets/images/donna-profile.png":
-/*!*****************************************!*\
-  !*** ./assets/images/donna-profile.png ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/donna-profile.png");
-
-/***/ }),
-
 /***/ "./assets/images/home-background.png":
 /*!*******************************************!*\
   !*** ./assets/images/home-background.png ***!
@@ -410,84 +387,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/home-background.png");
-
-/***/ }),
-
-/***/ "./assets/images/isabelle-profile.png":
-/*!********************************************!*\
-  !*** ./assets/images/isabelle-profile.png ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/isabelle-profile.png");
-
-/***/ }),
-
-/***/ "./assets/images/melina-profile.png":
-/*!******************************************!*\
-  !*** ./assets/images/melina-profile.png ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/melina-profile.png");
-
-/***/ }),
-
-/***/ "./assets/images/mina-profile.png":
-/*!****************************************!*\
-  !*** ./assets/images/mina-profile.png ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/mina-profile.png");
-
-/***/ }),
-
-/***/ "./assets/images/natalie-profile.jpg":
-/*!*******************************************!*\
-  !*** ./assets/images/natalie-profile.jpg ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/natalie-profile.jpg");
-
-/***/ }),
-
-/***/ "./assets/images/nicki-profile.jpg":
-/*!*****************************************!*\
-  !*** ./assets/images/nicki-profile.jpg ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/nicki-profile.jpg");
-
-/***/ }),
-
-/***/ "./assets/images/sierra-profile.png":
-/*!******************************************!*\
-  !*** ./assets/images/sierra-profile.png ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/sierra-profile.png");
 
 /***/ }),
 
@@ -778,6 +677,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header/header */ "./components/header/header.jsx");
 /* harmony import */ var _elements_milestones__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../elements/milestones */ "./components/elements/milestones.jsx");
 /* harmony import */ var _maps_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../maps/map */ "./components/maps/map.jsx");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.mjs");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -793,19 +696,29 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
  // import TableContainer from '../table/table_container'
+
+
 
 var HomePage = function HomePage(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     props.fetchPosts();
     props.fetchProfiles();
     props.fetchFAQ();
+    props.fetchMetric();
   }, []);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
       posts = _useState2[0],
       setPosts = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      metrics = _useState4[0],
+      setMetrics = _useState4[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var newPosts = [];
@@ -842,9 +755,11 @@ var HomePage = function HomePage(props) {
     className: "home-page-body-header"
   }, "OUR METRICS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "pillar-list"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "10,000 Impressions monthly across our Social Media Platforms (Instagram, Facebook, and Twitter)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "1,100 Profile Views monthly across Social Media Platforms"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "600 unique website visitors in the past two months"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "200 average reach per post about small business owners across social media platforms")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "no_reading_time"
+  }, props.metrics ? Object(html_react_parser__WEBPACK_IMPORTED_MODULE_4__["default"])(props.metrics.content.rendered) : null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "home-page-body-header"
-  }, "WHERE ARE THE SMALL BUSINESSES?"), console.log(posts), posts ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_maps_map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "WHERE ARE THE SMALL BUSINESSES?"), posts ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_maps_map__WEBPACK_IMPORTED_MODULE_3__["default"], {
     pins: posts
   }) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_elements_milestones__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
@@ -875,7 +790,9 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state) {
   return {
     profiles: Object.values(state.entities.profiles),
-    posts: Object.values(state.entities.posts)
+    posts: Object.values(state.entities.posts),
+    metrics: state.entities.metric,
+    FAQ: state.entities.faq
   };
 };
 
@@ -895,6 +812,9 @@ var mDTP = function mDTP(dispatch) {
     },
     fetchFAQ: function fetchFAQ() {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchFAQ"])());
+    },
+    fetchMetric: function fetchMetric() {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchMetric"])());
     }
   };
 };
@@ -932,8 +852,20 @@ var GoogleMap = function GoogleMap(_ref) {
       lat: 34.0522,
       lng: -118.2437
     },
-    zoom: 11
+    zoom: 9
   };
+
+  if (pins.length === 1) {
+    console.log(pins[0].lat);
+    console.log(pins[0]["long"]);
+
+    if (pins[0]["long"] && pins[0].lat) {
+      defaultProps.center.lat = parseInt(pins[0].lat);
+      dfaultProps.center["long"] = parseInt(pins[0]["long"]);
+      defaultProps.zoom = 11.5;
+    }
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "map-wrapper "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1393,7 +1325,9 @@ var postItem = function postItem(props) {
     className: "post-excerpt"
   }, Object(html_react_parser__WEBPACK_IMPORTED_MODULE_1__["default"])(post.excerpt.rendered)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post-content"
-  }, Object(html_react_parser__WEBPACK_IMPORTED_MODULE_1__["default"])(stripWidth(post.content.rendered))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_maps_map__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
+  }, Object(html_react_parser__WEBPACK_IMPORTED_MODULE_1__["default"])(stripWidth(post.content.rendered))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_maps_map__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    pins: [post]
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (postItem);
@@ -1548,17 +1482,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _header_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../header/header */ "./components/header/header.jsx");
-/* harmony import */ var _assets_images_adrian_profile_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/images/adrian-profile.png */ "./assets/images/adrian-profile.png");
-/* harmony import */ var _assets_images_brian_profile_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/images/brian-profile.png */ "./assets/images/brian-profile.png");
-/* harmony import */ var _assets_images_daniel_profile_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/images/daniel-profile.png */ "./assets/images/daniel-profile.png");
-/* harmony import */ var _assets_images_donna_profile_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/images/donna-profile.png */ "./assets/images/donna-profile.png");
-/* harmony import */ var _assets_images_isabelle_profile_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/images/isabelle-profile.png */ "./assets/images/isabelle-profile.png");
-/* harmony import */ var _assets_images_melina_profile_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/images/melina-profile.png */ "./assets/images/melina-profile.png");
-/* harmony import */ var _assets_images_mina_profile_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/images/mina-profile.png */ "./assets/images/mina-profile.png");
-/* harmony import */ var _assets_images_natalie_profile_jpg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/images/natalie-profile.jpg */ "./assets/images/natalie-profile.jpg");
-/* harmony import */ var _assets_images_nicki_profile_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/images/nicki-profile.jpg */ "./assets/images/nicki-profile.jpg");
-/* harmony import */ var _assets_images_sierra_profile_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/images/sierra-profile.png */ "./assets/images/sierra-profile.png");
-/* harmony import */ var _profile_thumb__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./profile_thumb */ "./components/team_page/profile_thumb.jsx");
+/* harmony import */ var _profile_thumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./profile_thumb */ "./components/team_page/profile_thumb.jsx");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1570,16 +1494,6 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.it
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1601,7 +1515,7 @@ var TeamPage = function TeamPage(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Meet the team!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "As of December 2020, we are a growing team of 10 people, including Website Developers, Social Media Content Creators, Professional Writers, Graphic Designers, and a Leadership team!")), console.log('ceo profile'), console.log(ceoprofile), ceoprofile.map(function (CEOProfile, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "ceo-profile"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_profile_thumb__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_profile_thumb__WEBPACK_IMPORTED_MODULE_3__["default"], {
       key: idx,
       profile: CEOProfile
     }));
@@ -1614,7 +1528,7 @@ var TeamPage = function TeamPage(props) {
   }).map(function (profile, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "team-member-item"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_profile_thumb__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_profile_thumb__WEBPACK_IMPORTED_MODULE_3__["default"], {
       key: idx,
       profile: profile
     }));
@@ -2048,6 +1962,7 @@ class Loader {
             this.done = false;
             this.loading = false;
             this.errors = [];
+            this.onerrorEvent = null;
         }
     }
     loadErrorCallback(e) {
@@ -4348,7 +4263,7 @@ ___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio
 ___CSS_LOADER_EXPORT___.push([module.i, "@import url(https://use.typekit.net/jio3qqh.css);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_assets_images_home_background_png__WEBPACK_IMPORTED_MODULE_3__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  height: auto;\n  width: 250px;\n  height: 250px;\n  border-radius: 200px;\n  border: 4px solid #737373;\n  object-fit: cover;\n  margin: 0px;\n  align-self: center; }\n\n.post-thumb {\n  width: 450px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  margin: 20px; }\n  .post-thumb h3:link {\n    text-align: center;\n    width: 300px;\n    text-decoration: none; }\n\n.post-title {\n  color: black;\n  text-align: center; }\n\n.thumbnail-image {\n  height: auto;\n  width: 250px;\n  height: 250px;\n  border-radius: 200px;\n  border: 4px solid #737373;\n  object-fit: cover;\n  margin: 0px; }\n\n.profile-thumb {\n  width: 450px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  margin: 40px; }\n  .profile-thumb h3:link {\n    text-align: center;\n    width: 300px;\n    text-decoration: none; }\n\n.profile-thumb:hover {\n  cursor: pointer; }\n\n.profile-title {\n  color: black;\n  text-align: center; }\n\n#header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center;\n  margin-top: 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.header-link-list {\n  justify-self: center;\n  padding: 0px 40px;\n  width: 90%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around; }\n\n.header-link {\n  font-family: input-sans-compressed, sans-serif;\n  list-style: none;\n  font-size: 24px;\n  line-height: 29px;\n  color: black;\n  font-style: normal;\n  text-decoration: none; }\n\n.header-link:hover {\n  cursor: pointer; }\n\n.home-page-container > div {\n  padding: 0px;\n  margin-top: 20px;\n  display: flex;\n  align-items: center;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .home-page-container > div div {\n    display: flex;\n    flex-direction: row; }\n  .home-page-container > div .gmnoprint {\n    display: none; }\n\n.pillar-list {\n  list-style: none; }\n  .pillar-list li {\n    font-size: 30px;\n    max-width: 600px;\n    text-align: center;\n    margin-bottom: 20px;\n    color: black;\n    font-family: tablet-gothic, sans-serif; }\n\n.home-page-banner {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: center center;\n  background-size: 100% auto;\n  background-repeat: no-repeat;\n  justify-content: center;\n  height: 100%;\n  min-height: 500px;\n  padding: 0px;\n  flex-direction: row; }\n  .home-page-banner div {\n    background-color: rgba(241, 222, 217, 0.6);\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    align-self: stretch;\n    width: 100%; }\n    .home-page-banner div div {\n      max-width: 1000px;\n      display: flex;\n      flex-direction: column;\n      padding: 40px;\n      background-color: transparent; }\n\n.home-page-body div {\n  max-width: 1000px; }\n\n.home-page-body h2 {\n  max-width: 1000px; }\n\n.home-page-body p {\n  max-width: 1000px; }\n\n.home-page-body ul {\n  max-width: 1000px; }\n\n@media screen and (max-width: 1700px) {\n  .home-page-banner {\n    background-size: auto 100%; } }\n\n.home-page-body {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: column; }\n\n.home-page-body-header {\n  padding: 0px 40px;\n  color: #f1ded9;\n  font-size: 50px; }\n\n.home-page-body-text {\n  padding: 40px; }\n\n.home-page-header {\n  color: black;\n  z-index: 2;\n  font-size: 64px;\n  text-align: left;\n  line-height: 84px;\n  font-weight: 300; }\n  .home-page-header .bold {\n    font-weight: 800; }\n\n.home-page-banner > p {\n  z-index: 2; }\n\n.team-list {\n  padding: 0px;\n  background-color: #737373; }\n  .team-list li {\n    list-style: none; }\n\n.profile-photo {\n  max-width: 200px;\n  max-height: 200px;\n  border-radius: 200px;\n  margin: 0px; }\n\n.ceo-profile {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  padding: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .ceo-profile .team-member-details {\n    padding-left: 50px; }\n\n.profile-photo-wrapper {\n  display: flex;\n  background-color: #737373;\n  padding: 0px;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  border: 4px solid #737373; }\n  .profile-photo-wrapper .hidden {\n    display: none; }\n\n.team-member-item {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  min-width: 50%;\n  max-width: 100%;\n  justify-content: space-around;\n  background-color: #f1ded9;\n  margin: 20px 0px; }\n\nteam-member-item:hover {\n  cursor: pointer; }\n\n.team-member-wrapper {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: center; }\n\n.team-member-details {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around; }\n\n.team-top {\n  background-color: #f1ded9;\n  margin: 20px 0px;\n  padding: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.team-team {\n  padding: 0px; }\n\n.milestone-wrapper {\n  background-color: #737373;\n  display: flex;\n  flex-direction: column; }\n  .milestone-wrapper .milestone-header {\n    font-family: tablet-gothic, sans-serif;\n    color: #F1DED9;\n    font-weight: 600;\n    max-width: 1000px; }\n  .milestone-wrapper .milestone-graphic {\n    background-color: #C4C4C4;\n    max-width: 1000px;\n    width: 90%;\n    height: 50%;\n    height: 500px;\n    margin-bottom: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center; }\n    .milestone-wrapper .milestone-graphic h1 {\n      font-weight: 300; }\n\n.map {\n  margin: 40px 0px;\n  display: flex;\n  flex-direction: column;\n  background-color: #C4C4C4; }\n  .map div {\n    width: 1000px;\n    height: 500px;\n    position: relative;\n    padding-bottom: 40px; }\n\n.map-wrapper {\n  width: 100%;\n  margin: 40px 0px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center; }\n\n#map {\n  height: 500px;\n  width: 1000px; }\n  #map div {\n    width: 400px;\n    height: 400px; }\n\n.gmnoprint {\n  display: 'none'; }\n\n.faq-body {\n  flex-direction: column;\n  display: flex; }\n\n.faq-wrapper-top {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  background-color: #6aa1a1;\n  margin-top: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .faq-wrapper-top h1 {\n    color: #f1ded9; }\n\n.faq-question p:nth-child(odd) {\n  background-color: #f1ded9;\n  margin-bottom: 0px;\n  padding-top: 20px;\n  padding-left: 20px;\n  padding-right: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.faq-question p:nth-child(even) {\n  padding-left: 60px;\n  background-color: #f1ded9;\n  margin-top: 0px;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.index-page-header {\n  background-color: #f1ded9;\n  padding: 40px;\n  margin: 20px 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .index-page-header h1 {\n    font-size: 80px; }\n  .index-page-header p {\n    padding-top: 40px; }\n\n.post-index-list {\n  margin-top: 20px;\n  padding-top: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n  .post-index-list div {\n    justify-content: center; }\n\n.index-page-header {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .index-page-header h1 {\n    max-width: 1000px;\n    margin: 0px; }\n  .index-page-header p {\n    max-width: 1000px; }\n\n.post-index-list div {\n  max-width: 1000px;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap; }\n\n.post-index-categories {\n  margin-top: 20px;\n  padding-top: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n  .post-index-categories .category-wrapper {\n    max-width: 1000px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    margin: 40px 0px; }\n  .post-index-categories .selection-item {\n    min-width: 180px;\n    min-height: 180px;\n    max-width: 180px;\n    max-height: 180px;\n    border-radius: 200px;\n    background-color: white;\n    border: 4px solid #737373;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    margin: 20px;\n    font-size: 20px; }\n  .post-index-categories .selection-item:hover {\n    cursor: pointer; }\n  .post-index-categories .selected-selection-item {\n    color: #6aa1a1;\n    font-weight: 800; }\n  .post-index-categories div {\n    justify-content: center;\n    max-width: 1000px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap; }\n\n.post-wrapper {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: column;\n  margin-top: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.post-top {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  padding: 40px;\n  align-items: center; }\n  .post-top h3 {\n    margin-left: 20px; }\n  .post-top img {\n    margin-right: 20px; }\n\n@media screen and (max-width: 800px) {\n  .post-top {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    padding: 40px;\n    align-items: center; }\n    .post-top h3 {\n      margin-top: 20px; }\n    .post-top img {\n      margin-bottom: 20px; } }\n\n.post-title {\n  width: 350px;\n  text-overflow: wrap;\n  font-size: 30px; }\n\n.post-header-image {\n  height: auto;\n  width: 350px;\n  height: 350px;\n  border-radius: 200px;\n  border: 4px solid #737373;\n  object-fit: cover;\n  margin: 0px; }\n\n.post-excerpt {\n  background-color: rgba(115, 115, 115, 0.5);\n  display: flex;\n  flex-direction: row;\n  justify-content: center; }\n  .post-excerpt p {\n    max-width: 1000px;\n    padding: 40px; }\n\n.post-content {\n  padding: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .post-content img {\n    border: solid grey 2px; }\n  .post-content p {\n    text-overflow: wrap;\n    padding: 20px;\n    max-width: 1000px; }\n  .post-content ul {\n    display: flex;\n    max-width: 1000px;\n    flex-direction: row;\n    list-style: none;\n    justify-content: space-around; }\n    .post-content ul svg {\n      height: 60px;\n      width: auto;\n      padding: 20px; }\n    .post-content ul svg:hover {\n      fill: white; }\n\n.alignright {\n  float: right; }\n\n.alignleft {\n  float: left; }\n\n.post-content p:nth-child(1) {\n  padding: 40px;\n  font-size: 30px;\n  font-style: bold; }\n  .post-content p:nth-child(1) em {\n    font-style: none; }\n\n.wp-block-image {\n  display: flex;\n  width: 1000px;\n  align-items: center; }\n  .wp-block-image img {\n    max-width: 100%;\n    height: auto;\n    justify-self: center; }\n\nfigcaption {\n  text-align: center; }\n\n.blocks-gallery-grid {\n  padding: 0px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  flex-wrap: wrap; }\n  .blocks-gallery-grid .blocks-gallery-item {\n    display: flex;\n    width: 50%;\n    height: auto;\n    align-items: center; }\n    .blocks-gallery-grid .blocks-gallery-item figure {\n      width: 100%;\n      align-items: center; }\n      .blocks-gallery-grid .blocks-gallery-item figure img {\n        max-width: 100%;\n        height: auto; }\n\n.author {\n  color: #f1ded9;\n  text-align: center;\n  width: 100%; }\n\n.map-pin {\n  background-color: #f1ded9;\n  border-radius: 20px;\n  border: black solid 2px; }\n\n.map-pin > .map-pin-hover {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  z-index: 20;\n  max-width: 100px;\n  max-height: 100px;\n  min-width: 100px;\n  min-height: 100px;\n  border: 2px solid #737373;\n  background-color: white;\n  border-radius: 50px;\n  visibility: hidden; }\n  .map-pin > .map-pin-hover span {\n    vertical-align: center;\n    font-size: 15px;\n    font-weight: 4000;\n    text-align: center;\n    text-overflow: wrap;\n    font-family: input-sans-compressed, sans-serif;\n    color: #6aa1a1;\n    font-style: none;\n    text-decoration-line: none; }\n\n.map-pin:hover {\n  background-color: #737373; }\n\n.map-pin:hover > .map-pin-hover {\n  visibility: visible; }\n\n#map div {\n  width: 15px;\n  height: 15px; }\n\n.modal_background {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background: rgba(85, 85, 85, 0.281);\n  z-index: 10; }\n\n.modal_child {\n  position: relative;\n  padding: 30px;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 500px;\n  background-color: white;\n  border-radius: 2px 2px 0 0;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px; }\n\n.modal_container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center; }\n\n.modal_top {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding-left: 32px;\n  padding-right: 32px;\n  padding-top: 14px;\n  padding-bottom: 8px;\n  align-content: center; }\n\n.width-wrapper {\n  max-width: 1000px;\n  display: flex;\n  flex-direction: row; }\n\nbody {\n  font-family: tablet-gothic, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: input-sans-compressed, sans-serif;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n\nimg {\n  max-height: 100%;\n  width: auto; }\n\n@media screen and (min-width: 2600px) {\n  #root {\n    display: flex;\n    flex-direction: row;\n    justify-content: center; }\n  .App {\n    width: 2600px; } }\n\na {\n  text-decoration-line: none; }\n\na:hover {\n  text-decoration-line: underline;\n  text-decoration-color: #6aa1a1; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/themeVars.scss","webpack://./src/styles/profileThumb.scss","webpack://./src/styles/header.scss","webpack://./src/styles/homePage.scss","webpack://./src/styles/teamPage.scss","webpack://./src/styles/milestones.scss","webpack://./src/styles/map.scss","webpack://./src/styles/faq.scss","webpack://./src/styles/postIndex.scss","webpack://./src/styles/postItem.scss","webpack://./src/styles/pin.scss","webpack://./src/styles/modal.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"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","sourcesContent":["\n@import 'themeVars';\n.thumbnail-image {\n    height: auto;\n    width: 250px;\n    height: 250px;\n    border-radius: 200px;\n        border: 4px solid $themeColor-Grey;\n    object-fit: cover;\n    margin:0px;\n    align-self: center;\n}\n\n\n.post-thumb {\n    // width: 25%;\n    width: 450px;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // margin: 0px;\n    margin: 20px;\n\n    h3:link {\n        text-align: center;\n        width:300px;\n        text-decoration: none;\n    }\n}\n\n.post-title {\ncolor: black;\ntext-align: center;\n}","@import url(\"https://use.typekit.net/jio3qqh.css\");\n\n$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);\n$themeColor-GreyLow: rgba(115,115,115,.5);\n$themeColor-lightGrey:#C4C4C4;\n$themeColor-Darkest: black;\n$theme-font: tablet-gothic, sans-serif;\n$theme-font2: 'Lato', sans-serif;\n$theme-font3: input-sans-compressed, sans-serif;\n$theme-box:  0px 4px 4px rgba(0, 0, 0, 0.25);\n$max-width: 1000px;","\n@import 'themeVars';\n.thumbnail-image {\n    height: auto;\n    width: 250px;\n    height: 250px;\n    border-radius: 200px;\n        border: 4px solid $themeColor-Grey;\n    object-fit: cover;\n    margin:0px;\n    \n}\n\n\n.profile-thumb {\n    // width: 25%;\n    width: 450px;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // margin: 0px;\n    margin: 40px;\n\n    h3:link {\n        text-align: center;\n        width:300px;\n        text-decoration: none;\n    }\n}\n\n\n.profile-thumb:hover {\n    cursor:pointer;\n}\n.profile-title {\ncolor: black;\ntext-align: center;\n}","@import 'themeVars';\n\n#header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n    margin-top: 0px;\n    box-shadow: $theme-box;\n}\n\n.header-link-list {\n    justify-self: center;\n    padding: 0px 40px;\n    width: 90%;\n    display:flex;\n    flex-direction: row;\n    justify-content: space-around;\n\n}\n\n// .header-link-list li {\n//     list-style: none;\n//     font-size: 24px;\n//     line-height: 29px;\n\n\n// }\n\n\n\n.header-link {\n    font-family: $theme-font3;\n      list-style: none;\n    font-size: 24px;\n    line-height: 29px;\n    color: $themeColor-Darkest;\n    font-style: normal;\n    text-decoration: none;\n\n\n}\n\n.header-link:hover {\n    cursor: pointer\n}","@import 'themeVars';\n\n\n\n.home-page-container > div {\n    padding: 0px;\n    // flex-direction:column;\n    margin-top: 20px;\n    display: flex;\n    // flex-direction: column;\n    align-items: center;\n    box-shadow: $theme-box;\n    div {\n        display: flex;\n        flex-direction: row;\n        // div {\n        //     display: flex;\n        // flex-direction: column;\n        // }\n    }\n      .gmnoprint {\n    \ndisplay:none;\n}\n}\n.pillar-list {\n    list-style: none;\n\n    li {\n        font-size: 30px;\n        // font-style: Bo;\n        max-width: 600px;\n        text-align:center;\n        margin-bottom: 20px;\n        color: $themeColor-Darkest;\n        font-family: $theme-font;\n    }\n}\n\n\n.home-page-banner {\n    background-image: url('../../assets//images/home-background.png');\n    background-position: center center;\n    background-size: 100% auto;\n    // background-size:  100% auto;\n    \n    // min-height: 80%;\n    background-repeat: no-repeat;\n    justify-content: center;\n    // width: 100%;\n    height: 100%;\n    min-height: 500px;\n    padding: 0px;\n    // display: flex;\n    // flex-direction: column;\n    flex-direction: row;\n    // justify-content: stretch;\n    \n    div {\n        background-color: rgba(241, 222, 217, .6);\n        display:flex;\n        justify-content: center;\n        flex-direction: column;\n        align-self: stretch;\n        // align-items: stretch;\n        width: 100%;\n    // height: 100%;\n    div {\n        max-width: $max-width;\n        display: flex;\n        \n        flex-direction: column;\n        padding: 40px;\n        background-color: transparent;\n    }\n  \n    }\n \n}\n\n.home-page-body {\n    div {\n        max-width: $max-width;\n    }\n\n    h2 {\n        max-width: $max-width;\n    }\n\n    p {\n        max-width: $max-width;\n    }\n    ul {\n        max-width: $max-width;\n    }\n\n\n}\n\n\n@media screen and (max-width: 1700px) {\n.home-page-banner {\n    background-size: auto 100%;\n }\n}\n\n.home-page-body {\n    background-color: $themeColor-Dark;\n    display:flex;\n    flex-direction: column;\n}\n\n.home-page-body-header {\n    padding: 0px 40px;\n    // padding-bottom: 0px;\n    color: $themeColor-Mid;\n    font-size: 50px;\n\n}\n.home-page-body-text {\n    padding: 40px;\n}\n\n.home-page-header {\n    \n    color: $themeColor-Darkest;\n    z-index: 2;\n    font-size: 64px;\n    text-align: left;\n    line-height: 84px;\n    font-weight: 300;\n    \n    .bold {\n        font-weight: 800;\n    }\n    // background-color: rgba(241, 222, 217, .6)\n}\n\n.home-page-banner > p {\n    z-index: 2;\n}\n.home-page-pillars{\n\n\n}","@import 'themeVars';\n\n.team-list {\n    li {\n        list-style: none;\n    }\n    padding: 0px;\n    background-color: $themeColor-Grey;\n}\n\n.profile-photo {\n    max-width: 200px;\n    max-height: 200px;\n    border-radius: 200px;\n    // object-fit: cover;\n    margin:0px;\n}\n\n.ceo-profile {\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n        padding: 20px ;\n        box-shadow: $theme-box;\n\n        .team-member-details  {\n            padding-left: 50px;\n        }\n\n}\n\n.profile-photo-wrapper {\n    display: flex;\n    background-color: $themeColor-Grey;\n    padding:0px;\n    justify-content:center;\n    align-items:center;\n    width: 200px;\n    height: 200px;\n    border-radius:200px;\n    border: 4px solid $themeColor-Grey;\n\n    .hidden {\n        display: none;\n    }\n}\n\n.team-member-item {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    min-width: 50%;\n    max-width: 100%;\n    justify-content: space-around;\n    background-color: $themeColor-Mid;\n    \n    margin: 20px 0px;\n    // box-shadow: $theme-box;\n}\nteam-member-item:hover {\n    cursor: pointer;\n}\n\n.team-member-wrapper {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    justify-content: center;\n}\n\n.team-member-details {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n\n.team-top {\n    background-color: $themeColor-Mid;\n    margin: 20px 0px;\n    padding: 40px;\n    box-shadow: $theme-box;\n}\n\n.team-team {\n    padding: 0px;\n}\n","\n\n.milestone-wrapper {\n    background-color: $themeColor-Grey;\n    display: flex;\n    flex-direction: column;\n    .milestone-header{\n        font-family: $theme-font;\n        color: #F1DED9;\n        font-weight: 600;\n        max-width: $max-width;\n\n    }\n\n    .milestone-graphic {\n        background-color: $themeColor-lightGrey;\n        max-width: $max-width;\n        width: 90%;\n        height: 50%;\n        height: 500px;\n        margin-bottom: 40px;\n        display: flex;\n        flex-direction: row;\n        justify-content: center;\n        \n        h1 {\n            font-weight: 300;\n            \n            \n        }\n\n    }\n}","@import 'themeVars';\n\n.map {\n    // padding: 4px;\n    margin: 40px 0px;\n\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-lightGrey;\n    div {\n        width: 1000px ;\n        height:500px ;\n        position: relative;\n        padding-bottom: 40px;\n    }\n}\n\n\n.map-wrapper {\n    width: 100%;\n    // padding: 40px;\n    margin: 40px 0px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n}\n\n#map {\n    height: 500px;\n    width: 1000px;\n    div {\n        width: 400px;\n        height: 400px;\n    }\n}\n\n.gmnoprint {\n    display: 'none';\n\n\n\n}\n","@import 'themeVars';\n\n.faq-body {\n    flex-direction: column;\n    display: flex;\n}\n\n\n.faq-wrapper-top {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    background-color:$themeColor-Dark;\n    margin-top: 20px;\n    box-shadow: $theme-box;\n    h1 {\n        color: $themeColor-Mid;\n    }\n}\n\n\n.faq-question {\n\n    p:nth-child(odd) {\n        background-color: $themeColor-Mid;\n        margin-bottom:0px;\n        padding-top:20px;\n        padding-left: 20px;\n        padding-right: 20px;\n        box-shadow: $theme-box;\n    }\n    p:nth-child(even) {\n        padding-left: 60px;\n        background-color: $themeColor-Mid;\n        margin-top:0px;\n        padding-top:20px;\n        padding-bottom:20px;\n        box-shadow: $theme-box;\n    }\n}","@import 'themeVars';\n\n.index-page-header {\n    background-color: $themeColor-Mid;\n    // height: 400px;\n    padding: 40px;\n    margin: 20px 0px;\n    box-shadow: $theme-box;\n    h1 {\n        font-size: 80px;\n    }\n\n    p {\n        padding-top: 40px;\n    }\n\n\n}\n\n.post-index-list {\n    \n    margin-top: 20px;\n    padding-top: 40px;\n    box-shadow: $theme-box;\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items:center;\n    flex-wrap: wrap;\n\n    div {\n        justify-content: center;\n    }\n    \n}\n\n.index-page-header {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    h1 {\n        max-width: $max-width;\n        margin: 0px;\n    }\n    p {\n        max-width: $max-width;\n    }\n}\n\n.post-index-list {\n    div {\n        max-width: $max-width;\n        display: flex;\n        flex-direction: row;\n        flex-wrap:wrap\n    }\n}\n\n.post-index-categories {\n      margin-top: 20px;\n    padding-top: 40px;\n    box-shadow: $theme-box;\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items:center;\n    flex-wrap: wrap;\n    \n    \n    .category-wrapper {\n        max-width: $max-width;\n        display: flex;\n        flex-direction: row;\n        flex-wrap:wrap;\n        align-items: center;\n        justify-content: center;\n        margin: 40px 0px;\n         }\n    \n    .selection-item {\n            \n    min-width: 180px;\n    min-height: 180px;\n    max-width: 180px;\n    max-height:180px;\n    border-radius: 200px;\n    background-color: $themeColor-Light;\n    border: 4px solid $themeColor-Grey;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // margin: 0px;\n    margin: 20px;\n    font-size: 20px;\n    \n\n    }\n    .selection-item:hover {\n        cursor: pointer;\n    }    \n    \n    .selected-selection-item {\n        color: $themeColor-Dark;\n        font-weight: 800;\n    }\n\n    div {\n           justify-content: center;\n        max-width: $max-width;\n        display: flex;\n        flex-direction: row;\n        flex-wrap:wrap\n    }\n\n    \n}\n\n","@import 'themeVars';\n\n.post-wrapper {\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: column;\n    margin-top: 20px;\n    box-shadow: $theme-box;\n  \n}\n\n\n\n.post-top {\n display: flex;\n flex-direction: row;\n justify-content: space-around;\n padding: 40px;\n align-items: center;\n  h3 {\n        margin-left: 20px;\n\n    }\n    img {\n        margin-right: 20px;\n    }\n}\n\n@media screen and (max-width: 800px) {\n\n    .post-top {\n display: flex;\n flex-direction: column;\n justify-content: space-around;\n padding: 40px;\n align-items: center;\n  h3 {\n        margin-top: 20px;\n\n    }\n    img {\n        margin-bottom: 20px;\n    }\n}\n}\n\n.post-title {\n    width: 350px;\n    text-overflow: wrap;\n    font-size: 30px;\n}\n\n.post-header-image {\n    height: auto;\n    width: 350px;\n    height: 350px;\n    border-radius: 200px;\n        border: 4px solid $themeColor-Grey;\n    object-fit: cover;\n    margin:0px;\n    \n}\n\n\n.post-excerpt {\n    background-color: $themeColor-GreyLow;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    p {\n        max-width: $max-width;\n        padding: 40px;\n    }\n}\n\n.post-content {\n    padding: 40px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    img {\n        border: solid grey 2px;\n    }\n\n    p {\n        text-overflow: wrap;\n        padding: 20px;\n        \n            max-width: $max-width;\n        \n    }\n\n    ul {\n        display: flex;\n        max-width: $max-width;\n        flex-direction: row;\n        list-style: none;\n        // justify-content: center;\n        justify-content: space-around;\n        svg {\n            height: 60px;\n            width:auto;\n            padding: 20px;\n        }\n        svg:hover {\n            fill: $themeColor-Light;\n        }\n    }\n}\n\n\n\n.alignright {\n    // justify-self: flex-end;\n    // align-self: flex-end;\n    float:right;\n    // width: autop;\n    // paddin\n    // max-width: 50%;\n    \n}\n.alignleft {\n    // justify-self: flex-end;\n    // align-self: flex-end;\n    float:left;\n    // width: 300px;\n    \n    \n}\n\n\n.post-content p:nth-child(1) {\n    em{ \n        font-style: none;\n    }\n    padding: 40px;\n    font-size: 30px;\n    font-style: bold;\n}\n\n.wp-block-image {\n    display: flex;\n// flex-direction: center;\n// width: 300px;\nwidth: $max-width;\nalign-items: center;\n// max-width: 100%;\n// justify-content: center;\n// figcaption {\n//     max-width: 100%;\n// }\n\nimg{\n    max-width: 100%;\n    height: auto;\n    justify-self: center;\n}\n}\n\nfigcaption {\n    text-align: center;\n}\n\n\n.blocks-gallery-grid {\n    padding:0px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    flex-wrap: wrap;\n\n    .blocks-gallery-item {\n        display:flex;\n\n        width: 50%;\n        height: auto;\n        align-items: center;\n        figure {\n            width: 100%;\n            align-items: center;\n            img {\n                max-width: 100%;\n            \n                height: auto;\n            }\n        }\n    }\n\n}\n\n.author {\n    color: $themeColor-Mid;\n    text-align: center;\n    width: 100%;\n}","@import 'themeVars';\n\n.map-pin {\n    background-color: $themeColor-Mid;\n    border-radius: 20px;\n    border: black solid 2px;\n}\n\n.map-pin > .map-pin-hover {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // line-height: 100px;\n    z-index: 20;\n   \n    max-width:100px;\n    max-height:100px;\n    min-width:100px;\n    min-height:100px;\n    border: 2px solid $themeColor-Grey;\n    background-color: white;\n    border-radius: 50px;\n    visibility: hidden;\n    \n    span {\n        vertical-align: center;\n        font-size: 15px;\n        font-weight: 4000;\n        text-align: center;\n        text-overflow: wrap;\n         font-family: $theme-font3;\n    color: $themeColor-Dark;\n    font-style: none;\n\n    text-decoration-line: none;\n\n    }\n}\n\n.map-pin:hover {\n    background-color: $themeColor-Grey;\n\n}\n.map-pin:hover > .map-pin-hover {\n\n\n    visibility: visible;\n\n}\n\n#map {\n    div {\n        width:15px;\n        height:15px;\n        \n    }\n\n\n\n\n}\n\n\n","@import 'themeVars';\n\n.modal_background {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background: rgba(85, 85, 85, 0.281);\n  z-index: 10;\n}\n\n.modal_child {\n  position: relative;\n  padding: 30px;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 500px;\n  background-color: white;\n  border-radius: 2px 2px 0 0;\n    border-top-left-radius: 4px;\n    border-top-right-radius: 4px;\n    border-bottom-right-radius: 4px;\n    border-bottom-left-radius: 4px;\n\n}\n\n.modal_container {\n  display: flex;\n  flex-direction: column;\n  align-items:center;\n  justify-content: center;\n  \n\n}\n\n.modal_top {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding-left: 32px;\n  padding-right:32px;\n  padding-top: 14px;\n  padding-bottom: 8px;\n  align-content: center;\n  \n}","\n@import 'postThumb';\n@import 'profileThumb';\n@import 'header';\n@import 'homePage';\n@import 'teamPage';\n@import 'milestones';\n@import 'themeVars';\n@import 'map';\n@import 'faq';\n@import 'postIndex';\n@import 'postItem';\n@import 'pin';\n@import 'modal';\n\n\n.width-wrapper {\n   max-width: $max-width;\n   display: flex;\n   flex-direction: row;\n}\n\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: $theme-font3;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}\n\nimg {\n  max-height: 100%;\n  width: auto;\n}\n\n@media screen and (min-width: 2600px) {\n#root {\n  display: flex; \n  flex-direction: row;\n  justify-content: center;\n}\n\n.App {\n  width: 2600px;\n}\n}\n\na {\n text-decoration-line: none; \n}\n\na:hover {\n  text-decoration-line: underline;\n  text-decoration-color: $themeColor-Dark;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".thumbnail-image {\n  height: auto;\n  width: 250px;\n  height: 250px;\n  border-radius: 200px;\n  border: 4px solid #737373;\n  object-fit: cover;\n  margin: 0px;\n  align-self: center; }\n\n.post-thumb {\n  width: 450px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  margin: 20px; }\n  .post-thumb h3:link {\n    text-align: center;\n    width: 300px;\n    text-decoration: none; }\n\n.post-title {\n  color: black;\n  text-align: center; }\n\n.thumbnail-image {\n  height: auto;\n  width: 250px;\n  height: 250px;\n  border-radius: 200px;\n  border: 4px solid #737373;\n  object-fit: cover;\n  margin: 0px; }\n\n.profile-thumb {\n  width: 450px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  margin: 40px; }\n  .profile-thumb h3:link {\n    text-align: center;\n    width: 300px;\n    text-decoration: none; }\n\n.profile-thumb:hover {\n  cursor: pointer; }\n\n.profile-title {\n  color: black;\n  text-align: center; }\n\n#header-container {\n  display: flex;\n  flex-direction: column;\n  background-color: #737373;\n  align-items: center;\n  margin-top: 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.header-link-list {\n  justify-self: center;\n  padding: 0px 40px;\n  width: 90%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around; }\n\n.header-link {\n  font-family: input-sans-compressed, sans-serif;\n  list-style: none;\n  font-size: 24px;\n  line-height: 29px;\n  color: black;\n  font-style: normal;\n  text-decoration: none; }\n\n.header-link:hover {\n  cursor: pointer; }\n\n.home-page-container > div {\n  padding: 0px;\n  margin-top: 20px;\n  display: flex;\n  align-items: center;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .home-page-container > div div {\n    display: flex;\n    flex-direction: row; }\n  .home-page-container > div .gmnoprint {\n    display: none; }\n\n.pillar-list {\n  list-style: none; }\n  .pillar-list li {\n    font-size: 30px;\n    max-width: 600px;\n    text-align: center;\n    margin-bottom: 20px;\n    color: black;\n    font-family: tablet-gothic, sans-serif; }\n\n.home-page-banner {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: center center;\n  background-size: 100% auto;\n  background-repeat: no-repeat;\n  justify-content: center;\n  height: 100%;\n  min-height: 500px;\n  padding: 0px;\n  flex-direction: row; }\n  .home-page-banner div {\n    background-color: rgba(241, 222, 217, 0.6);\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    align-self: stretch;\n    width: 100%; }\n    .home-page-banner div div {\n      max-width: 1000px;\n      display: flex;\n      flex-direction: column;\n      padding: 40px;\n      background-color: transparent; }\n\n.home-page-body div {\n  max-width: 1000px; }\n\n.home-page-body h2 {\n  max-width: 1000px; }\n\n.home-page-body p {\n  max-width: 1000px; }\n\n.home-page-body ul {\n  max-width: 1000px; }\n\n@media screen and (max-width: 1700px) {\n  .home-page-banner {\n    background-size: auto 100%; } }\n\n.home-page-body {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: column; }\n\n.home-page-body-header {\n  padding: 0px 40px;\n  color: #f1ded9;\n  font-size: 50px; }\n\n.home-page-body-text {\n  padding: 40px; }\n\n.home-page-header {\n  color: black;\n  z-index: 2;\n  font-size: 64px;\n  text-align: left;\n  line-height: 84px;\n  font-weight: 300; }\n  .home-page-header .bold {\n    font-weight: 800; }\n\n.home-page-banner > p {\n  z-index: 2; }\n\n.team-list {\n  padding: 0px;\n  background-color: #737373; }\n  .team-list li {\n    list-style: none; }\n\n.profile-photo {\n  max-width: 200px;\n  max-height: 200px;\n  border-radius: 200px;\n  margin: 0px; }\n\n.ceo-profile {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  padding: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .ceo-profile .team-member-details {\n    padding-left: 50px; }\n\n.profile-photo-wrapper {\n  display: flex;\n  background-color: #737373;\n  padding: 0px;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border-radius: 200px;\n  border: 4px solid #737373; }\n  .profile-photo-wrapper .hidden {\n    display: none; }\n\n.team-member-item {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  min-width: 50%;\n  max-width: 100%;\n  justify-content: space-around;\n  background-color: #f1ded9;\n  margin: 20px 0px; }\n\nteam-member-item:hover {\n  cursor: pointer; }\n\n.team-member-wrapper {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: center; }\n\n.team-member-details {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around; }\n\n.team-top {\n  background-color: #f1ded9;\n  margin: 20px 0px;\n  padding: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.team-team {\n  padding: 0px; }\n\n.milestone-wrapper {\n  background-color: #737373;\n  display: flex;\n  flex-direction: column; }\n  .milestone-wrapper .milestone-header {\n    font-family: tablet-gothic, sans-serif;\n    color: #F1DED9;\n    font-weight: 600;\n    max-width: 1000px; }\n  .milestone-wrapper .milestone-graphic {\n    background-color: #C4C4C4;\n    max-width: 1000px;\n    width: 90%;\n    height: 50%;\n    height: 500px;\n    margin-bottom: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center; }\n    .milestone-wrapper .milestone-graphic h1 {\n      font-weight: 300; }\n\n.map {\n  margin: 40px 0px;\n  display: flex;\n  flex-direction: column;\n  background-color: #C4C4C4; }\n  .map div {\n    width: 1000px;\n    height: 500px;\n    position: relative;\n    padding-bottom: 40px; }\n\n.map-wrapper {\n  width: 100%;\n  margin: 40px 0px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center; }\n\n#map {\n  height: 500px;\n  width: 1000px; }\n  #map div {\n    width: 400px;\n    height: 400px; }\n\n.gmnoprint {\n  display: 'none'; }\n\n.faq-body {\n  flex-direction: column;\n  display: flex; }\n\n.faq-wrapper-top {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  background-color: #6aa1a1;\n  margin-top: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .faq-wrapper-top h1 {\n    color: #f1ded9; }\n\n.faq-question p:nth-child(odd) {\n  background-color: #f1ded9;\n  margin-bottom: 0px;\n  padding-top: 20px;\n  padding-left: 20px;\n  padding-right: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.faq-question p:nth-child(even) {\n  padding-left: 60px;\n  background-color: #f1ded9;\n  margin-top: 0px;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.index-page-header {\n  background-color: #f1ded9;\n  padding: 40px;\n  margin: 20px 0px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n  .index-page-header h1 {\n    font-size: 80px; }\n  .index-page-header p {\n    padding-top: 40px; }\n\n.post-index-list {\n  margin-top: 20px;\n  padding-top: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n  .post-index-list div {\n    justify-content: center; }\n\n.index-page-header {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .index-page-header h1 {\n    max-width: 1000px;\n    margin: 0px; }\n  .index-page-header p {\n    max-width: 1000px; }\n\n.post-index-list div {\n  max-width: 1000px;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap; }\n\n.post-index-categories {\n  margin-top: 20px;\n  padding-top: 40px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n  .post-index-categories .category-wrapper {\n    max-width: 1000px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    margin: 40px 0px; }\n  .post-index-categories .selection-item {\n    min-width: 180px;\n    min-height: 180px;\n    max-width: 180px;\n    max-height: 180px;\n    border-radius: 200px;\n    background-color: white;\n    border: 4px solid #737373;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    margin: 20px;\n    font-size: 20px; }\n  .post-index-categories .selection-item:hover {\n    cursor: pointer; }\n  .post-index-categories .selected-selection-item {\n    color: #6aa1a1;\n    font-weight: 800; }\n  .post-index-categories div {\n    justify-content: center;\n    max-width: 1000px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap; }\n\n.post-wrapper {\n  background-color: #6aa1a1;\n  display: flex;\n  flex-direction: column;\n  margin-top: 20px;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }\n\n.post-top {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  padding: 40px;\n  align-items: center; }\n  .post-top h3 {\n    margin-left: 20px; }\n  .post-top img {\n    margin-right: 20px; }\n\n@media screen and (max-width: 800px) {\n  .post-top {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    padding: 40px;\n    align-items: center; }\n    .post-top h3 {\n      margin-top: 20px; }\n    .post-top img {\n      margin-bottom: 20px; } }\n\n.post-title {\n  width: 350px;\n  text-overflow: wrap;\n  font-size: 30px; }\n\n.post-header-image {\n  height: auto;\n  width: 350px;\n  height: 350px;\n  border-radius: 200px;\n  border: 4px solid #737373;\n  object-fit: cover;\n  margin: 0px; }\n\n.post-excerpt {\n  background-color: rgba(115, 115, 115, 0.5);\n  display: flex;\n  flex-direction: row;\n  justify-content: center; }\n  .post-excerpt p {\n    max-width: 1000px;\n    padding: 40px; }\n\n.post-content {\n  padding: 40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .post-content img {\n    border: solid grey 2px; }\n  .post-content p {\n    text-overflow: wrap;\n    padding: 20px;\n    max-width: 1000px; }\n  .post-content ul {\n    display: flex;\n    max-width: 1000px;\n    flex-direction: row;\n    list-style: none;\n    justify-content: space-around; }\n    .post-content ul svg {\n      height: 60px;\n      width: auto;\n      padding: 20px; }\n    .post-content ul svg:hover {\n      fill: white; }\n\n.alignright {\n  float: right; }\n\n.alignleft {\n  float: left; }\n\n.post-content p:nth-child(1) {\n  padding: 40px;\n  font-size: 30px;\n  font-style: bold; }\n  .post-content p:nth-child(1) em {\n    font-style: none; }\n\n.wp-block-image {\n  display: flex;\n  width: 1000px;\n  align-items: center; }\n  .wp-block-image img {\n    max-width: 100%;\n    height: auto;\n    justify-self: center; }\n\nfigcaption {\n  text-align: center; }\n\n.blocks-gallery-grid {\n  padding: 0px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  flex-wrap: wrap; }\n  .blocks-gallery-grid .blocks-gallery-item {\n    display: flex;\n    width: 50%;\n    height: auto;\n    align-items: center; }\n    .blocks-gallery-grid .blocks-gallery-item figure {\n      width: 100%;\n      align-items: center; }\n      .blocks-gallery-grid .blocks-gallery-item figure img {\n        max-width: 100%;\n        height: auto; }\n\n.author {\n  color: #f1ded9;\n  text-align: center;\n  width: 100%; }\n\n.map-pin {\n  background-color: #f1ded9;\n  border-radius: 20px;\n  border: black solid 2px; }\n\n.map-pin > .map-pin-hover {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  z-index: 20;\n  max-width: 100px;\n  max-height: 100px;\n  min-width: 100px;\n  min-height: 100px;\n  border: 2px solid #737373;\n  background-color: white;\n  border-radius: 50px;\n  visibility: hidden; }\n  .map-pin > .map-pin-hover span {\n    vertical-align: center;\n    font-size: 15px;\n    font-weight: 4000;\n    text-align: center;\n    text-overflow: wrap;\n    font-family: input-sans-compressed, sans-serif;\n    color: #6aa1a1;\n    font-style: none;\n    text-decoration-line: none; }\n\n.map-pin:hover {\n  background-color: #737373; }\n\n.map-pin:hover > .map-pin-hover {\n  visibility: visible; }\n\n#map div {\n  width: 15px;\n  height: 15px; }\n\n.modal_background {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background: rgba(85, 85, 85, 0.281);\n  z-index: 10; }\n\n.modal_child {\n  position: relative;\n  padding: 30px;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 500px;\n  background-color: white;\n  border-radius: 2px 2px 0 0;\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px; }\n\n.modal_container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center; }\n\n.modal_top {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding-left: 32px;\n  padding-right: 32px;\n  padding-top: 14px;\n  padding-bottom: 8px;\n  align-content: center; }\n\n.width-wrapper {\n  max-width: 1000px;\n  display: flex;\n  flex-direction: row; }\n\nbody {\n  font-family: tablet-gothic, sans-serif;\n  background-color: white; }\n  body h1, body h2 {\n    color: #6aa1a1; }\n  body p {\n    font-family: input-sans-compressed, sans-serif;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px; }\n    body p .bold {\n      font-weight: 700; }\n\nimg {\n  max-height: 100%;\n  width: auto; }\n\n@media screen and (min-width: 2600px) {\n  #root {\n    display: flex;\n    flex-direction: row;\n    justify-content: center; }\n  .App {\n    width: 2600px; } }\n\na {\n  text-decoration-line: none; }\n\na:hover {\n  text-decoration-line: underline;\n  text-decoration-color: #6aa1a1; }\n", "",{"version":3,"sources":["webpack://./src/styles/postThumb.scss","webpack://./src/styles/themeVars.scss","webpack://./src/styles/profileThumb.scss","webpack://./src/styles/header.scss","webpack://./src/styles/homePage.scss","webpack://./src/styles/teamPage.scss","webpack://./src/styles/milestones.scss","webpack://./src/styles/map.scss","webpack://./src/styles/faq.scss","webpack://./src/styles/postIndex.scss","webpack://./src/styles/postItem.scss","webpack://./src/styles/pin.scss","webpack://./src/styles/modal.scss","webpack://./src/styles/appStyles.scss"],"names":[],"mappings":"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","sourcesContent":["\n@import 'themeVars';\n.thumbnail-image {\n    height: auto;\n    width: 250px;\n    height: 250px;\n    border-radius: 200px;\n        border: 4px solid $themeColor-Grey;\n    object-fit: cover;\n    margin:0px;\n    align-self: center;\n}\n\n\n.post-thumb {\n    // width: 25%;\n    width: 450px;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // margin: 0px;\n    margin: 20px;\n\n    h3:link {\n        text-align: center;\n        width:300px;\n        text-decoration: none;\n    }\n}\n\n.post-title {\ncolor: black;\ntext-align: center;\n}","@import url(\"https://use.typekit.net/jio3qqh.css\");\n\n$themeColor-Light: white;\n$themeColor-Dark:rgba(106,161,161,1);\n$themeColor-Mid: rgba(241,222,217,1);\n$themeColor-Grey: rgba(115,115,115,1);\n$themeColor-GreyLow: rgba(115,115,115,.5);\n$themeColor-lightGrey:#C4C4C4;\n$themeColor-Darkest: black;\n$theme-font: tablet-gothic, sans-serif;\n$theme-font2: 'Lato', sans-serif;\n$theme-font3: input-sans-compressed, sans-serif;\n$theme-box:  0px 4px 4px rgba(0, 0, 0, 0.25);\n$max-width: 1000px;","\n@import 'themeVars';\n.thumbnail-image {\n    height: auto;\n    width: 250px;\n    height: 250px;\n    border-radius: 200px;\n        border: 4px solid $themeColor-Grey;\n    object-fit: cover;\n    margin:0px;\n    \n}\n\n\n.profile-thumb {\n    // width: 25%;\n    width: 450px;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // margin: 0px;\n    margin: 40px;\n\n    h3:link {\n        text-align: center;\n        width:300px;\n        text-decoration: none;\n    }\n}\n\n\n.profile-thumb:hover {\n    cursor:pointer;\n}\n.profile-title {\ncolor: black;\ntext-align: center;\n}","@import 'themeVars';\n\n#header-container {\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-Grey;\n    align-items: center;\n    margin-top: 0px;\n    box-shadow: $theme-box;\n}\n\n.header-link-list {\n    justify-self: center;\n    padding: 0px 40px;\n    width: 90%;\n    display:flex;\n    flex-direction: row;\n    justify-content: space-around;\n\n}\n\n// .header-link-list li {\n//     list-style: none;\n//     font-size: 24px;\n//     line-height: 29px;\n\n\n// }\n\n\n\n.header-link {\n    font-family: $theme-font3;\n      list-style: none;\n    font-size: 24px;\n    line-height: 29px;\n    color: $themeColor-Darkest;\n    font-style: normal;\n    text-decoration: none;\n\n\n}\n\n.header-link:hover {\n    cursor: pointer\n}","@import 'themeVars';\n\n\n\n.home-page-container > div {\n    padding: 0px;\n    // flex-direction:column;\n    margin-top: 20px;\n    display: flex;\n    // flex-direction: column;\n    align-items: center;\n    box-shadow: $theme-box;\n    div {\n        display: flex;\n        flex-direction: row;\n        // div {\n        //     display: flex;\n        // flex-direction: column;\n        // }\n    }\n      .gmnoprint {\n    \ndisplay:none;\n}\n}\n.pillar-list {\n    list-style: none;\n\n    li {\n        font-size: 30px;\n        // font-style: Bo;\n        max-width: 600px;\n        text-align:center;\n        margin-bottom: 20px;\n        color: $themeColor-Darkest;\n        font-family: $theme-font;\n    }\n}\n\n\n\n.home-page-banner {\n    background-image: url('../../assets//images/home-background.png');\n    background-position: center center;\n    background-size: 100% auto;\n    // background-size:  100% auto;\n    \n    // min-height: 80%;\n    background-repeat: no-repeat;\n    justify-content: center;\n    // width: 100%;\n    height: 100%;\n    min-height: 500px;\n    padding: 0px;\n    // display: flex;\n    // flex-direction: column;\n    flex-direction: row;\n    // justify-content: stretch;\n    \n    div {\n        background-color: rgba(241, 222, 217, .6);\n        display:flex;\n        justify-content: center;\n        flex-direction: column;\n        align-self: stretch;\n        // align-items: stretch;\n        width: 100%;\n    // height: 100%;\n    div {\n        max-width: $max-width;\n        display: flex;\n        \n        flex-direction: column;\n        padding: 40px;\n        background-color: transparent;\n    }\n  \n    }\n \n}\n\n.home-page-body {\n    div {\n        max-width: $max-width;\n    }\n\n    h2 {\n        max-width: $max-width;\n    }\n\n    p {\n        max-width: $max-width;\n    }\n    ul {\n        max-width: $max-width;\n    }\n\n\n}\n\n\n@media screen and (max-width: 1700px) {\n.home-page-banner {\n    background-size: auto 100%;\n }\n}\n\n.home-page-body {\n    background-color: $themeColor-Dark;\n    display:flex;\n    flex-direction: column;\n}\n\n.home-page-body-header {\n    padding: 0px 40px;\n    // padding-bottom: 0px;\n    color: $themeColor-Mid;\n    font-size: 50px;\n\n}\n.home-page-body-text {\n    padding: 40px;\n}\n\n.home-page-header {\n    \n    color: $themeColor-Darkest;\n    z-index: 2;\n    font-size: 64px;\n    text-align: left;\n    line-height: 84px;\n    font-weight: 300;\n    \n    .bold {\n        font-weight: 800;\n    }\n    // background-color: rgba(241, 222, 217, .6)\n}\n\n.home-page-banner > p {\n    z-index: 2;\n}\n.home-page-pillars{\n\n\n}","@import 'themeVars';\n\n.team-list {\n    li {\n        list-style: none;\n    }\n    padding: 0px;\n    background-color: $themeColor-Grey;\n}\n\n.profile-photo {\n    max-width: 200px;\n    max-height: 200px;\n    border-radius: 200px;\n    // object-fit: cover;\n    margin:0px;\n}\n\n.ceo-profile {\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n        padding: 20px ;\n        box-shadow: $theme-box;\n\n        .team-member-details  {\n            padding-left: 50px;\n        }\n\n}\n\n.profile-photo-wrapper {\n    display: flex;\n    background-color: $themeColor-Grey;\n    padding:0px;\n    justify-content:center;\n    align-items:center;\n    width: 200px;\n    height: 200px;\n    border-radius:200px;\n    border: 4px solid $themeColor-Grey;\n\n    .hidden {\n        display: none;\n    }\n}\n\n.team-member-item {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    min-width: 50%;\n    max-width: 100%;\n    justify-content: space-around;\n    background-color: $themeColor-Mid;\n    \n    margin: 20px 0px;\n    // box-shadow: $theme-box;\n}\nteam-member-item:hover {\n    cursor: pointer;\n}\n\n.team-member-wrapper {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    justify-content: center;\n}\n\n.team-member-details {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n\n.team-top {\n    background-color: $themeColor-Mid;\n    margin: 20px 0px;\n    padding: 40px;\n    box-shadow: $theme-box;\n}\n\n.team-team {\n    padding: 0px;\n}\n","\n\n.milestone-wrapper {\n    background-color: $themeColor-Grey;\n    display: flex;\n    flex-direction: column;\n    .milestone-header{\n        font-family: $theme-font;\n        color: #F1DED9;\n        font-weight: 600;\n        max-width: $max-width;\n\n    }\n\n    .milestone-graphic {\n        background-color: $themeColor-lightGrey;\n        max-width: $max-width;\n        width: 90%;\n        height: 50%;\n        height: 500px;\n        margin-bottom: 40px;\n        display: flex;\n        flex-direction: row;\n        justify-content: center;\n        \n        h1 {\n            font-weight: 300;\n            \n            \n        }\n\n    }\n}","@import 'themeVars';\n\n.map {\n    // padding: 4px;\n    margin: 40px 0px;\n\n    display: flex;\n    flex-direction: column;\n    background-color: $themeColor-lightGrey;\n    div {\n        width: 1000px ;\n        height:500px ;\n        position: relative;\n        padding-bottom: 40px;\n    }\n}\n\n\n.map-wrapper {\n    width: 100%;\n    // padding: 40px;\n    margin: 40px 0px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n}\n\n#map {\n    height: 500px;\n    width: 1000px;\n    div {\n        width: 400px;\n        height: 400px;\n    }\n}\n\n.gmnoprint {\n    display: 'none';\n\n\n\n}\n","@import 'themeVars';\n\n.faq-body {\n    flex-direction: column;\n    display: flex;\n}\n\n\n.faq-wrapper-top {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    background-color:$themeColor-Dark;\n    margin-top: 20px;\n    box-shadow: $theme-box;\n    h1 {\n        color: $themeColor-Mid;\n    }\n}\n\n\n.faq-question {\n\n    p:nth-child(odd) {\n        background-color: $themeColor-Mid;\n        margin-bottom:0px;\n        padding-top:20px;\n        padding-left: 20px;\n        padding-right: 20px;\n        box-shadow: $theme-box;\n    }\n    p:nth-child(even) {\n        padding-left: 60px;\n        background-color: $themeColor-Mid;\n        margin-top:0px;\n        padding-top:20px;\n        padding-bottom:20px;\n        box-shadow: $theme-box;\n    }\n}","@import 'themeVars';\n\n.index-page-header {\n    background-color: $themeColor-Mid;\n    // height: 400px;\n    padding: 40px;\n    margin: 20px 0px;\n    box-shadow: $theme-box;\n    h1 {\n        font-size: 80px;\n    }\n\n    p {\n        padding-top: 40px;\n    }\n\n\n}\n\n.post-index-list {\n    \n    margin-top: 20px;\n    padding-top: 40px;\n    box-shadow: $theme-box;\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items:center;\n    flex-wrap: wrap;\n\n    div {\n        justify-content: center;\n    }\n    \n}\n\n.index-page-header {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    h1 {\n        max-width: $max-width;\n        margin: 0px;\n    }\n    p {\n        max-width: $max-width;\n    }\n}\n\n.post-index-list {\n    div {\n        max-width: $max-width;\n        display: flex;\n        flex-direction: row;\n        flex-wrap:wrap\n    }\n}\n\n.post-index-categories {\n      margin-top: 20px;\n    padding-top: 40px;\n    box-shadow: $theme-box;\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items:center;\n    flex-wrap: wrap;\n    \n    \n    .category-wrapper {\n        max-width: $max-width;\n        display: flex;\n        flex-direction: row;\n        flex-wrap:wrap;\n        align-items: center;\n        justify-content: center;\n        margin: 40px 0px;\n         }\n    \n    .selection-item {\n            \n    min-width: 180px;\n    min-height: 180px;\n    max-width: 180px;\n    max-height:180px;\n    border-radius: 200px;\n    background-color: $themeColor-Light;\n    border: 4px solid $themeColor-Grey;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // margin: 0px;\n    margin: 20px;\n    font-size: 20px;\n    \n\n    }\n    .selection-item:hover {\n        cursor: pointer;\n    }    \n    \n    .selected-selection-item {\n        color: $themeColor-Dark;\n        font-weight: 800;\n    }\n\n    div {\n           justify-content: center;\n        max-width: $max-width;\n        display: flex;\n        flex-direction: row;\n        flex-wrap:wrap\n    }\n\n    \n}\n\n","@import 'themeVars';\n\n.post-wrapper {\n    background-color: $themeColor-Dark;\n    display: flex;\n    flex-direction: column;\n    margin-top: 20px;\n    box-shadow: $theme-box;\n  \n}\n\n\n\n.post-top {\n display: flex;\n flex-direction: row;\n justify-content: space-around;\n padding: 40px;\n align-items: center;\n  h3 {\n        margin-left: 20px;\n\n    }\n    img {\n        margin-right: 20px;\n    }\n}\n\n@media screen and (max-width: 800px) {\n\n    .post-top {\n display: flex;\n flex-direction: column;\n justify-content: space-around;\n padding: 40px;\n align-items: center;\n  h3 {\n        margin-top: 20px;\n\n    }\n    img {\n        margin-bottom: 20px;\n    }\n}\n}\n\n.post-title {\n    width: 350px;\n    text-overflow: wrap;\n    font-size: 30px;\n}\n\n.post-header-image {\n    height: auto;\n    width: 350px;\n    height: 350px;\n    border-radius: 200px;\n        border: 4px solid $themeColor-Grey;\n    object-fit: cover;\n    margin:0px;\n    \n}\n\n\n.post-excerpt {\n    background-color: $themeColor-GreyLow;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    p {\n        max-width: $max-width;\n        padding: 40px;\n    }\n}\n\n.post-content {\n    padding: 40px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    img {\n        border: solid grey 2px;\n    }\n\n    p {\n        text-overflow: wrap;\n        padding: 20px;\n        \n            max-width: $max-width;\n        \n    }\n\n    ul {\n        display: flex;\n        max-width: $max-width;\n        flex-direction: row;\n        list-style: none;\n        // justify-content: center;\n        justify-content: space-around;\n        svg {\n            height: 60px;\n            width:auto;\n            padding: 20px;\n        }\n        svg:hover {\n            fill: $themeColor-Light;\n        }\n    }\n}\n\n\n\n.alignright {\n    // justify-self: flex-end;\n    // align-self: flex-end;\n    float:right;\n    // width: autop;\n    // paddin\n    // max-width: 50%;\n    \n}\n.alignleft {\n    // justify-self: flex-end;\n    // align-self: flex-end;\n    float:left;\n    // width: 300px;\n    \n    \n}\n\n\n.post-content p:nth-child(1) {\n    em{ \n        font-style: none;\n    }\n    padding: 40px;\n    font-size: 30px;\n    font-style: bold;\n}\n\n.wp-block-image {\n    display: flex;\n// flex-direction: center;\n// width: 300px;\nwidth: $max-width;\nalign-items: center;\n// max-width: 100%;\n// justify-content: center;\n// figcaption {\n//     max-width: 100%;\n// }\n\nimg{\n    max-width: 100%;\n    height: auto;\n    justify-self: center;\n}\n}\n\nfigcaption {\n    text-align: center;\n}\n\n\n.blocks-gallery-grid {\n    padding:0px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    flex-wrap: wrap;\n\n    .blocks-gallery-item {\n        display:flex;\n\n        width: 50%;\n        height: auto;\n        align-items: center;\n        figure {\n            width: 100%;\n            align-items: center;\n            img {\n                max-width: 100%;\n            \n                height: auto;\n            }\n        }\n    }\n\n}\n\n.author {\n    color: $themeColor-Mid;\n    text-align: center;\n    width: 100%;\n}","@import 'themeVars';\n\n.map-pin {\n    background-color: $themeColor-Mid;\n    border-radius: 20px;\n    border: black solid 2px;\n}\n\n.map-pin > .map-pin-hover {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    // line-height: 100px;\n    z-index: 20;\n   \n    max-width:100px;\n    max-height:100px;\n    min-width:100px;\n    min-height:100px;\n    border: 2px solid $themeColor-Grey;\n    background-color: white;\n    border-radius: 50px;\n    visibility: hidden;\n    \n    span {\n        vertical-align: center;\n        font-size: 15px;\n        font-weight: 4000;\n        text-align: center;\n        text-overflow: wrap;\n         font-family: $theme-font3;\n    color: $themeColor-Dark;\n    font-style: none;\n\n    text-decoration-line: none;\n\n    }\n}\n\n.map-pin:hover {\n    background-color: $themeColor-Grey;\n\n}\n.map-pin:hover > .map-pin-hover {\n\n\n    visibility: visible;\n\n}\n\n#map {\n    div {\n        width:15px;\n        height:15px;\n        \n    }\n\n\n\n\n}\n\n\n","@import 'themeVars';\n\n.modal_background {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  background: rgba(85, 85, 85, 0.281);\n  z-index: 10;\n}\n\n.modal_child {\n  position: relative;\n  padding: 30px;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 500px;\n  background-color: white;\n  border-radius: 2px 2px 0 0;\n    border-top-left-radius: 4px;\n    border-top-right-radius: 4px;\n    border-bottom-right-radius: 4px;\n    border-bottom-left-radius: 4px;\n\n}\n\n.modal_container {\n  display: flex;\n  flex-direction: column;\n  align-items:center;\n  justify-content: center;\n  \n\n}\n\n.modal_top {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding-left: 32px;\n  padding-right:32px;\n  padding-top: 14px;\n  padding-bottom: 8px;\n  align-content: center;\n  \n}","\n@import 'postThumb';\n@import 'profileThumb';\n@import 'header';\n@import 'homePage';\n@import 'teamPage';\n@import 'milestones';\n@import 'themeVars';\n@import 'map';\n@import 'faq';\n@import 'postIndex';\n@import 'postItem';\n@import 'pin';\n@import 'modal';\n\n\n.width-wrapper {\n   max-width: $max-width;\n   display: flex;\n   flex-direction: row;\n}\n\nbody {\n  font-family: $theme-font;\n  background-color: $themeColor-Light;\n  h1, h2 {\n      color: $themeColor-Dark\n      \n  }\n  p {\n    font-family: $theme-font3;\n    font-weight: 400;\n    font-size: 20px;\n    font-stretch: ultra-condensed;\n    line-height: 27.8px;\n    .bold {\n      font-weight: 700;\n    }\n  }\n}\n\nimg {\n  max-height: 100%;\n  width: auto;\n}\n\n@media screen and (min-width: 2600px) {\n#root {\n  display: flex; \n  flex-direction: row;\n  justify-content: center;\n}\n\n.App {\n  width: 2600px;\n}\n}\n\na {\n text-decoration-line: none; \n}\n\na:hover {\n  text-decoration-line: underline;\n  text-decoration-color: $themeColor-Dark;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -7411,20 +7326,6 @@ module.exports = function(style, options) {
 function trim(str) {
   return str ? str.replace(TRIM_REGEX, EMPTY_STRING) : EMPTY_STRING;
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/isarray/index.js":
-/*!***************************************!*\
-  !*** ./node_modules/isarray/index.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
 
 
 /***/ }),
@@ -18627,7 +18528,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js")
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/path-to-regexp/node_modules/isarray/index.js")
 
 /**
  * Expose `pathToRegexp`.
@@ -19053,6 +18954,20 @@ function pathToRegexp (path, keys, options) {
 
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/path-to-regexp/node_modules/isarray/index.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/path-to-regexp/node_modules/isarray/index.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
 
 
 /***/ }),
@@ -20027,7 +19942,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v17.0.1
+/** @license React v17.0.2
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -31375,7 +31290,7 @@ function flushSyncCallbackQueueImpl() {
 }
 
 // TODO: this is special because it gets imported during build.
-var ReactVersion = '17.0.1';
+var ReactVersion = '17.0.2';
 
 var NoMode = 0;
 var StrictMode = 1; // TODO: Remove BlockingMode and ConcurrentMode by reading from the root
@@ -47223,6 +47138,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Context */ "./node_modules/react-redux/es/components/Context.js");
 /* harmony import */ var _utils_Subscription__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/Subscription */ "./node_modules/react-redux/es/utils/Subscription.js");
+/* harmony import */ var _utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useIsomorphicLayoutEffect */ "./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js");
+
 
 
 
@@ -47243,7 +47160,7 @@ function Provider(_ref) {
   var previousState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
     return store.getState();
   }, [store]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+  Object(_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_4__["useIsomorphicLayoutEffect"])(function () {
     var subscription = contextValue.subscription;
     subscription.trySubscribe();
 
@@ -47428,14 +47345,14 @@ function connectAdvanced(
 /*
   selectorFactory is a func that is responsible for returning the selector function used to
   compute new props from state, props, and dispatch. For example:
-     export default connectAdvanced((dispatch, options) => (state, props) => ({
+      export default connectAdvanced((dispatch, options) => (state, props) => ({
       thing: state.things[props.thingId],
       saveThing: fields => dispatch(actionCreators.saveThing(props.thingId, fields)),
     }))(YourComponent)
-   Access to dispatch is provided to the factory so selectorFactories can bind actionCreators
+    Access to dispatch is provided to the factory so selectorFactories can bind actionCreators
   outside of their selector as an optimization. Options passed to connectAdvanced are passed to
   the selectorFactory, along with displayName and WrappedComponent, as the second argument.
-   Note that selectorFactory is responsible for all caching/memoization of inbound and outbound
+    Note that selectorFactory is responsible for all caching/memoization of inbound and outbound
   props. Do not use connectAdvanced directly without memoizing results between calls to your
   selector, otherwise the Connect component will re-render on every state or props change.
 */
@@ -48267,7 +48184,13 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
 
   try {
     if (selector !== latestSelector.current || storeState !== latestStoreState.current || latestSubscriptionCallbackError.current) {
-      selectedState = selector(storeState);
+      var newSelectedState = selector(storeState); // ensure latest selected state is reused so that a custom equality function can result in identical references
+
+      if (latestSelectedState.current === undefined || !equalityFn(newSelectedState, latestSelectedState.current)) {
+        selectedState = newSelectedState;
+      } else {
+        selectedState = latestSelectedState.current;
+      }
     } else {
       selectedState = latestSelectedState.current;
     }
@@ -48288,13 +48211,13 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
   Object(_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_3__["useIsomorphicLayoutEffect"])(function () {
     function checkForUpdates() {
       try {
-        var newSelectedState = latestSelector.current(store.getState());
+        var _newSelectedState = latestSelector.current(store.getState());
 
-        if (equalityFn(newSelectedState, latestSelectedState.current)) {
+        if (equalityFn(_newSelectedState, latestSelectedState.current)) {
           return;
         }
 
-        latestSelectedState.current = newSelectedState;
+        latestSelectedState.current = _newSelectedState;
       } catch (err) {
         // we ignore all errors here, since when the component
         // is re-rendered, the selectors are called again, and
@@ -50027,7 +49950,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v17.0.1
+/** @license React v17.0.2
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -50045,7 +49968,7 @@ if (true) {
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 
 // TODO: this is special because it gets imported during build.
-var ReactVersion = '17.0.1';
+var ReactVersion = '17.0.2';
 
 // ATTENTION
 // When adding new symbols to this file,
@@ -53205,7 +53128,7 @@ function resolvePathname(to, from) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v0.20.1
+/** @license React v0.20.2
  * scheduler-tracing.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -53564,7 +53487,7 @@ exports.unstable_wrap = unstable_wrap;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v0.20.1
+/** @license React v0.20.2
  * scheduler.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -53580,7 +53503,7 @@ if (true) {
 'use strict';
 
 var enableSchedulerDebugging = false;
-var enableProfiling = true;
+var enableProfiling = false;
 
 var requestHostCallback;
 var requestHostTimeout;
@@ -53850,172 +53773,13 @@ function compare(a, b) {
 }
 
 // TODO: Use symbols?
-var NoPriority = 0;
 var ImmediatePriority = 1;
 var UserBlockingPriority = 2;
 var NormalPriority = 3;
 var LowPriority = 4;
 var IdlePriority = 5;
 
-var runIdCounter = 0;
-var mainThreadIdCounter = 0;
-var profilingStateSize = 4;
-var sharedProfilingBuffer =  // $FlowFixMe Flow doesn't know about SharedArrayBuffer
-typeof SharedArrayBuffer === 'function' ? new SharedArrayBuffer(profilingStateSize * Int32Array.BYTES_PER_ELEMENT) : // $FlowFixMe Flow doesn't know about ArrayBuffer
-typeof ArrayBuffer === 'function' ? new ArrayBuffer(profilingStateSize * Int32Array.BYTES_PER_ELEMENT) : null // Don't crash the init path on IE9
-;
-var profilingState =  sharedProfilingBuffer !== null ? new Int32Array(sharedProfilingBuffer) : []; // We can't read this but it helps save bytes for null checks
-
-var PRIORITY = 0;
-var CURRENT_TASK_ID = 1;
-var CURRENT_RUN_ID = 2;
-var QUEUE_SIZE = 3;
-
-{
-  profilingState[PRIORITY] = NoPriority; // This is maintained with a counter, because the size of the priority queue
-  // array might include canceled tasks.
-
-  profilingState[QUEUE_SIZE] = 0;
-  profilingState[CURRENT_TASK_ID] = 0;
-} // Bytes per element is 4
-
-
-var INITIAL_EVENT_LOG_SIZE = 131072;
-var MAX_EVENT_LOG_SIZE = 524288; // Equivalent to 2 megabytes
-
-var eventLogSize = 0;
-var eventLogBuffer = null;
-var eventLog = null;
-var eventLogIndex = 0;
-var TaskStartEvent = 1;
-var TaskCompleteEvent = 2;
-var TaskErrorEvent = 3;
-var TaskCancelEvent = 4;
-var TaskRunEvent = 5;
-var TaskYieldEvent = 6;
-var SchedulerSuspendEvent = 7;
-var SchedulerResumeEvent = 8;
-
-function logEvent(entries) {
-  if (eventLog !== null) {
-    var offset = eventLogIndex;
-    eventLogIndex += entries.length;
-
-    if (eventLogIndex + 1 > eventLogSize) {
-      eventLogSize *= 2;
-
-      if (eventLogSize > MAX_EVENT_LOG_SIZE) {
-        // Using console['error'] to evade Babel and ESLint
-        console['error']("Scheduler Profiling: Event log exceeded maximum size. Don't " + 'forget to call `stopLoggingProfilingEvents()`.');
-        stopLoggingProfilingEvents();
-        return;
-      }
-
-      var newEventLog = new Int32Array(eventLogSize * 4);
-      newEventLog.set(eventLog);
-      eventLogBuffer = newEventLog.buffer;
-      eventLog = newEventLog;
-    }
-
-    eventLog.set(entries, offset);
-  }
-}
-
-function startLoggingProfilingEvents() {
-  eventLogSize = INITIAL_EVENT_LOG_SIZE;
-  eventLogBuffer = new ArrayBuffer(eventLogSize * 4);
-  eventLog = new Int32Array(eventLogBuffer);
-  eventLogIndex = 0;
-}
-function stopLoggingProfilingEvents() {
-  var buffer = eventLogBuffer;
-  eventLogSize = 0;
-  eventLogBuffer = null;
-  eventLog = null;
-  eventLogIndex = 0;
-  return buffer;
-}
-function markTaskStart(task, ms) {
-  {
-    profilingState[QUEUE_SIZE]++;
-
-    if (eventLog !== null) {
-      // performance.now returns a float, representing milliseconds. When the
-      // event is logged, it's coerced to an int. Convert to microseconds to
-      // maintain extra degrees of precision.
-      logEvent([TaskStartEvent, ms * 1000, task.id, task.priorityLevel]);
-    }
-  }
-}
-function markTaskCompleted(task, ms) {
-  {
-    profilingState[PRIORITY] = NoPriority;
-    profilingState[CURRENT_TASK_ID] = 0;
-    profilingState[QUEUE_SIZE]--;
-
-    if (eventLog !== null) {
-      logEvent([TaskCompleteEvent, ms * 1000, task.id]);
-    }
-  }
-}
-function markTaskCanceled(task, ms) {
-  {
-    profilingState[QUEUE_SIZE]--;
-
-    if (eventLog !== null) {
-      logEvent([TaskCancelEvent, ms * 1000, task.id]);
-    }
-  }
-}
 function markTaskErrored(task, ms) {
-  {
-    profilingState[PRIORITY] = NoPriority;
-    profilingState[CURRENT_TASK_ID] = 0;
-    profilingState[QUEUE_SIZE]--;
-
-    if (eventLog !== null) {
-      logEvent([TaskErrorEvent, ms * 1000, task.id]);
-    }
-  }
-}
-function markTaskRun(task, ms) {
-  {
-    runIdCounter++;
-    profilingState[PRIORITY] = task.priorityLevel;
-    profilingState[CURRENT_TASK_ID] = task.id;
-    profilingState[CURRENT_RUN_ID] = runIdCounter;
-
-    if (eventLog !== null) {
-      logEvent([TaskRunEvent, ms * 1000, task.id, runIdCounter]);
-    }
-  }
-}
-function markTaskYield(task, ms) {
-  {
-    profilingState[PRIORITY] = NoPriority;
-    profilingState[CURRENT_TASK_ID] = 0;
-    profilingState[CURRENT_RUN_ID] = 0;
-
-    if (eventLog !== null) {
-      logEvent([TaskYieldEvent, ms * 1000, task.id, runIdCounter]);
-    }
-  }
-}
-function markSchedulerSuspended(ms) {
-  {
-    mainThreadIdCounter++;
-
-    if (eventLog !== null) {
-      logEvent([SchedulerSuspendEvent, ms * 1000, mainThreadIdCounter]);
-    }
-  }
-}
-function markSchedulerUnsuspended(ms) {
-  {
-    if (eventLog !== null) {
-      logEvent([SchedulerResumeEvent, ms * 1000, mainThreadIdCounter]);
-    }
-  }
 }
 
 /* eslint-disable no-var */
@@ -54056,11 +53820,6 @@ function advanceTimers(currentTime) {
       pop(timerQueue);
       timer.sortIndex = timer.expirationTime;
       push(taskQueue, timer);
-
-      {
-        markTaskStart(timer, currentTime);
-        timer.isQueued = true;
-      }
     } else {
       // Remaining timers are pending.
       return;
@@ -54089,9 +53848,6 @@ function handleTimeout(currentTime) {
 }
 
 function flushWork(hasTimeRemaining, initialTime) {
-  {
-    markSchedulerUnsuspended(initialTime);
-  } // We'll need a host callback the next time work is scheduled.
 
 
   isHostCallbackScheduled = false;
@@ -54126,12 +53882,6 @@ function flushWork(hasTimeRemaining, initialTime) {
     currentTask = null;
     currentPriorityLevel = previousPriorityLevel;
     isPerformingWork = false;
-
-    {
-      var _currentTime = exports.unstable_now();
-
-      markSchedulerSuspended(_currentTime);
-    }
   }
 }
 
@@ -54152,18 +53902,13 @@ function workLoop(hasTimeRemaining, initialTime) {
       currentTask.callback = null;
       currentPriorityLevel = currentTask.priorityLevel;
       var didUserCallbackTimeout = currentTask.expirationTime <= currentTime;
-      markTaskRun(currentTask, currentTime);
+
       var continuationCallback = callback(didUserCallbackTimeout);
       currentTime = exports.unstable_now();
 
       if (typeof continuationCallback === 'function') {
         currentTask.callback = continuationCallback;
-        markTaskYield(currentTask, currentTime);
       } else {
-        {
-          markTaskCompleted(currentTask, currentTime);
-          currentTask.isQueued = false;
-        }
 
         if (currentTask === peek(taskQueue)) {
           pop(taskQueue);
@@ -54308,10 +54053,6 @@ function unstable_scheduleCallback(priorityLevel, callback, options) {
     sortIndex: -1
   };
 
-  {
-    newTask.isQueued = false;
-  }
-
   if (startTime > currentTime) {
     // This is a delayed task.
     newTask.sortIndex = startTime;
@@ -54332,11 +54073,6 @@ function unstable_scheduleCallback(priorityLevel, callback, options) {
   } else {
     newTask.sortIndex = expirationTime;
     push(taskQueue, newTask);
-
-    {
-      markTaskStart(newTask, currentTime);
-      newTask.isQueued = true;
-    } // Schedule a host callback, if needed. If we're already performing work,
     // wait until the next time we yield.
 
 
@@ -54365,13 +54101,6 @@ function unstable_getFirstCallbackNode() {
 }
 
 function unstable_cancelCallback(task) {
-  {
-    if (task.isQueued) {
-      var currentTime = exports.unstable_now();
-      markTaskCanceled(task, currentTime);
-      task.isQueued = false;
-    }
-  } // Null out the callback to indicate the task has been canceled. (Can't
   // remove from the queue because you can't remove arbitrary nodes from an
   // array based heap, only the first one.)
 
@@ -54384,11 +54113,7 @@ function unstable_getCurrentPriorityLevel() {
 }
 
 var unstable_requestPaint = requestPaint;
-var unstable_Profiling =  {
-  startLoggingProfilingEvents: startLoggingProfilingEvents,
-  stopLoggingProfilingEvents: stopLoggingProfilingEvents,
-  sharedProfilingBuffer: sharedProfilingBuffer
-} ;
+var unstable_Profiling =  null;
 
 exports.unstable_IdlePriority = IdlePriority;
 exports.unstable_ImmediatePriority = ImmediatePriority;
@@ -55101,7 +54826,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_reducer */ "./reducers/post_reducer.js");
 /* harmony import */ var _profile_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile_reducer */ "./reducers/profile_reducer.js");
 /* harmony import */ var _faq_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./faq_reducer */ "./reducers/faq_reducer.js");
-/* harmony import */ var _selected_profile_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./selected_profile_reducer */ "./reducers/selected_profile_reducer.js");
+/* harmony import */ var _metric_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./metric_reducer */ "./reducers/metric_reducer.js");
+/* harmony import */ var _selected_profile_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./selected_profile_reducer */ "./reducers/selected_profile_reducer.js");
+
 
 
 
@@ -55111,7 +54838,8 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
   posts: _post_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   profiles: _profile_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   faq: _faq_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  profile: _selected_profile_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
+  metric: _metric_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
+  profile: _selected_profile_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -55200,6 +54928,36 @@ var PostsReducer = function PostsReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PostsReducer);
+
+/***/ }),
+
+/***/ "./reducers/metric_reducer.js":
+/*!************************************!*\
+  !*** ./reducers/metric_reducer.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/data_actions */ "./actions/data_actions.js");
+
+
+var MetricReducer = function MetricReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_METRIC_DATA"]:
+      return action.metric;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MetricReducer);
 
 /***/ }),
 
@@ -55558,13 +55316,14 @@ var configureStore = function configureStore() {
 /*!**************************!*\
   !*** ./util/api_util.js ***!
   \**************************/
-/*! exports provided: fetchPostsData, fetchFAQ, fetchProfilesData, fetchPostData, fetchProfileData, fetchCategoryPosts */
+/*! exports provided: fetchPostsData, fetchFAQ, fetchMetric, fetchProfilesData, fetchPostData, fetchProfileData, fetchCategoryPosts */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostsData", function() { return fetchPostsData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFAQ", function() { return fetchFAQ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMetric", function() { return fetchMetric; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProfilesData", function() { return fetchProfilesData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostData", function() { return fetchPostData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProfileData", function() { return fetchProfileData; });
@@ -55582,6 +55341,12 @@ var fetchFAQ = function fetchFAQ() {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
     method: 'GET',
     url: 'https://businessesoftheearth.org/wp-json/wp/v2/pages/129'
+  });
+};
+var fetchMetric = function fetchMetric() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+    method: 'GET',
+    url: 'https://businessesoftheearth.org/wp-json/wp/v2/pages/1370'
   });
 };
 var fetchProfilesData = function fetchProfilesData() {

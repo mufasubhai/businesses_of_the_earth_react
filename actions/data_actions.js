@@ -9,16 +9,27 @@ export const RECEIVE_PROFILES_DATA = "RECEIVE_PROFILES_DATA";
 export const RECEIVE_PROFILE_DATA = "RECEIVE_PROFILE_DATA";
 export const RECEIVE_FAQ_DATA = "RECEIVE_FAQ_DATA";
 export const RECEIVE_FAQ_ERRORS = "RECEIVE_FAQ_ERRORS";
+export const RECEIVE_METRIC_DATA = "RECEIVE_METRIC_DATA";
+export const RECEIVE_METRIC_ERRORS = "RECEIVE_METRIC_ERRORS";
 export const SET_CURRENT_PROFILE = "SET_CURRENT_PROFILE"
+
+
 const receivePostErrors = errors => ({
     type: RECEIVE_POST_ERRORS,
     errors
 })
+
 const receiveProfileErrors = errors => ({
     type: RECEIVE_PROFILE_ERRORS,
     errors
 })
+
 const receiveFAQErrors = errors => ({
+    type: RECEIVE_FAQ_ERRORS,
+    errors
+})
+
+const receiveMetricErrors = errors => ({
     type: RECEIVE_FAQ_ERRORS,
     errors
 })
@@ -61,6 +72,20 @@ export const fetchFAQ = () => dispatch => (
         .then(FAQ => (dispatch(receiveFAQData(FAQ))),
         err => (
             dispatch(receiveFAQErrors(err.responseJSON))
+        )
+))
+
+const receiveMetricData = metric => ({
+    type: RECEIVE_METRIC_DATA,
+    metric
+}) 
+
+
+export const fetchMetric = () => dispatch => (
+    APIUtil.fetchMetric()
+        .then(FAQ => (dispatch(receiveMetricData(FAQ))),
+        err => (
+            dispatch(receiveMetricErrors(err.responseJSON))
         )
 ))
 

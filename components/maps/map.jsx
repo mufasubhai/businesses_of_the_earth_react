@@ -13,13 +13,25 @@ let defaultProps = {
       lat: 34.0522,
       lng: -118.2437
     },
-    zoom: 11
+    zoom: 9
   };
 
 
+
+  if (pins.length === 1) {
+
+    console.log(pins[0].lat)
+    console.log(pins[0].long)
+    if ((pins[0].long && pins[0].lat)) {
+      defaultProps.center.lat = parseInt(pins[0].lat);
+      dfaultProps.center.long = parseInt(pins[0].long);
+    defaultProps.zoom = 11.5;
+    }
+  }
+
     return (
         <div className="map-wrapper ">
-
+          
         <div id="map">
         
            <GoogleMapReact

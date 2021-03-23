@@ -4,7 +4,11 @@ import React, {useState, useEffect} from 'react';
 import Header from '../header/header'
 import Milestones from '../elements/milestones'
 import Map from '../maps/map'
+import parse from 'html-react-parser';
+import { compose } from 'redux';
 // import TableContainer from '../table/table_container'
+import Axios from 'axios';
+
 
 const HomePage = props => {
     
@@ -12,10 +16,11 @@ const HomePage = props => {
         props.fetchPosts()
         props.fetchProfiles()
         props.fetchFAQ();
+        props.fetchMetric()
     }, [])    
     
     const [posts, setPosts] = useState([])
-
+    const [metrics, setMetrics] = useState(null)
 useEffect(() => {
     let newPosts = [];
     
@@ -30,8 +35,6 @@ useEffect(() => {
     setPosts(newPosts)
 
 }, [props.posts])
-
-
 
 
 
@@ -69,8 +72,12 @@ useEffect(() => {
                 <h2 className="home-page-body-header">OUR METRICS</h2>
 
                 <ul className="pillar-list">
-
-                    <li>
+                      
+                   
+                    <span className="no_reading_time">{
+                    (props.metrics) ? parse(props.metrics.content.rendered) : null }</span>
+                  
+                    {/* <li>
                         10,000 Impressions monthly across our Social Media Platforms (Instagram, Facebook, and Twitter)
                     </li>
                     <li>
@@ -81,12 +88,12 @@ useEffect(() => {
                     </li>
                     <li>
                         200 average reach per post about small business owners across social media platforms
-                    </li>
+                    </li> */}
 
                 </ul>
 
                 <h2 className="home-page-body-header">WHERE ARE THE SMALL BUSINESSES?</h2>
-                {console.log(posts)}
+                
                 {
                     (posts) ? 
                     <Map pins={posts}/>

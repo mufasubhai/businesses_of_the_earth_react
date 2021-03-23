@@ -1,17 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { connect } from 'react-redux';
 import Header from '../header/header';
-import adrian from '../../assets/images/adrian-profile.png';
-import brian from '../../assets/images/brian-profile.png';
-import daniel from '../../assets/images/daniel-profile.png';
-import donna from '../../assets/images/donna-profile.png';
-import isabelle from '../../assets/images/isabelle-profile.png';
-import melina from '../../assets/images/melina-profile.png';
-import mina from '../../assets/images/mina-profile.png';
-import natalie from '../../assets/images/natalie-profile.jpg';
-import nicole from '../../assets/images/nicki-profile.jpg';
-import sierra from '../../assets/images/sierra-profile.png';
-
 import ProfileThumb from './profile_thumb'
 
 const TeamPage = props => {

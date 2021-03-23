@@ -16,6 +16,14 @@ export const fetchFAQ = () => {
     })
     
 }
+export const fetchMetric = () => {
+    
+    return $.ajax({
+        method: 'GET',
+        url: 'https://businessesoftheearth.org/wp-json/wp/v2/pages/1370',
+    })
+    
+}
 
 export const fetchProfilesData = () => (
     $.ajax({

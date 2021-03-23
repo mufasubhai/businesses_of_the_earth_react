@@ -77,7 +77,7 @@ const postItem = (props) => {
             
             
             
-           <Map/>
+           <Map pins={[post]}/>
            </div>
 
            }

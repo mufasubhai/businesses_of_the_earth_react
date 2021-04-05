@@ -23,11 +23,7 @@ const TeamPage = props => {
 
 
             </div>
-            {
-                console.log('ceo profile')
-                
-            }
-            {console.log(ceoprofile)}
+    
             {
                 ceoprofile.map((CEOProfile, idx) => {
                     return <div className="ceo-profile">

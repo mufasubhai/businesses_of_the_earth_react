@@ -19,9 +19,6 @@ let defaultProps = {
 
 
   if (pins.length === 1) {
-
-    console.log(pins[0].lat)
-    console.log(pins[0].long)
     if ((pins[0].long && pins[0].lat)) {
       defaultProps.center.lat = parseInt(pins[0].lat);
       defaultProps.center.long = parseInt(pins[0].long);

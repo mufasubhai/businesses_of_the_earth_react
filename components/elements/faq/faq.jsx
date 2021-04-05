@@ -4,7 +4,7 @@ import Axios from 'axios';
 import Header from '../../header/header'
 
 const FAQ = (props) => {
-    // console.log(props);
+
     const [faq, setFaq] = useState(null);
 
 
@@ -20,7 +20,7 @@ const FAQ = (props) => {
 
 
     if (!props.faq) {
-        console.log('axios')
+     
        useEffect(()=> {
             Axios.get(`https://businessesoftheearth.org/wp-json/wp/v2/pages/129`).then(response => {
                 setFaq(response.data)
@@ -48,11 +48,7 @@ const FAQ = (props) => {
 
            <div className='faq-wrapper no_reading_time'>
                
-                
 
-                        {/* <img className="thumbnail-image" src={post.jetpack_featured_media_url}></img> */}
-                    {/* <h3 className="post-title">{post.title.rendered}</h3> */}
-                    {/* <span>{parse(post.excerpt.rendered)}</span> */}
                     <span className="faq-question">
                         <span>{parse(faq.content.rendered)}
                             </span>
@@ -61,8 +57,7 @@ const FAQ = (props) => {
                
            </div>
            }
-           {/* {console.log(post)} */}
-            
+
         </div>
     )
 }

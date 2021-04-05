@@ -12,7 +12,7 @@ const Header = props => {
                         <ul className="header-link-list">
                             <Link to='/' className="header-link">Home</Link>
                             <Link to='/team'className="header-link">Our Team</Link>
-                            <Link to='/posts'className="header-link">Local Business</Link>
+                            <Link to='/posts'className="header-link">Local Businesses</Link>
                             <Link to='/faq'className="header-link">FAQ</Link>
                         </ul>              
             </div>

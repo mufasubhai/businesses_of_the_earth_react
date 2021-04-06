@@ -8,7 +8,7 @@ const Header = props => {
 
     return (
             <div id="header-container">
-                <p className="logo-top">Businesses of the Earth</p>
+                <img src={'../../assets/images/white-logo-BOTE.png'} alt="Businesses of the Earth Logo"className="logo-top"/>
                         <ul className="header-link-list">
                             <Link to='/' className="header-link">Home</Link>
                             <Link to='/team'className="header-link">Our Team</Link>

@@ -27,7 +27,14 @@ const postItem = (props) => {
 
         }
     }, [post])
-
+    const dateFormat = (date) => {
+    let dateString = (new Date(Date.parse(date))).toString()
+    
+        let dateArray = dateString.split(' ')
+        return dateArray.splice(0, 5).join(' ')
+        return dateArray.join(" ")
+    }
+    
     const submitComment = (event) => {
         event.preventDefault()
         let data = {
@@ -158,9 +165,15 @@ const postItem = (props) => {
                         return <div className="comment-wrapper" key={idx}>
                             <img className="comment-avatar" alt={`${comment.author_name} avatar`} src={comment.author_avatar_urls["48"]}>
                             </img>
-                            <div className="comment-content">
-                                 <p className="comment-author">{comment.author_name} says:</p>
-                                 {parse(comment.content.rendered.split('<p>').join('<p class="comment-body">'))}
+                            <div className="comment-right-wrapper">
+
+                            <span className="comment-top-right">
+                                <div className="comment-date">{dateFormat(comment.date)}</div>
+                                    <p className="comment-author">{comment.author_name} </p>
+                                </span>
+                                <div className="comment-content">
+                                    {parse(comment.content.rendered.split('<p>').join('<p class="comment-body">'))}
+                                </div>
                             </div>
 
                         </div>
@@ -173,10 +186,11 @@ const postItem = (props) => {
   
             
 
-            <form className="post-con" onSubmit={(event) => submitComment(event)}>
+            <form className="comment-form" onSubmit={(event) => submitComment(event)}>
                 <input type="hidden" id="postId" value={post.id} />
-                <div>
-                    <label htmlFor="name">Name*</label>
+           
+                    <label className="comment-input" htmlFor="name">Name:
+                    </label>
                     <input 
                     id="name" 
                     type="text" 
@@ -185,9 +199,9 @@ const postItem = (props) => {
                     required 
                     
                     />
-                </div>
-                <div>
-                    <label htmlFor="email">Email*</label>
+                
+                    <label className="comment-input" htmlFor="email">Email:
+                    </label>
                     <input
                     id="email"
                     value={commentEmail}
@@ -195,17 +209,17 @@ const postItem = (props) => {
                     type="email"
                     required
                     />
-                </div>
-                <div>
-                    <label htmlFor="comment">Comment*</label>
+   
+                    <label className="comment-input-text" htmlFor="comment">Comment:
+                    </label>
                     <textarea
                     value={comment}
                     onChange={(event) => setComment(event.target.value)}
                     id="comment"
                     required
                     />
-                </div>
-                <input type="submit" value="Post Comment" />
+                
+                <input className="comment-input" type="submit" value="Post Comment" />
             </form>
                 : null }
                 </div>

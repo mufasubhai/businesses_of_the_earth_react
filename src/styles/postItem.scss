@@ -203,3 +203,38 @@ figcaption {
     border: 2px solid $themeColor-Grey;
     border-radius: 8;
 }
+
+.comment-form {
+    display:flex;
+    justify-self: center;
+    align-self: center;
+    flex-direction: column;
+    padding: 40px;
+    width: 600px;
+    height: 300px;
+    justify-content: space-between;
+    font: $theme-font;
+}
+
+.comment-input {
+    width: 100%;
+
+}
+
+.comment-wrapper {
+       display:flex;
+    justify-self: center;
+    align-self: center;
+    flex-direction: row;
+    padding: 40px;
+    width: 600px;
+    // height: 400px;
+    justify-content: flex-start;
+    font: $theme-font;
+
+    .comment-avatar{
+        width: 48px;
+        height: 48px;
+
+    }
+}

@@ -24,17 +24,28 @@
     p:nth-child(even) {
         background-color: $themeColor-Mid;
         margin-bottom:0px;
-        padding-top:20px;
-        padding-left: 20px;
-        padding-right: 20px;
-        box-shadow: $theme-box;
+
     }
     p:nth-child(odd) {
         padding-left: 60px;
         background-color: $themeColor-Mid;
         margin-top:0px;
-        padding-top:20px;
-        padding-bottom:20px;
-        box-shadow: $theme-box;
+        
+        
+    }
+}
+.faq-p {
+    display: flex;
+    flex-direction: row;
+    background-color:  $themeColor-Mid;
+    justify-content: center;
+    box-shadow: $theme-box;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    p {
+        max-width: $max-width;
+        
     }
 }

@@ -5,6 +5,9 @@ import Header from '../../header/header'
 
 const FAQ = (props) => {
 
+    const addPclass = (content, tag) => {
+        return content.split('<p>').join(`<span class="${tag}"><p>`).split('</p>').join('</p></span>')
+    }
     const [faq, setFaq] = useState(null);
 
 
@@ -50,7 +53,7 @@ const FAQ = (props) => {
                
 
                     <span className="faq-question">
-                        <span>{parse(faq.content.rendered)}
+                        <span>{parse(addPclass(faq.content.rendered, 'faq-p'))}
                             </span>
                             </span>
                 

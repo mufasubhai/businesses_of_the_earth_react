@@ -43,7 +43,7 @@ const TeamPage = props => {
                 props.profiles.filter(el => el.order != 0).sort((a,b) => {
           
                     return a.order - b.order}).map((profile, idx) => {
-                    return<li className="team-member-item">
+                    return<li key={idx} className="team-member-item">
                          <ProfileThumb key={idx} profile={profile}/>
 
                      </li> 

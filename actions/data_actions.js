@@ -11,8 +11,9 @@ export const RECEIVE_FAQ_DATA = "RECEIVE_FAQ_DATA";
 export const RECEIVE_FAQ_ERRORS = "RECEIVE_FAQ_ERRORS";
 export const RECEIVE_METRIC_DATA = "RECEIVE_METRIC_DATA";
 export const RECEIVE_METRIC_ERRORS = "RECEIVE_METRIC_ERRORS";
+export const RECEIVE_ABOUT_US_ERRORS = "RECEIVE_ABOUT_US_ERRORS";
 export const SET_CURRENT_PROFILE = "SET_CURRENT_PROFILE"
-
+export const RECEIVE_ABOUT_US_DATA = "RECEIVE_ABOUT_US_DATA"
 
 const receivePostErrors = errors => ({
     type: RECEIVE_POST_ERRORS,
@@ -31,6 +32,10 @@ const receiveFAQErrors = errors => ({
 
 const receiveMetricErrors = errors => ({
     type: RECEIVE_FAQ_ERRORS,
+    errors
+})
+const receiveAboutUsErrors = errors => ({
+    type: RECEIVE_ABOUT_US_ERRORS,
     errors
 })
 
@@ -66,6 +71,10 @@ const receiveFAQData = faq => ({
     faq
 }) 
 
+const receiveAboutUsData = aboutUs => ({
+    type: RECEIVE_ABOUT_US_DATA,
+    aboutUs
+})
 
 export const fetchFAQ = () => dispatch => (
     APIUtil.fetchFAQ()
@@ -86,6 +95,14 @@ export const fetchMetric = () => dispatch => (
         .then(FAQ => (dispatch(receiveMetricData(FAQ))),
         err => (
             dispatch(receiveMetricErrors(err.responseJSON))
+        )
+))
+
+export const fetchAboutUs = () => dispatch => (
+    APIUtil.fetchAboutUs()
+        .then(aboutUs => (dispatch(receiveAboutUsData(aboutUs))),
+        err => (
+            dispatch(receiveAboutUsErrors(err.responseJSON))
         )
 ))
 

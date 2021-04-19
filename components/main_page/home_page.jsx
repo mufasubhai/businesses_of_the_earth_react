@@ -15,6 +15,7 @@ const HomePage = props => {
         props.fetchProfiles()
         props.fetchFAQ();
         props.fetchMetric()
+        props.fetchAboutUs()
     }, [])    
     
     const [posts, setPosts] = useState([])
@@ -41,9 +42,10 @@ useEffect(() => {
 
     return (
         <div className="home-page-container">
-
+            
+        
                 <Header/>
-
+        {console.log(props.aboutUs)}
 
             <div className="home-page-banner">
                 
@@ -58,10 +60,16 @@ useEffect(() => {
             </div>
 
             <div className="home-page-body">
-                <h2 className="home-page-body-header">WHO WE ARE AND WHAT WE STAND FOR</h2>
+               
+                    {(props.aboutUs) ? <h2 className="home-page-body-header">{props.aboutUs.title.rendered.toUpperCase()}</h2> : null}
                 <div>
 
-                <p className="home-page-body-text">“Our mission is to <span className="bold">inspire people to support small businesses</span> so that consumers, job-seekers, entrepreneurs, and local communities can thrive. The way we do this is by <span className="bold"> showing local communities the stories of small business owners and providing discounts to inspire purchases.</span> We believe that if these small business owners could show customers, job-seekers, and other businesses <span className="bold">who they are, the struggles they overcame, and their dreams, then they would inspire much more support.</span> We hope that entrepreneurs, job-seekers, and surrounding communities can learn from these brick-and-mortar, mom-and-pop shops and support them along the way."</p>
+                    <span className="no_reading_time">
+
+                     {  (props.aboutUs) ? parse(props.aboutUs.content.rendered) : null }
+                    </span>
+
+                {/* <p className="home-page-body-text">“Our mission is to <span className="bold">inspire people to support small businesses</span> so that consumers, job-seekers, entrepreneurs, and local communities can thrive. The way we do this is by <span className="bold"> showing local communities the stories of small business owners and providing discounts to inspire purchases.</span> We believe that if these small business owners could show customers, job-seekers, and other businesses <span className="bold">who they are, the struggles they overcame, and their dreams, then they would inspire much more support.</span> We hope that entrepreneurs, job-seekers, and surrounding communities can learn from these brick-and-mortar, mom-and-pop shops and support them along the way."</p> */}
                 </div>
 
 
@@ -73,10 +81,10 @@ useEffect(() => {
                      <li className="value-item">Equity</li>   
                      <li className="value-item">Empowerment</li>   
                     </ul>        
-                <h2 className="home-page-body-header">OUR METRICS</h2>
+                    {props.metrics? <h2 className="home-page-body-header">{props.metrics.title.rendered.toUpperCase()}</h2>: null }
+          
 
                 <ul className="pillar-list">
-                      
                    
                     <span className="no_reading_time">{
                     (props.metrics) ? parse(props.metrics.content.rendered) : null }</span>
@@ -94,7 +102,7 @@ useEffect(() => {
             </div>  
             
 
-            {/* <Milestones/> */}
+
         </div>
         )
 }

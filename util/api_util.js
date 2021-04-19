@@ -24,6 +24,14 @@ export const fetchMetric = () => {
     })
     
 }
+export const fetchAboutUs = () => {
+    
+    return $.ajax({
+        method: 'GET',
+        url: 'https://businessesoftheearth.org/wp-json/wp/v2/pages/1761',
+    })
+    
+}
 
 export const fetchProfilesData = () => (
     $.ajax({
@@ -31,8 +39,6 @@ export const fetchProfilesData = () => (
         url: `https://businessesoftheearth.org/wp-json/wp/v2/profiles-api`
     })
 )
-
-
 
 export const fetchPostData = (id) => {
     
@@ -56,3 +62,4 @@ export const fetchCategoryPosts = (categoryTag) => (
         url: `https://businessesoftheearth.org/wp-json/wp/v2/posts?categories=${categoryTag}&per_page=60`
     }) 
 )
+

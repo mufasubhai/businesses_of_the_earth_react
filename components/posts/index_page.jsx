@@ -52,11 +52,11 @@ const classTag = (tag) => {
            
                 <div className="post-index-categories">
                     <span className="category-wrapper">
+                        <div className={classTag("All Posts")} onClick={() => selectTag("All Posts")}>All Posts</div>
 
                     {Object.values(categoryTags).map((val, idx) => {
                         return <div className={classTag(val)} onClick={() => selectTag(val)} key={idx}>{val}</div>
                     })}
-                    <div className={classTag("All Posts")} onClick={() => selectTag("All Posts")}>All Posts</div>
                     </span>
                 </div>
 

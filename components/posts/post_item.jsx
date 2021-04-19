@@ -159,6 +159,7 @@ const postItem = (props) => {
 
            }
             <div className="post-wrapper">
+              <h1 className="comment-header">Comments</h1>
             {(comments) ? 
                     comments.data.map((comment, idx)=> {
             
@@ -168,8 +169,8 @@ const postItem = (props) => {
                             <div className="comment-right-wrapper">
 
                             <span className="comment-top-right">
-                                <div className="comment-date">{dateFormat(comment.date)}</div>
                                     <p className="comment-author">{comment.author_name} </p>
+                                <p className="comment-date">{dateFormat(comment.date)}</p>
                                 </span>
                                 <div className="comment-content">
                                     {parse(comment.content.rendered.split('<p>').join('<p class="comment-body">'))}
@@ -191,35 +192,35 @@ const postItem = (props) => {
            
                     <label className="comment-input" htmlFor="name">Name:
                     </label>
-                    <input 
-                    id="name" 
-                    type="text" 
-                    value={commentName}
-                    onChange={(event) => setCommentName(event.target.value)}
-                    required 
-                    
-                    />
+                        <input className="comment-input-text"
+                        id="name" 
+                        type="text" 
+                        value={commentName}
+                        onChange={(event) => setCommentName(event.target.value)}
+                        required 
+                        
+                        />
                 
                     <label className="comment-input" htmlFor="email">Email:
                     </label>
-                    <input
-                    id="email"
-                    value={commentEmail}
-                    onChange={(event) => setCommentEmail(event.target.value)}
-                    type="email"
-                    required
-                    />
+                        <input className="comment-input-text"
+                        id="email"
+                        value={commentEmail}
+                        onChange={(event) => setCommentEmail(event.target.value)}
+                        type="email"
+                        required
+                        />
    
-                    <label className="comment-input-text" htmlFor="comment">Comment:
-                    </label>
-                    <textarea
-                    value={comment}
-                    onChange={(event) => setComment(event.target.value)}
-                    id="comment"
-                    required
-                    />
+                    <label className="comment-input" htmlFor="comment">Comment:
+                        </label>
+                        <textarea className="comment-input-text textarea"
+                        value={comment}
+                        onChange={(event) => setComment(event.target.value)}
+                        id="comment"
+                        required
+                        />
                 
-                <input className="comment-input" type="submit" value="Post Comment" />
+                <input className="comment-input-button" type="submit" value="Post Comment" />
             </form>
                 : null }
                 </div>
@@ -230,119 +231,3 @@ const postItem = (props) => {
 
 export default postItem;
 
-// {
-//   "data": [
-//     {
-//       "id": 48,
-//       "post": 1413,
-//       "parent": 0,
-//       "author": 0,
-//       "author_name": "Auntie Carla",
-//       "author_url": "",
-//       "date": "2021-03-25T18:27:44",
-//       "date_gmt": "2021-03-25T18:27:44",
-//       "content": {
-//         "rendered": "<p>Wonderful..</p>\n"
-//       },
-//       "link": "https://businessesoftheearth.org/muma_cultural_identity/#comment-48",
-//       "status": "approved",
-//       "type": "comment",
-//       "author_avatar_urls": {
-//         "24": "https://secure.gravatar.com/avatar/6c5ce7de08c2af86b3ef06e4985b81e9?s=24&d=mm&r=g",
-//         "48": "https://secure.gravatar.com/avatar/6c5ce7de08c2af86b3ef06e4985b81e9?s=48&d=mm&r=g",
-//         "96": "https://secure.gravatar.com/avatar/6c5ce7de08c2af86b3ef06e4985b81e9?s=96&d=mm&r=g"
-//       },
-//       "meta": [],
-//       "_links": {
-//         "self": [
-//           {
-//             "href": "https://businessesoftheearth.org/wp-json/wp/v2/comments/48"
-//           }
-//         ],
-//         "collection": [
-//           {
-//             "href": "https://businessesoftheearth.org/wp-json/wp/v2/comments"
-//           }
-//         ],
-//         "up": [
-//           {
-//             "embeddable": true,
-//             "post_type": "post",
-//             "href": "https://businessesoftheearth.org/wp-json/wp/v2/posts/1413"
-//           }
-//         ]
-//       }
-//     },
-//     {
-//       "id": 46,
-//       "post": 1413,
-//       "parent": 0,
-//       "author": 0,
-//       "author_name": "AnnMarie",
-//       "author_url": "",
-//       "date": "2021-03-25T01:30:18",
-//       "date_gmt": "2021-03-25T01:30:18",
-//       "content": {
-//         "rendered": "<p>This is wonderful Jaimelle!!!</p>\n"
-//       },
-//       "link": "https://businessesoftheearth.org/muma_cultural_identity/#comment-46",
-//       "status": "approved",
-//       "type": "comment",
-//       "author_avatar_urls": {
-//         "24": "https://secure.gravatar.com/avatar/7ab298c75d469dc5167574077fe171ab?s=24&d=mm&r=g",
-//         "48": "https://secure.gravatar.com/avatar/7ab298c75d469dc5167574077fe171ab?s=48&d=mm&r=g",
-//         "96": "https://secure.gravatar.com/avatar/7ab298c75d469dc5167574077fe171ab?s=96&d=mm&r=g"
-//       },
-//       "meta": [],
-//       "_links": {
-//         "self": [
-//           {
-//             "href": "https://businessesoftheearth.org/wp-json/wp/v2/comments/46"
-//           }
-//         ],
-//         "collection": [
-//           {
-//             "href": "https://businessesoftheearth.org/wp-json/wp/v2/comments"
-//           }
-//         ],
-//         "up": [
-//           {
-//             "embeddable": true,
-//             "post_type": "post",
-//             "href": "https://businessesoftheearth.org/wp-json/wp/v2/posts/1413"
-//           }
-//         ]
-//       }
-//     }
-//   ],
-//   "status": 200,
-//   "statusText": "",
-//   "headers": {
-//     "cache-control": "no-cache, must-revalidate, max-age=0",
-//     "content-length": "708",
-//     "content-type": "application/json; charset=UTF-8",
-//     "expires": "Wed, 11 Jan 1984 05:00:00 GMT",
-//     "link": "<https://businessesoftheearth.org/wp-json/>; rel=\"https://api.w.org/\"",
-//     "x-wp-total": "2",
-//     "x-wp-totalpages": "1"
-//   },
-//   "config": {
-//     "url": "https://businessesoftheearth.org/wp-json/wp/v2/comments?post=1413",
-//     "method": "get",
-//     "headers": {
-//       "Accept": "application/json, text/plain, */*"
-//     },
-//     "transformRequest": [
-//       null
-//     ],
-//     "transformResponse": [
-//       null
-//     ],
-//     "timeout": 0,
-//     "xsrfCookieName": "XSRF-TOKEN",
-//     "xsrfHeaderName": "X-XSRF-TOKEN",
-//     "maxContentLength": -1,
-//     "maxBodyLength": -1
-//   },
-//   "request": {}
-// }

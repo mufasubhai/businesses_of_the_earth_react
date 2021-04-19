@@ -218,23 +218,87 @@ figcaption {
 
 .comment-input {
     width: 100%;
+    color: $themeColor-Mid;
+    font-size: 20px;
+    
 
 }
 
+.comment-input-button {
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    color: $themeColor-Mid;
+    font-size: 20px;
+    background-color: $themeColor-Light;
+    border: 1px solid $themeColor-Darkest;
+    border-radius: 2px;
+    padding: 4px;
+    align-content:center;
+    justify-self: center;
+}
+
+.comment-input-button:hover {
+   background-color: $themeColor-GreyLow;
+   color: $themeColor-Grey;
+    cursor: pointer;
+}
+
 .comment-wrapper {
-       display:flex;
+    display:flex;
     justify-self: center;
     align-self: center;
     flex-direction: row;
-    padding: 40px;
+    padding: 20px;
     width: 600px;
     // height: 400px;
     justify-content: flex-start;
     font: $theme-font;
+    border-bottom: 1px solid $themeColor-lightGrey;
 
     .comment-avatar{
         width: 48px;
         height: 48px;
+        align-self: center;
+        border-radius: 2px;
 
     }
+}
+
+.comment-input-text {
+    line-height: 20px;
+    width: calc(100% -10px);
+    border-radius: 2px;
+    padding:4px;
+    border: 1px solid $themeColor-Darkest;
+    border-radius: 1px;
+    font-family: $theme-font3;
+}
+
+
+.textarea {
+    height: 60px;
+}
+.comment-right-wrapper {
+    padding-left: 20px; 
+    width: 100%;
+}
+
+.comment-top-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+        margin: 0px;
+        font-family:$theme-font3;
+        font-style: bold;
+        color: $themeColor-Darkest;
+    }
+
+}
+
+.comment-body {
+    margin: 0px;
+    font-family:$theme-font3;
+    color: $themeColor-Mid;
 }

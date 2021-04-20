@@ -418,6 +418,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./assets/images/white-logo-BOTE.png":
+/*!*******************************************!*\
+  !*** ./assets/images/white-logo-BOTE.png ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "assets/images/white-logo-BOTE.png");
+
+/***/ }),
+
 /***/ "./assets/variables/authors.js":
 /*!*************************************!*\
   !*** ./assets/variables/authors.js ***!
@@ -666,6 +679,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _assets_images_white_logo_BOTE_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/white-logo-BOTE.png */ "./assets/images/white-logo-BOTE.png");
+
 
  // import {PostThumb} from './post_thumb'
 // import TableContainer from '../table/table_container'
@@ -674,7 +689,7 @@ var Header = function Header(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "header-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: '../../assets/images/white-logo-BOTE.png',
+    src: _assets_images_white_logo_BOTE_png__WEBPACK_IMPORTED_MODULE_2__["default"],
     alt: "Businesses of the Earth Logo",
     className: "logo-top"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {

@@ -4,18 +4,25 @@ import Milestones from '../elements/milestones'
 import Map from '../maps/map'
 import parse from 'html-react-parser';
 import { compose } from 'redux';
+import Loader from '../loader/loader'
 // import TableContainer from '../table/table_container'
 import Axios from 'axios';
 
 
 const HomePage = props => {
+
+    const[fetch, setFetch] = useState(true)
     
     useEffect(() => {
         props.fetchPosts()
+
+        props.fetchAboutUs().then(res => {
+            setFetch(false)
+        })
         props.fetchProfiles()
         props.fetchFAQ();
         props.fetchMetric()
-        props.fetchAboutUs()
+        
     }, [])    
     
     const [posts, setPosts] = useState([])
@@ -41,9 +48,11 @@ useEffect(() => {
 
 
     return (
+        <span>
+
+            {fetch? <Loader/> : null}
         <div className="home-page-container">
             
-        
                 <Header/>
         {console.log(props.aboutUs)}
 
@@ -87,7 +96,7 @@ useEffect(() => {
                 <ul className="pillar-list">
                    
                     <span className="no_reading_time">{
-                    (props.metrics) ? parse(props.metrics.content.rendered) : null }</span>
+                        (props.metrics) ? parse(props.metrics.content.rendered) : null }</span>
                 
 
                 </ul>
@@ -104,6 +113,7 @@ useEffect(() => {
 
 
         </div>
+                </span>
         )
 }
 

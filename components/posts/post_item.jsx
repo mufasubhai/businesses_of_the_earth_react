@@ -57,36 +57,7 @@ const postItem = (props) => {
 
 
     }
-    // const [postId, name, email, comment] = evt.target.elements;
 
-//   let data = JSON.stringify({
-//     post: postId.value,
-//     author_name: name.value,
-//     author_email: email.value,
-//     content: comment.value,
-//   });
-  
-//   fetch(ACTION_URL, {
-//     method: 'post',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: data,
-//   })
-//     .then((response) => {
-//       if (response.ok === true) {
-//         // Submitted successfully!
-//       }
-
-//       return response.json();
-//     })
-//     .then((object) => {
-//       // Comment submission failed.
-//       // Output `object.message` to see the error message.
-//     })
-//     .catch(error => console.error('Error:', error));
-// }
-// const images = document.getElementsByClassName('wp-block-image');
 
     const stripWidth = string => {
         return string.split(/width="[^"]+"/).join('').split(/height="[^"]+"/).join('').split(/sizes="[^"]+"/).join('');

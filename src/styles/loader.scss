@@ -3,6 +3,16 @@
 
 
 #loader_wrapper {
+  // position: fixed;
+  // z-index: 999;
+  // height: 2em;
+  // width: 2em;
+  // overflow: show;
+  // margin: auto;
+  // top: 0;
+  // left: 0;
+  // bottom: 0;
+  // right: 0;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -27,6 +37,7 @@
     animation: loader-turn $loader-duration-alt linear infinite;
     padding: 1rem;
     max-width: 60px;
+    height: 100vh;
     width: 100%;
   
     @keyframes loader-turn {

@@ -11,7 +11,7 @@ import Axios from 'axios';
 
 const HomePage = props => {
 
-    const[fetch, setFetch] = useState(true)
+    const[fetch, setFetch] = useState(false)
     
     useEffect(() => {
         props.fetchPosts()
@@ -54,7 +54,7 @@ useEffect(() => {
         <div className="home-page-container">
             
                 <Header/>
-        {console.log(props.aboutUs)}
+     
 
             <div className="home-page-banner">
                 

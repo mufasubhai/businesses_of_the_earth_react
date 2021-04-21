@@ -53,32 +53,6 @@ const TeamPage = props => {
             </div>
 
 
-{/* 
-                <ul className="team-list">
-
-                   
-                        <div className="profile-photo-wrapper">
-                            <img src={nicole} className="profile-photo" alt="nicole-profile"/>
-                        </div>
-                        <div className="team-member-details">
-                            <p className="team-member-detail">Nicole Giles</p>
-                            <p className="team-member-detail">Team Leader</p>
-                        </div>
-                        <div className="profile-photo-wrapper">
-                            <img src={isabelle} className="profile-photo" alt="isabelle-profile"/>
-                        </div>
-                        <div className="team-member-details">
-                            <p className="team-member-detail">Isabelle Rubio</p>
-                            <p className="team-member-detail">Team Leader</p>
-                        </div>
-                    </li>
-                     
-                    
-                   */}
-                   
-        
-
-
         </div>
     )
 }

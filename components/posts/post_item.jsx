@@ -21,9 +21,8 @@ const postItem = (props) => {
         if (post) {
 
             Axios.get(`https://businessesoftheearth.org/wp-json/wp/v2/comments?post=${post.id}`).then(res => {
-                console.log(res)
-                setComments(res)
-            }).then(() =>  console.log(comments))
+        
+            })
 
         }
     }, [post])
@@ -49,9 +48,9 @@ const postItem = (props) => {
     }
         } ).then(res => {
             if (res.ok === true) {
-                console.log('success')
+             
             }
-            console.log(res)
+            
             // return res.json()
         }).catch(error => console.error('Error:', error))
 

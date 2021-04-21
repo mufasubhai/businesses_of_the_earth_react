@@ -811,7 +811,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var HomePage = function HomePage(props) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
       fetch = _useState2[0],
       setFetch = _useState2[1];
@@ -845,7 +845,7 @@ var HomePage = function HomePage(props) {
   }, [props.posts]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, fetch ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loader_loader__WEBPACK_IMPORTED_MODULE_6__["default"], null) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-page-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), console.log(props.aboutUs), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-page-banner"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "home-page-header"
@@ -1425,12 +1425,7 @@ var postItem = function postItem(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (post) {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://businessesoftheearth.org/wp-json/wp/v2/comments?post=".concat(post.id)).then(function (res) {
-        console.log(res);
-        setComments(res);
-      }).then(function () {
-        return console.log(comments);
-      });
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://businessesoftheearth.org/wp-json/wp/v2/comments?post=".concat(post.id)).then(function (res) {});
     }
   }, [post]);
 
@@ -1454,11 +1449,8 @@ var postItem = function postItem(props) {
         'Content-Type': 'application/json'
       }
     }).then(function (res) {
-      if (res.ok === true) {
-        console.log('success');
-      }
+      if (res.ok === true) {} // return res.json()
 
-      console.log(res); // return res.json()
     })["catch"](function (error) {
       return console.error('Error:', error);
     });

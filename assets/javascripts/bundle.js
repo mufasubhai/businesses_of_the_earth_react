@@ -158,7 +158,7 @@ function App() {
 /*!*********************************!*\
   !*** ./actions/data_actions.js ***!
   \*********************************/
-/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, RECEIVE_METRIC_DATA, RECEIVE_METRIC_ERRORS, RECEIVE_ABOUT_US_ERRORS, SET_CURRENT_PROFILE, RECEIVE_ABOUT_US_DATA, clearErrors, fetchFAQ, fetchMetric, fetchAboutUs, fetchPosts, fetchPostsTag, fetchPost, fetchProfiles, fetchProfile, setCurrentProfile */
+/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, RECEIVE_METRIC_DATA, RECEIVE_METRIC_ERRORS, RECEIVE_ABOUT_US_ERRORS, SET_CURRENT_PROFILE, RECEIVE_ABOUT_US_DATA, LAST_PAGE_TRUE, LAST_PAGE_FALSE, RECEIVE_CURRENT_PAGE, RESET_CURRENT_PAGE, RECEIVE_NEW_POSTS_DATA, clearErrors, fetchFAQ, fetchMetric, fetchAboutUs, fetchPosts, fetchPostsTag, fetchPost, fetchProfiles, fetchProfile, setCurrentProfile */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -177,6 +177,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ABOUT_US_ERRORS", function() { return RECEIVE_ABOUT_US_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_CURRENT_PROFILE", function() { return SET_CURRENT_PROFILE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ABOUT_US_DATA", function() { return RECEIVE_ABOUT_US_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LAST_PAGE_TRUE", function() { return LAST_PAGE_TRUE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LAST_PAGE_FALSE", function() { return LAST_PAGE_FALSE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CURRENT_PAGE", function() { return RECEIVE_CURRENT_PAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_CURRENT_PAGE", function() { return RESET_CURRENT_PAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NEW_POSTS_DATA", function() { return RECEIVE_NEW_POSTS_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearErrors", function() { return clearErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFAQ", function() { return fetchFAQ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMetric", function() { return fetchMetric; });
@@ -203,6 +208,36 @@ var RECEIVE_METRIC_ERRORS = "RECEIVE_METRIC_ERRORS";
 var RECEIVE_ABOUT_US_ERRORS = "RECEIVE_ABOUT_US_ERRORS";
 var SET_CURRENT_PROFILE = "SET_CURRENT_PROFILE";
 var RECEIVE_ABOUT_US_DATA = "RECEIVE_ABOUT_US_DATA";
+var LAST_PAGE_TRUE = "LAST_PAGE_TRUE";
+var LAST_PAGE_FALSE = "LAST_PAGE_FALSE";
+var RECEIVE_CURRENT_PAGE = "RECEIVE_CURRENT_PAGE";
+var RESET_CURRENT_PAGE = "RESET_CURRENT_PAGE";
+var RECEIVE_NEW_POSTS_DATA = "RECEIVE_NEW_POST_DATA";
+
+var setLastPage = function setLastPage() {
+  return {
+    type: LAST_PAGE_TRUE
+  };
+};
+
+var unsetLastPage = function unsetLastPage() {
+  return {
+    type: LAST_PAGE_FALSE
+  };
+};
+
+var receiveCurrentPage = function receiveCurrentPage(page) {
+  return {
+    type: RECEIVE_CURRENT_PAGE,
+    currentPage: page
+  };
+};
+
+var resetCurrentPage = function resetCurrentPage() {
+  return {
+    type: RESET_CURRENT_PAGE
+  };
+};
 
 var receivePostErrors = function receivePostErrors(errors) {
   return {
@@ -256,6 +291,13 @@ var receivePostData = function receivePostData(post) {
   return {
     type: RECEIVE_POST_DATA,
     post: post
+  };
+};
+
+var receiveNewPostsData = function receiveNewPostsData(posts) {
+  return {
+    type: RECEIVE_NEW_POSTS_DATA,
+    posts: posts
   };
 };
 
@@ -323,18 +365,39 @@ var fetchAboutUs = function fetchAboutUs() {
   };
 };
 var fetchPosts = function fetchPosts() {
+  var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 4;
   return function (dispatch) {
-    return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"]().then(function (Posts) {
-      return dispatch(receivePostsData(Posts));
+    var nextPage = page + 1;
+    _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"](nextPage).then(function (res) {
+      console.log('not last');
+    })["catch"](function (err) {
+      dispatch(setLastPage());
+      console.log("LASTPAGE");
+    });
+    return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"](page).then(function (Posts, Status, Header) {
+      dispatch(receivePostsData(Posts));
+      dispatch(receiveCurrentPage(page));
+      console.log(Posts);
+      console.log(Status);
+      console.log(Header);
     }, function (err) {
       return dispatch(receivePostErrors(err.responseJSON));
     });
   };
 };
 var fetchPostsTag = function fetchPostsTag(tag) {
+  var page = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
   return function (dispatch) {
-    return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchCategoryPosts"](tag).then(function (Posts) {
-      return dispatch(receivePostsData(Posts));
+    var nextPage = page + 1;
+    _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"](nextPage).then(function (res) {
+      console.log('not last');
+    })["catch"](function (err) {
+      dispatch(setLastPage());
+      console.log("LASTPAGE");
+    });
+    return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchCategoryPosts"](tag, page).then(function (Posts) {
+      dispatch(receivePostsData(Posts));
+      dispatch(receiveCurrentPage(page));
     }, function (err) {
       return dispatch(receivePostErrors(err.responseJson));
     });
@@ -690,11 +753,13 @@ var Header = function Header(props) {
     id: "header-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "header-link-list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: _assets_images_white_logo_BOTE_png__WEBPACK_IMPORTED_MODULE_2__["default"],
     alt: "Businesses of the Earth Logo",
     className: "logo-top"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/",
     className: "header-link"
   }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -55138,6 +55203,41 @@ var PostsReducer = function PostsReducer() {
 
 /***/ }),
 
+/***/ "./reducers/current_page_reducer.js":
+/*!******************************************!*\
+  !*** ./reducers/current_page_reducer.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/data_actions */ "./actions/data_actions.js");
+
+
+var CurrentPageReducer = function CurrentPageReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_PAGE"]:
+      // return Object.assign({}, state, action.posts)
+      return action.currentPage;
+    // add new 
+
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RESET_CURRENT_PAGE"]:
+      return 1;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CurrentPageReducer);
+
+/***/ }),
+
 /***/ "./reducers/entities_reducer.js":
 /*!**************************************!*\
   !*** ./reducers/entities_reducer.js ***!
@@ -55154,6 +55254,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _metric_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./metric_reducer */ "./reducers/metric_reducer.js");
 /* harmony import */ var _selected_profile_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./selected_profile_reducer */ "./reducers/selected_profile_reducer.js");
 /* harmony import */ var _about_us_reducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./about_us_reducer */ "./reducers/about_us_reducer.js");
+/* harmony import */ var _current_page_reducer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./current_page_reducer */ "./reducers/current_page_reducer.js");
+/* harmony import */ var _last_page_reducer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./last_page_reducer */ "./reducers/last_page_reducer.js");
+
+
 
 
 
@@ -55167,7 +55271,9 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
   faq: _faq_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
   metric: _metric_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
   profile: _selected_profile_reducer__WEBPACK_IMPORTED_MODULE_5__["default"],
-  aboutUs: _about_us_reducer__WEBPACK_IMPORTED_MODULE_6__["default"]
+  aboutUs: _about_us_reducer__WEBPACK_IMPORTED_MODULE_6__["default"],
+  currentPage: _current_page_reducer__WEBPACK_IMPORTED_MODULE_7__["default"],
+  lastPage: _last_page_reducer__WEBPACK_IMPORTED_MODULE_8__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -55259,6 +55365,41 @@ var PostsReducer = function PostsReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PostsReducer);
+
+/***/ }),
+
+/***/ "./reducers/last_page_reducer.js":
+/*!***************************************!*\
+  !*** ./reducers/last_page_reducer.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/data_actions */ "./actions/data_actions.js");
+
+
+var LastPageReducer = function LastPageReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["LAST_PAGE_TRUE"]:
+      // return Object.assign({}, state, action.posts)
+      return true;
+    // add new 
+
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["LAST_PAGE_FALSE"]:
+      return false;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LastPageReducer);
 
 /***/ }),
 
@@ -55373,10 +55514,14 @@ var PostsReducer = function PostsReducer() {
 
   switch (action.type) {
     case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS_DATA"]:
-      // return Object.assign({}, state, action.posts)
-      return action.posts;
+      return Object.assign({}, state, action.posts);
+    // return action.posts
+    // add new 
 
-    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST_DATA"]:
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NEW_POSTS_DATA"]:
+      return actiion.posts;
+
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS_DATA"]:
       return Object.assign({}, state, _defineProperty({}, action.post.id, action.post));
 
     default:
@@ -55663,10 +55808,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
-var fetchPostsData = function fetchPostsData() {
+var fetchPostsData = function fetchPostsData(page) {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
     method: 'GET',
-    url: 'https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=60'
+    url: "https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=20&page=".concat(page)
   });
 };
 var fetchFAQ = function fetchFAQ() {
@@ -55705,10 +55850,10 @@ var fetchProfileData = function fetchProfileData(id) {
     url: "https://businessesoftheearth.org/wp-json/wp/v2/profiles-api/".concat(id)
   });
 };
-var fetchCategoryPosts = function fetchCategoryPosts(categoryTag) {
+var fetchCategoryPosts = function fetchCategoryPosts(categoryTag, page) {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
     method: 'GET',
-    url: "https://businessesoftheearth.org/wp-json/wp/v2/posts?categories=".concat(categoryTag, "&per_page=60")
+    url: "https://businessesoftheearth.org/wp-json/wp/v2/posts?categories=".concat(categoryTag, "&per_page=20&page=").concat(page)
   });
 };
 

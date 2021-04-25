@@ -12,9 +12,30 @@ export const RECEIVE_FAQ_ERRORS = "RECEIVE_FAQ_ERRORS";
 export const RECEIVE_METRIC_DATA = "RECEIVE_METRIC_DATA";
 export const RECEIVE_METRIC_ERRORS = "RECEIVE_METRIC_ERRORS";
 export const RECEIVE_ABOUT_US_ERRORS = "RECEIVE_ABOUT_US_ERRORS";
-export const SET_CURRENT_PROFILE = "SET_CURRENT_PROFILE"
-export const RECEIVE_ABOUT_US_DATA = "RECEIVE_ABOUT_US_DATA"
+export const SET_CURRENT_PROFILE = "SET_CURRENT_PROFILE";
+export const RECEIVE_ABOUT_US_DATA = "RECEIVE_ABOUT_US_DATA";
+export const LAST_PAGE_TRUE = "LAST_PAGE_TRUE";
+export const LAST_PAGE_FALSE = "LAST_PAGE_FALSE";
+export const RECEIVE_CURRENT_PAGE ="RECEIVE_CURRENT_PAGE";
+export const RESET_CURRENT_PAGE = "RESET_CURRENT_PAGE"
+export const RECEIVE_NEW_POSTS_DATA = "RECEIVE_NEW_POST_DATA"
+const setLastPage = () => ({
+    type: LAST_PAGE_TRUE,
+})
 
+const unsetLastPage = () => ({
+    type: LAST_PAGE_FALSE
+})
+
+const receiveCurrentPage = (page) => ({
+    type: RECEIVE_CURRENT_PAGE,
+    currentPage: page
+
+})
+
+const resetCurrentPage = () => ({
+    type: RESET_CURRENT_PAGE
+}) 
 const receivePostErrors = errors => ({
     type: RECEIVE_POST_ERRORS,
     errors
@@ -52,6 +73,10 @@ const receivePostsData = (posts) => {
 const receivePostData = post => ({
     type: RECEIVE_POST_DATA,
     post
+})
+const receiveNewPostsData = posts => ({
+    type: RECEIVE_NEW_POSTS_DATA,
+    posts
 })
 
 const receiveProfilesData = profiles => {
@@ -106,22 +131,49 @@ export const fetchAboutUs = () => dispatch => (
         )
 ))
 
-export const fetchPosts = () => dispatch => (
-    APIUtil.fetchPostsData()
-        .then(Posts => (dispatch(receivePostsData(Posts))
-        ), err => (
+export const fetchPosts = (page = 4) => dispatch => {
+    let nextPage = page + 1;
+
+    APIUtil.fetchPostsData(nextPage).then(res => {
+      console.log('not last')
+    }).catch( err => {
+  dispatch(setLastPage())
+            console.log("LASTPAGE")
+    })
+    
+    return APIUtil.fetchPostsData(page)
+        .then((Posts, Status, Header) => { 
+            dispatch(receivePostsData(Posts))
+            dispatch(receiveCurrentPage(page))
+            
+            console.log(Posts)
+            console.log(Status)
+            console.log(Header)
+        }, err => (
             dispatch(receivePostErrors(err.responseJSON))
         ))
-)
+    }
 
-export const fetchPostsTag = (tag) => dispatch => (
-    APIUtil.fetchCategoryPosts(tag)
-        .then(Posts => (dispatch(receivePostsData(Posts))
-        ), err => (
+export const fetchPostsTag = (tag, page = 1) => dispatch => {
+  let nextPage = page + 1;
+
+    APIUtil.fetchPostsData(nextPage).then(res => {
+      console.log('not last')
+    }).catch( err => {
+  dispatch(setLastPage())
+            console.log("LASTPAGE")
+    })
+    
+
+   return APIUtil.fetchCategoryPosts(tag, page)
+        .then(Posts => { 
+            dispatch(receivePostsData(Posts))
+             dispatch(receiveCurrentPage(page))
+         }, err => (
             dispatch(receivePostErrors(err.responseJson))
         ))
 
-)
+  }
 export const fetchPost = (id) => dispatch => (
     APIUtil.fetchPostData(id)
         .then(Post => (dispatch(receivePostData(Post))

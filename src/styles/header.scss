@@ -11,8 +11,9 @@
 
 .header-link-list {
     justify-self: center;
+    align-items: center;
     padding: 0px 40px;
-    width: 90%;
+    width: $max-width;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
@@ -63,7 +64,8 @@
     justify-content: center;
     // width: 100%;
     width: auto;
-    height: 200px;
+    
+    height: 150px;
     margin: 10px;
     // display: flex;
     // flex-direction: column;

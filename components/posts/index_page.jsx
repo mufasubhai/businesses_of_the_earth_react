@@ -32,9 +32,23 @@ const selectTag = (tag) => {
 
 const classTag = (tag) => {
     if (currentSection === tag) {
-        return 'selection-item selected-selection-item'
+        if (tag === "Jobs & Hiring" || tag === "Discounts") {
+            return 'selection-item selected-selection-item discount-jobs'
+            
+        } else {
+            return 'selection-item selected-selection-item'
+
+        }
+        
     } else {
-        return 'selection-item'
+        if (tag === "Jobs & Hiring" || tag === "Discounts") {
+            return 'selection-item discount-jobs'
+            
+        } else {
+            return 'selection-item'
+
+        }
+       
     }
 }
     

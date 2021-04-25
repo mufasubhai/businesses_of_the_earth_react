@@ -20,9 +20,13 @@ let defaultProps = {
 
   if (pins.length === 1) {
     if ((pins[0].long && pins[0].lat)) {
-      defaultProps.center.lat = parseInt(pins[0].lat);
-      defaultProps.center.long = parseInt(pins[0].long);
-    defaultProps.zoom = 11.5;
+      console.log(pins)
+      defaultProps.center.lat = parseFloat(pins[0].lat);
+      console.log(parseFloat(pins[0].lat))
+      defaultProps.center.lng = parseFloat(pins[0].long);
+      console.log(parseFloat(pins[0].long))
+      console.log(defaultProps)
+    defaultProps.zoom = 12;
     }
   }
 

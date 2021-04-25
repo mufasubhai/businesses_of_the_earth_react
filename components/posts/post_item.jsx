@@ -21,7 +21,7 @@ const postItem = (props) => {
         if (post) {
 
             Axios.get(`https://businessesoftheearth.org/wp-json/wp/v2/comments?post=${post.id}`).then(res => {
-        
+                setComments(res)
             })
 
         }

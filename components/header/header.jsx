@@ -9,8 +9,8 @@ const Header = props => {
 
     return (
             <div id="header-container">
-                <img src={Logo} alt="Businesses of the Earth Logo"className="logo-top"/>
                         <ul className="header-link-list">
+                <img src={Logo} alt="Businesses of the Earth Logo"className="logo-top"/>
                             <Link to='/' className="header-link">Home</Link>
                             <Link to='/team'className="header-link">Our Team</Link>
                             <Link to='/posts'className="header-link">Local Businesses</Link>

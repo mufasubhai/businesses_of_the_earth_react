@@ -8,13 +8,19 @@ import {categoryTags, categoryNames} from '../../assets/variables/categories'
 const IndexPage = props => {
 
 useEffect(() => {
-    props.fetchPosts()
+    props.fetchPosts(props.currentPage)
     props.fetchProfiles()
+    props.currentPageReset()
 }, [])    
 
 const [currentSection, setCurrentSection ] = useState('All Posts')
 // maybe add loader here
 
+
+const fetchAdditionalPosts = () => {
+    props.fetchPosts(props.currentPage + 1);
+    props.setCurrentPage(props.currentPage + 1)
+}
 const selectTag = (tag) => {
     if (tag === "All Posts") {
         if (currentSection != tag) {
@@ -87,8 +93,10 @@ const classTag = (tag) => {
                 </div> : null
                 }
                 
+                {!props.lastPage ? <button className="plus-button" onClick={() => fetchAdditionalPosts()}>Fetch some more posts</button> : null}
 
             </div>
+
         )
 }
 

@@ -131,11 +131,19 @@ export const fetchAboutUs = () => dispatch => (
         )
 ))
 
-export const fetchPosts = (page = 4) => dispatch => {
+export const setCurrentPage = (page) => dispatch => (
+    dispatch(receiveCurrentPage(page))
+)
+
+export const currentPageReset = () => dispatch => (
+    dispatch(resetCurrentPage())
+)
+
+export const fetchPosts = (page) => dispatch => {
     let nextPage = page + 1;
 
     APIUtil.fetchPostsData(nextPage).then(res => {
-      console.log('not last')
+      dispatch(unsetLastPage())
     }).catch( err => {
   dispatch(setLastPage())
             console.log("LASTPAGE")
@@ -145,19 +153,16 @@ export const fetchPosts = (page = 4) => dispatch => {
         .then((Posts, Status, Header) => { 
             dispatch(receivePostsData(Posts))
             dispatch(receiveCurrentPage(page))
-            
-            console.log(Posts)
-            console.log(Status)
-            console.log(Header)
         }, err => (
             dispatch(receivePostErrors(err.responseJSON))
         ))
     }
 
-export const fetchPostsTag = (tag, page = 1) => dispatch => {
+export const fetchPostsTag = (tag, page) => dispatch => {
   let nextPage = page + 1;
 
     APIUtil.fetchPostsData(nextPage).then(res => {
+        dispatch(unsetLastPage())
       console.log('not last')
     }).catch( err => {
   dispatch(setLastPage())

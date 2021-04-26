@@ -14,7 +14,7 @@ const HomePage = props => {
     const[fetch, setFetch] = useState(false)
     
     useEffect(() => {
-        props.fetchPosts()
+        props.fetchPosts(1)
 
         props.fetchAboutUs().then(res => {
             setFetch(false)

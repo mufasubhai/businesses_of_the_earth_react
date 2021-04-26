@@ -20,7 +20,7 @@ const mDTP = dispatch => ({
   fetchPost: (id) => dispatch(fetchPost(id)),
   fetchProfile: (id) => dispatch(fetchProfile(id)),
   fetchProfiles: () => dispatch(fetchProfiles()),
-  fetchPosts: () => dispatch(fetchPosts()),
+  fetchPosts: (page) => dispatch(fetchPosts(page)),
   fetchFAQ: () => dispatch(fetchFAQ()),
   fetchMetric: () => dispatch(fetchMetric()),
   fetchAboutUs: () => dispatch(fetchAboutUs())

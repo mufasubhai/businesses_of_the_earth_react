@@ -158,7 +158,7 @@ function App() {
 /*!*********************************!*\
   !*** ./actions/data_actions.js ***!
   \*********************************/
-/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, RECEIVE_METRIC_DATA, RECEIVE_METRIC_ERRORS, RECEIVE_ABOUT_US_ERRORS, SET_CURRENT_PROFILE, RECEIVE_ABOUT_US_DATA, LAST_PAGE_TRUE, LAST_PAGE_FALSE, RECEIVE_CURRENT_PAGE, RESET_CURRENT_PAGE, RECEIVE_NEW_POSTS_DATA, clearErrors, fetchFAQ, fetchMetric, fetchAboutUs, fetchPosts, fetchPostsTag, fetchPost, fetchProfiles, fetchProfile, setCurrentProfile */
+/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, RECEIVE_METRIC_DATA, RECEIVE_METRIC_ERRORS, RECEIVE_ABOUT_US_ERRORS, SET_CURRENT_PROFILE, RECEIVE_ABOUT_US_DATA, LAST_PAGE_TRUE, LAST_PAGE_FALSE, RECEIVE_CURRENT_PAGE, RESET_CURRENT_PAGE, RECEIVE_NEW_POSTS_DATA, clearErrors, fetchFAQ, fetchMetric, fetchAboutUs, setCurrentPage, currentPageReset, fetchPosts, fetchPostsTag, fetchPost, fetchProfiles, fetchProfile, setCurrentProfile */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -186,6 +186,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFAQ", function() { return fetchFAQ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMetric", function() { return fetchMetric; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAboutUs", function() { return fetchAboutUs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCurrentPage", function() { return setCurrentPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currentPageReset", function() { return currentPageReset; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostsTag", function() { return fetchPostsTag; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPost", function() { return fetchPost; });
@@ -364,12 +366,21 @@ var fetchAboutUs = function fetchAboutUs() {
     });
   };
 };
-var fetchPosts = function fetchPosts() {
-  var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 4;
+var setCurrentPage = function setCurrentPage(page) {
+  return function (dispatch) {
+    return dispatch(receiveCurrentPage(page));
+  };
+};
+var currentPageReset = function currentPageReset() {
+  return function (dispatch) {
+    return dispatch(resetCurrentPage());
+  };
+};
+var fetchPosts = function fetchPosts(page) {
   return function (dispatch) {
     var nextPage = page + 1;
     _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"](nextPage).then(function (res) {
-      console.log('not last');
+      dispatch(unsetLastPage());
     })["catch"](function (err) {
       dispatch(setLastPage());
       console.log("LASTPAGE");
@@ -377,19 +388,16 @@ var fetchPosts = function fetchPosts() {
     return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"](page).then(function (Posts, Status, Header) {
       dispatch(receivePostsData(Posts));
       dispatch(receiveCurrentPage(page));
-      console.log(Posts);
-      console.log(Status);
-      console.log(Header);
     }, function (err) {
       return dispatch(receivePostErrors(err.responseJSON));
     });
   };
 };
-var fetchPostsTag = function fetchPostsTag(tag) {
-  var page = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+var fetchPostsTag = function fetchPostsTag(tag, page) {
   return function (dispatch) {
     var nextPage = page + 1;
     _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"](nextPage).then(function (res) {
+      dispatch(unsetLastPage());
       console.log('not last');
     })["catch"](function (err) {
       dispatch(setLastPage());
@@ -882,7 +890,7 @@ var HomePage = function HomePage(props) {
       setFetch = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    props.fetchPosts();
+    props.fetchPosts(1);
     props.fetchAboutUs().then(function (res) {
       setFetch(false);
     });
@@ -993,8 +1001,8 @@ var mDTP = function mDTP(dispatch) {
     fetchProfiles: function fetchProfiles() {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfiles"])());
     },
-    fetchPosts: function fetchPosts() {
-      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
+    fetchPosts: function fetchPosts(page) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])(page));
     },
     fetchFAQ: function fetchFAQ() {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchFAQ"])());
@@ -1298,8 +1306,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var IndexPage = function IndexPage(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    props.fetchPosts();
+    props.fetchPosts(props.currentPage);
     props.fetchProfiles();
+    props.currentPageReset();
   }, []);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('All Posts'),
@@ -1307,6 +1316,11 @@ var IndexPage = function IndexPage(props) {
       currentSection = _useState2[0],
       setCurrentSection = _useState2[1]; // maybe add loader here
 
+
+  var fetchAdditionalPosts = function fetchAdditionalPosts() {
+    props.fetchPosts(props.currentPage + 1);
+    props.setCurrentPage(props.currentPage + 1);
+  };
 
   var selectTag = function selectTag(tag) {
     if (tag === "All Posts") {
@@ -1368,7 +1382,12 @@ var IndexPage = function IndexPage(props) {
       key: idx,
       post: post
     });
-  }))) : null);
+  }))) : null, !props.lastPage ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "plus-button",
+    onClick: function onClick() {
+      return fetchAdditionalPosts();
+    }
+  }, "Fetch some more posts") : null);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (IndexPage);
@@ -1397,7 +1416,9 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state) {
   return {
     profiles: Object.values(state.entities.profiles),
-    posts: Object.values(state.entities.posts)
+    posts: Object.values(state.entities.posts),
+    currentPage: state.entities.currentPage,
+    lastPage: state.entities.lastPage
   };
 };
 
@@ -1412,11 +1433,17 @@ var mDTP = function mDTP(dispatch) {
     fetchProfiles: function fetchProfiles() {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchProfiles"])());
     },
-    fetchPosts: function fetchPosts() {
-      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
+    fetchPosts: function fetchPosts(page) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])(page));
     },
     fetchPostsTag: function fetchPostsTag(tag) {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPostsTag"])(tag));
+    },
+    currentPageReset: function currentPageReset() {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["currentPageReset"])());
+    },
+    setCurrentPage: function setCurrentPage(page) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["setCurrentPage"])(page));
     }
   };
 };
@@ -55505,23 +55532,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/data_actions */ "./actions/data_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 
 var PostsReducer = function PostsReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
 
+  var newState = _toConsumableArray(state);
+
   switch (action.type) {
     case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS_DATA"]:
-      return Object.assign({}, state, action.posts);
-    // return action.posts
-    // add new 
+      console.log(state);
+      console.log(action.posts);
+      console.log(newState.concat(action.posts));
+      return newState.concat(action.posts);
 
     case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NEW_POSTS_DATA"]:
-      return actiion.posts;
+      return action.posts;
 
-    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS_DATA"]:
+    case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST_DATA"]:
       return Object.assign({}, state, _defineProperty({}, action.post.id, action.post));
 
     default:

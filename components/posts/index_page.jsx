@@ -8,7 +8,7 @@ import {categoryTags, categoryNames} from '../../assets/variables/categories'
 const IndexPage = props => {
 
 useEffect(() => {
-    props.fetchPosts(props.currentPage)
+    props.fetchFirstPosts(1)
     props.fetchProfiles()
     props.currentPageReset()
 }, [])    
@@ -18,20 +18,39 @@ const [currentSection, setCurrentSection ] = useState('All Posts')
 
 
 const fetchAdditionalPosts = () => {
-    props.fetchPosts(props.currentPage + 1);
-    props.setCurrentPage(props.currentPage + 1)
+
+    let nextPage = props.currentPage + 1
+
+    if (currentSection === "All Posts") {
+        props.fetchPosts(nextPage);
+        props.setCurrentPage(nextPage)
+    } else {
+        props.fetchPostsTag(categoryNames[currentSection], nextPage)
+        props.setCurrentPage(nextPage)
+    }
 }
+
+
+
 const selectTag = (tag) => {
     if (tag === "All Posts") {
         if (currentSection != tag) {
             setCurrentSection(tag);
-            props.fetchPosts();
+            props.currentPageReset()
+            
+            
+                props.fetchFirstPosts(1);
+            
         }
         
     } else {
         if (currentSection != tag) {
             setCurrentSection(tag);
-            props.fetchPostsTag(categoryNames[tag]);
+            props.currentPageReset()
+
+            props.fetchFirstPostsTag(categoryNames[tag], 1);
+
+            
         }
     }
 }
@@ -93,7 +112,7 @@ const classTag = (tag) => {
                 </div> : null
                 }
                 
-                {!props.lastPage ? <button className="plus-button" onClick={() => fetchAdditionalPosts()}>Fetch some more posts</button> : null}
+                {(!props.lastPage) ? <button className="plus-button" onClick={() => fetchAdditionalPosts()}>Fetch some more posts</button> : null}
 
             </div>
 

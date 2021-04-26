@@ -158,7 +158,7 @@ function App() {
 /*!*********************************!*\
   !*** ./actions/data_actions.js ***!
   \*********************************/
-/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, RECEIVE_METRIC_DATA, RECEIVE_METRIC_ERRORS, RECEIVE_ABOUT_US_ERRORS, SET_CURRENT_PROFILE, RECEIVE_ABOUT_US_DATA, LAST_PAGE_TRUE, LAST_PAGE_FALSE, RECEIVE_CURRENT_PAGE, RESET_CURRENT_PAGE, RECEIVE_NEW_POSTS_DATA, clearErrors, fetchFAQ, fetchMetric, fetchAboutUs, setCurrentPage, currentPageReset, fetchPosts, fetchPostsTag, fetchPost, fetchProfiles, fetchProfile, setCurrentProfile */
+/*! exports provided: RECEIVE_PROFILE_ERRORS, RECEIVE_POST_ERRORS, CLEAR_ERRORS, RECEIVE_POSTS_DATA, RECEIVE_POST_DATA, RECEIVE_PROFILES_DATA, RECEIVE_PROFILE_DATA, RECEIVE_FAQ_DATA, RECEIVE_FAQ_ERRORS, RECEIVE_METRIC_DATA, RECEIVE_METRIC_ERRORS, RECEIVE_ABOUT_US_ERRORS, SET_CURRENT_PROFILE, RECEIVE_ABOUT_US_DATA, LAST_PAGE_TRUE, LAST_PAGE_FALSE, RECEIVE_CURRENT_PAGE, RESET_CURRENT_PAGE, RECEIVE_NEW_POSTS_DATA, clearErrors, fetchFAQ, fetchMetric, fetchAboutUs, setCurrentPage, currentPageReset, fetchPosts, fetchFirstPosts, fetchFirstPostsTag, fetchPostsTag, fetchPost, fetchProfiles, fetchProfile, setCurrentProfile */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -189,6 +189,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCurrentPage", function() { return setCurrentPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currentPageReset", function() { return currentPageReset; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFirstPosts", function() { return fetchFirstPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFirstPostsTag", function() { return fetchFirstPostsTag; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostsTag", function() { return fetchPostsTag; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPost", function() { return fetchPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProfiles", function() { return fetchProfiles; });
@@ -285,6 +287,13 @@ var clearErrors = function clearErrors() {
 var receivePostsData = function receivePostsData(posts) {
   return {
     type: RECEIVE_POSTS_DATA,
+    posts: posts
+  };
+};
+
+var receiveFirstPostsData = function receiveFirstPostsData(posts) {
+  return {
+    type: RECEIVE_NEW_POSTS_DATA,
     posts: posts
   };
 };
@@ -393,10 +402,27 @@ var fetchPosts = function fetchPosts(page) {
     });
   };
 };
-var fetchPostsTag = function fetchPostsTag(tag, page) {
+var fetchFirstPosts = function fetchFirstPosts(page) {
   return function (dispatch) {
     var nextPage = page + 1;
     _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"](nextPage).then(function (res) {
+      dispatch(unsetLastPage());
+    })["catch"](function (err) {
+      dispatch(setLastPage());
+      console.log("LASTPAGE");
+    });
+    return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchPostsData"](page).then(function (Posts, Status, Header) {
+      dispatch(receiveFirstPostsData(Posts));
+      dispatch(receiveCurrentPage(page));
+    }, function (err) {
+      return dispatch(receivePostErrors(err.responseJSON));
+    });
+  };
+};
+var fetchFirstPostsTag = function fetchFirstPostsTag(tag, page) {
+  return function (dispatch) {
+    var nextPage = page + 1;
+    _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchCategoryPosts"](tag, nextPage).then(function (res) {
       dispatch(unsetLastPage());
       console.log('not last');
     })["catch"](function (err) {
@@ -404,10 +430,26 @@ var fetchPostsTag = function fetchPostsTag(tag, page) {
       console.log("LASTPAGE");
     });
     return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchCategoryPosts"](tag, page).then(function (Posts) {
-      dispatch(receivePostsData(Posts));
+      dispatch(receiveFirstPostsData(Posts));
       dispatch(receiveCurrentPage(page));
     }, function (err) {
       return dispatch(receivePostErrors(err.responseJson));
+    });
+  };
+};
+var fetchPostsTag = function fetchPostsTag(tag, page) {
+  return function (dispatch) {
+    var nextPage = page + 1;
+    _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchCategoryPosts"](tag, nextPage).then(function (res) {
+      dispatch(unsetLastPage());
+    })["catch"](function (err) {
+      dispatch(setLastPage());
+    });
+    return _util_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchCategoryPosts"](tag, page).then(function (Posts) {
+      dispatch(receivePostsData(Posts));
+      dispatch(receiveCurrentPage(page));
+    })["catch"](function (err) {
+      dispatch(setLastPage());
     });
   };
 };
@@ -1054,12 +1096,8 @@ var GoogleMap = function GoogleMap(_ref) {
 
   if (pins.length === 1) {
     if (pins[0]["long"] && pins[0].lat) {
-      console.log(pins);
       defaultProps.center.lat = parseFloat(pins[0].lat);
-      console.log(parseFloat(pins[0].lat));
       defaultProps.center.lng = parseFloat(pins[0]["long"]);
-      console.log(parseFloat(pins[0]["long"]));
-      console.log(defaultProps);
       defaultProps.zoom = 12;
     }
   }
@@ -1306,7 +1344,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var IndexPage = function IndexPage(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    props.fetchPosts(props.currentPage);
+    props.fetchFirstPosts(1);
     props.fetchProfiles();
     props.currentPageReset();
   }, []);
@@ -1318,20 +1356,29 @@ var IndexPage = function IndexPage(props) {
 
 
   var fetchAdditionalPosts = function fetchAdditionalPosts() {
-    props.fetchPosts(props.currentPage + 1);
-    props.setCurrentPage(props.currentPage + 1);
+    var nextPage = props.currentPage + 1;
+
+    if (currentSection === "All Posts") {
+      props.fetchPosts(nextPage);
+      props.setCurrentPage(nextPage);
+    } else {
+      props.fetchPostsTag(_assets_variables_categories__WEBPACK_IMPORTED_MODULE_3__["categoryNames"][currentSection], nextPage);
+      props.setCurrentPage(nextPage);
+    }
   };
 
   var selectTag = function selectTag(tag) {
     if (tag === "All Posts") {
       if (currentSection != tag) {
         setCurrentSection(tag);
-        props.fetchPosts();
+        props.currentPageReset();
+        props.fetchFirstPosts(1);
       }
     } else {
       if (currentSection != tag) {
         setCurrentSection(tag);
-        props.fetchPostsTag(_assets_variables_categories__WEBPACK_IMPORTED_MODULE_3__["categoryNames"][tag]);
+        props.currentPageReset();
+        props.fetchFirstPostsTag(_assets_variables_categories__WEBPACK_IMPORTED_MODULE_3__["categoryNames"][tag], 1);
       }
     }
   };
@@ -1436,14 +1483,20 @@ var mDTP = function mDTP(dispatch) {
     fetchPosts: function fetchPosts(page) {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])(page));
     },
-    fetchPostsTag: function fetchPostsTag(tag) {
-      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPostsTag"])(tag));
+    fetchPostsTag: function fetchPostsTag(tag, page) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPostsTag"])(tag, page));
     },
     currentPageReset: function currentPageReset() {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["currentPageReset"])());
     },
     setCurrentPage: function setCurrentPage(page) {
       return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["setCurrentPage"])(page));
+    },
+    fetchFirstPostsTag: function fetchFirstPostsTag(category, page) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchFirstPostsTag"])(category, page));
+    },
+    fetchFirstPosts: function fetchFirstPosts(page) {
+      return dispatch(Object(_actions_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchFirstPosts"])(page));
     }
   };
 };
@@ -55555,9 +55608,6 @@ var PostsReducer = function PostsReducer() {
 
   switch (action.type) {
     case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS_DATA"]:
-      console.log(state);
-      console.log(action.posts);
-      console.log(newState.concat(action.posts));
       return newState.concat(action.posts);
 
     case _actions_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NEW_POSTS_DATA"]:
@@ -55853,7 +55903,7 @@ __webpack_require__.r(__webpack_exports__);
 var fetchPostsData = function fetchPostsData(page) {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
     method: 'GET',
-    url: "https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=20&page=".concat(page)
+    url: "https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=10&page=".concat(page)
   });
 };
 var fetchFAQ = function fetchFAQ() {
@@ -55895,7 +55945,7 @@ var fetchProfileData = function fetchProfileData(id) {
 var fetchCategoryPosts = function fetchCategoryPosts(categoryTag, page) {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
     method: 'GET',
-    url: "https://businessesoftheearth.org/wp-json/wp/v2/posts?categories=".concat(categoryTag, "&per_page=20&page=").concat(page)
+    url: "https://businessesoftheearth.org/wp-json/wp/v2/posts?categories=".concat(categoryTag, "&per_page=10&page=").concat(page)
   });
 };
 

@@ -4,7 +4,7 @@ export const fetchPostsData = (page) => {
     
     return $.ajax({
         method: 'GET',
-        url: `https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=20&page=${page}`,
+        url: `https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=10&page=${page}`,
     })
     
 }
@@ -59,7 +59,7 @@ export const fetchProfileData = (id) => (
 export const fetchCategoryPosts = (categoryTag, page) => (
     $.ajax({
         method: 'GET',
-        url: `https://businessesoftheearth.org/wp-json/wp/v2/posts?categories=${categoryTag}&per_page=20&page=${page}`
+        url: `https://businessesoftheearth.org/wp-json/wp/v2/posts?categories=${categoryTag}&per_page=10&page=${page}`
     }) 
 )
 

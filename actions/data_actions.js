@@ -69,6 +69,13 @@ const receivePostsData = (posts) => {
     posts
      }
 }
+const receiveFirstPostsData = (posts) => {   
+ return {   type: RECEIVE_NEW_POSTS_DATA,
+    posts
+     }
+}
+
+
 
 const receivePostData = post => ({
     type: RECEIVE_POST_DATA,
@@ -157,11 +164,29 @@ export const fetchPosts = (page) => dispatch => {
             dispatch(receivePostErrors(err.responseJSON))
         ))
     }
-
-export const fetchPostsTag = (tag, page) => dispatch => {
-  let nextPage = page + 1;
+export const fetchFirstPosts = (page) => dispatch => {
+    let nextPage = page + 1;
 
     APIUtil.fetchPostsData(nextPage).then(res => {
+      dispatch(unsetLastPage())
+    }).catch( err => {
+  dispatch(setLastPage())
+            console.log("LASTPAGE")
+    })
+    
+    return APIUtil.fetchPostsData(page)
+        .then((Posts, Status, Header) => { 
+            dispatch(receiveFirstPostsData(Posts))
+            dispatch(receiveCurrentPage(page))
+        }, err => (
+            dispatch(receivePostErrors(err.responseJSON))
+        ))
+    }
+
+export const fetchFirstPostsTag = (tag, page) => dispatch => {
+  let nextPage = page + 1;
+
+    APIUtil.fetchCategoryPosts(tag, nextPage).then(res => {
         dispatch(unsetLastPage())
       console.log('not last')
     }).catch( err => {
@@ -172,11 +197,35 @@ export const fetchPostsTag = (tag, page) => dispatch => {
 
    return APIUtil.fetchCategoryPosts(tag, page)
         .then(Posts => { 
-            dispatch(receivePostsData(Posts))
+            dispatch(receiveFirstPostsData(Posts))
              dispatch(receiveCurrentPage(page))
          }, err => (
             dispatch(receivePostErrors(err.responseJson))
         ))
+
+  }
+export const fetchPostsTag = (tag, page) => dispatch => {
+  let nextPage = page + 1;
+
+    APIUtil.fetchCategoryPosts(tag, nextPage).then(res => {
+        dispatch(unsetLastPage())
+   
+    }).catch( err => {
+  dispatch(setLastPage())
+        
+    })
+    
+
+   return APIUtil.fetchCategoryPosts(tag, page)
+        .then(Posts => { 
+            dispatch(receivePostsData(Posts))
+             dispatch(receiveCurrentPage(page))
+         }).catch( err => {
+               dispatch(setLastPage())
+
+
+         })
+    
 
   }
 export const fetchPost = (id) => dispatch => (

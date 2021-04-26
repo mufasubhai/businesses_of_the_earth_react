@@ -107,12 +107,12 @@ const classTag = (tag) => {
                             return <PostThumb key={idx} post={post}/>
                         })}
 
+                    {(!props.lastPage) ? <div className="plus-button" onClick={() => fetchAdditionalPosts()}>+</div> : null}
                     </div>
 
                 </div> : null
                 }
                 
-                {(!props.lastPage) ? <button className="plus-button" onClick={() => fetchAdditionalPosts()}>Fetch some more posts</button> : null}
 
             </div>
 

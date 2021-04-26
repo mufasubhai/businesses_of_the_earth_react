@@ -56,6 +56,27 @@
     }
 }
 
+.plus-button {
+    height: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+    border: 4px solid $themeColor-Grey;
+    margin:0px;
+    align-self: center;
+    text-align: center;
+    line-height: 150px;
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom:50px;
+    background-color: $themeColor-Mid;
+}
+
+.plus-button:hover {
+    cursor: pointer;
+
+}
+
 .post-index-categories {
       margin-top: 20px;
     padding-top: 40px;

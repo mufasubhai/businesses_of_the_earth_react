@@ -10,7 +10,7 @@ const postItem = (props) => {
     const COMMENT_URL = "https://businessesoftheearth.org/wp-json/wp/v2/comments"
     const [post, setPost] = useState(null);
     let images = null;
-
+    const [readingTime, setReadingTime] = useState("")
 
     const [commentName, setCommentName] = useState('')
     const [commentEmail, setCommentEmail] = useState('')
@@ -53,8 +53,6 @@ const postItem = (props) => {
             
             // return res.json()
         }).catch(error => console.error('Error:', error))
-
-
     }
 
 
@@ -102,7 +100,7 @@ const postItem = (props) => {
             <script>
                 
                 
-            </script> 
+            </script >
            <Header/>
            {(!post) ? null : 
 
@@ -119,7 +117,10 @@ const postItem = (props) => {
                     </div>
                </div>
 
-            <div className="post-excerpt">{parse(post.excerpt.rendered)}</div>
+            <div className="post-excerpt">
+                <p className="summary-header" > Quick Summary: </p>
+                {parse(post.excerpt.rendered)}</div>
+        
             <div className="post-content">{parse(stripWidth(post.content.rendered))}</div>
             
             
@@ -143,6 +144,7 @@ const postItem = (props) => {
                                 <p className="comment-date">{dateFormat(comment.date)}</p>
                                 </span>
                                 <div className="comment-content">
+                                <p className="comment-body">Quick Summary:</p>
                                     {parse(comment.content.rendered.split('<p>').join('<p class="comment-body">'))}
                                 </div>
                             </div>

@@ -108,7 +108,7 @@ const classTag = (tag) => {
                         })}
 
                     {(!props.lastPage) ? <div className="plus-button" onClick={() => fetchAdditionalPosts()}>+</div> : null}
-                    </div>
+                    </div>ww
 
                 </div> : null
                 }

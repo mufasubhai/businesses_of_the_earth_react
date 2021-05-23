@@ -6,6 +6,7 @@
     flex-direction: column;
     margin-top: 20px;
     box-shadow: $theme-box;
+    align-items: center;
   
 }
 
@@ -64,6 +65,7 @@
 
 .post-excerpt {
     background-color: $themeColor-GreyLow;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -75,8 +77,10 @@
 
 .post-content {
     padding: 40px;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    width: $max-width;
+    // display: flex;
+    // flex-direction: column;
     align-items: center;
 
     img {
@@ -302,3 +306,83 @@ figcaption {
     font-family:$theme-font3;
     color: $themeColor-Mid;
 }
+.rt-reading-time {
+    font-style: bold;
+    padding: 20px 0px;
+}
+
+.summary-header {
+    display: flex;
+    align-self: center;
+    font-size: 25px;
+    
+}
+
+.post-content p {     
+     padding: 0px;
+     margin: 20px 0px;
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .post-content .rt-reading-time {
+        display: none !important;
+    } 
+
+    .comment-header {
+        padding: 0px 40px;
+    }
+
+
+    // .alignright {
+    //     img {
+    //          float: right;
+    //          width: 100%;
+    //         margin-left: auto;
+    //     margin-right: auto;
+    //     display: block;
+    //     // max-width: 50%;
+    //     }
+    //     // display: flex;
+    //     // // align-self: flex-end;
+    //     float: right;
+    //         margin-left: auto;
+    //     margin-right: auto;
+    //     display: block;
+    //     max-width: 50%;
+    //     // flex-wrap: wrap;
+    //     // flex-direction: row;
+    //     // justify-content: flex-end;
+    // }
+    
+    // .alignleft {
+    //     img {
+    //          float: left;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     display: block;
+    //     }
+    //     // display: flex;
+    //     float: left;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     display: block;
+    //     // align-self: flex-start;
+       
+    //     // flex-wrap: wrap;
+    //     // justify-content: flex-start;
+    //     }
+
+        .post-content > .alignleft {
+             max-width: 50%;
+        }
+        .post-content > .alignright {
+             max-width: 50%;
+        }
+
+        .post-content > .undefined {
+            max-width: 80%;
+        }
+
+        .wp-block-social-links {}

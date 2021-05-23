@@ -6,6 +6,14 @@ export const fetchPostsData = (page) => {
         method: 'GET',
         url: `https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=10&page=${page}`,
     })
+}
+
+export const fetchHomePagePosts = () => {
+    
+    return $.ajax({
+        method: 'GET',
+        url: `https://businessesoftheearth.org/wp-json/wp/v2/posts?per_page=100`,
+    })
     
 }
 export const fetchFAQ = () => {

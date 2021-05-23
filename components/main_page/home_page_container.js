@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import HomePage from "./home_page.jsx";
-import {fetchPost, fetchAboutUs, fetchProfile, fetchPosts, fetchProfiles, fetchFAQ, fetchMetric} from '../../actions/data_actions';
+import {fetchPost, fetchAboutUs, fetchProfile, fetchPosts, fetchProfiles, fetchFAQ, fetchMetric, fetchHomePagePosts} from '../../actions/data_actions';
 // import {fetchOTBSampleHistories} from '../../actions/otb_sample_history_actions';
 
 
@@ -21,6 +21,7 @@ const mDTP = dispatch => ({
   fetchProfile: (id) => dispatch(fetchProfile(id)),
   fetchProfiles: () => dispatch(fetchProfiles()),
   fetchPosts: (page) => dispatch(fetchPosts(page)),
+  fetchHomePagePosts: () => dispatch(fetchHomePagePosts()),
   fetchFAQ: () => dispatch(fetchFAQ()),
   fetchMetric: () => dispatch(fetchMetric()),
   fetchAboutUs: () => dispatch(fetchAboutUs())

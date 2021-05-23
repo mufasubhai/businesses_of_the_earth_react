@@ -164,6 +164,18 @@ export const fetchPosts = (page) => dispatch => {
             dispatch(receivePostErrors(err.responseJSON))
         ))
     }
+
+export const fetchHomePagePosts = () => dispatch => {
+
+    
+    return APIUtil.fetchHomePagePosts()
+        .then((Posts) => { 
+            dispatch(receivePostsData(Posts))
+       
+        }, err => (
+            dispatch(receivePostErrors(err.responseJSON))
+        ))
+    }
 export const fetchFirstPosts = (page) => dispatch => {
     let nextPage = page + 1;
 
